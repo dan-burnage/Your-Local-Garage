@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*------------------------------------------------------------------- */
+
+/*
+	Designed and Developed by Dan Burnage
+	Email: info@danburnage.com
+*/
+
+/*------------------------------------------------------------------- */
+
+/* LAYOUT CSS */
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: inherit;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 120px;
+	color: blueviolet;
+}
+
