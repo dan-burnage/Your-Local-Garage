@@ -8,6 +8,58 @@
 
 /*------------------------------------------------------------------- */
 
+/* ----- Base Variables ----- */
+
+:root {
+
+	/* -- Colors -- */
+
+	--AzureRadiance: #00afff;
+	--BahamaBlue: #006E97;
+	--Onahau: #CEF0FF;
+	--Rhino: #283453;
+	--Amaranth: #E7344C;
+	--Supernova: #FFCC00;
+
+	--Alabaster: #F8F8F8;
+	--Iron: #E7E7E8;
+	--Abbey: #50505A;
+	--MineShaft: #222222;
+	--White: #FFFFFF;
+
+	--RedRibbon: #E30638;
+	--JungleGreen: #2ACE58;
+	--Buttercup: #F1C21B;
+
+	--AzureRadiance-Gradient: linear-gradient(180deg, #00AFFF 0%, #0097FF 100%);
+	--BahamaBlue-Gradient: linear-gradient(180deg, #006E97 0%, #3A4B78 100%);
+	--Rhino-Gradient: linear-gradient(180deg, #283453 0%, #192135 100%);
+
+	/* -- Colors -- */
+
+	--margin-col-1: calc(8.333% + 16px);
+
+}
+
+/* ----- Site Container ----- */
+
+html {
+	height: 100%;
+	overflow: scroll;
+	/* -- REM Value -- */
+	font-size: 32px;
+}
+
+body {
+	height: inherit;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+	background: var(--Rhino-Gradient);
+	font-family: 'Raleway' , sans-serif;
+	font-size: 18px;
+}
+
 /* ----- Layout Functions ----- */
 
 .hide {
@@ -18,15 +70,21 @@
 	margin-left: auto;
 }
 
+.left-1 {
+	margin-left: var(--margin-col-1);
+}
+
 .align-left {
 	margin-right: auto;
 }
 
-.site-wrapper {
-	display: flex;
-	flex-wrap: nowrap;
-	margin: 0 auto;
-	max-width: calc(1240px + 32px);
+.header {
+	color: var(--White);
+	margin: 2rem inherit;
 }
 
+.content {
+	color: var(--White);
+	margin: 4rem inherit;
+}
 
