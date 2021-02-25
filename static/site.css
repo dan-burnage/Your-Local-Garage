@@ -80,11 +80,13 @@ body {
 
 .header {
 	color: var(--White);
-	margin: 2rem inherit;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .content {
 	color: var(--White);
-	margin: 4rem inherit;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
