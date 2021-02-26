@@ -33,7 +33,7 @@
 
 <body>
 
-	<div id="grid-wrapper" class="">
+	<div id="grid-wrapper" class="hide">
 		<div id="grid">
 			<div class="col-1"></div>
 			<div class="col-1"></div>
@@ -70,7 +70,9 @@
 			<h6>Heading 6 - Lorem ipsum dolor sit amet ...</h6>
 			<p>Paragraph 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			<p class="p-plus">Pargaraph+ - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<a class="button">Button - Lorem ipsum dolor sit amet ...</a>
+			<div>
+				<a class="button">Book now<img src="static/images/arrow-forward.svg"/></a>
+			</div>
 			<p class="caption">Caption - Lorem ipsum dolor sit amet ...</p>
 			<p class="kicker">Kicker - Lorem ipsum dolor sit amet ...</p>
 
