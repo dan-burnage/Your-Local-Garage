@@ -113,8 +113,10 @@
 	/* -- Typography - Mobile -- */
 
 	h1 {
+		font-size: 56px;
+		line-height: 66px;
 		font-weight: 700;
-		margin-top: 1rem;
+		margin-top: 0.5rem;
 		margin-bottom: .5rem;
 	}
 
@@ -206,8 +208,11 @@
 	p.kicker {
 		font-size: 14px;
 		line-height: 24px;
+		margin-top: 0.5rem;
+		margin-bottom: .25rem;
 		letter-spacing: 2px;
 		text-transform: uppercase;
+		color: var(--AzureRadiance);
 	}
 
 
@@ -302,9 +307,6 @@
 	h1 {
 		font-size: 56px;
 		line-height: 66px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h1.h1-plus {
@@ -315,49 +317,31 @@
 	h2 {
 		font-size: 40px;
 		line-height: 50px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h3 {
 		font-size: 30px;
 		line-height: 40px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h4 {
 		font-size: 24px;
 		line-height: 34px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h5 {
 		font-size: 20px;
 		line-height: 30px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h6 {
 		font-size: 20px;
 		line-height: 30px;
-		font-weight: 500;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	p {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 500;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	p.p-plus {
@@ -368,13 +352,11 @@
 	.button-link {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 600;
 	}
 
 	.button {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 600;
 	}
 
 	p.caption {
@@ -385,8 +367,6 @@
 	p.kicker {
 		font-size: 14px;
 		line-height: 24px;
-		letter-spacing: 2px;
-		text-transform: uppercase;
 	}
 
 }
@@ -461,9 +441,6 @@
 	h1 {
 		font-size: 56px;
 		line-height: 66px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h1.h1-plus {
@@ -474,49 +451,31 @@
 	h2 {
 		font-size: 40px;
 		line-height: 50px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h3 {
 		font-size: 30px;
 		line-height: 40px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h4 {
 		font-size: 24px;
 		line-height: 34px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h5 {
 		font-size: 20px;
 		line-height: 30px;
-		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	h6 {
 		font-size: 20px;
 		line-height: 30px;
-		font-weight: 500;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	p {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 500;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
 	}
 
 	p.p-plus {
@@ -527,13 +486,11 @@
 	.button-link {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 600;
 	}
 
 	.button {
 		font-size: 16px;
 		line-height: 28px;
-		font-weight: 600;
 	}
 
 	p.caption {
@@ -544,8 +501,6 @@
 	p.kicker {
 		font-size: 14px;
 		line-height: 24px;
-		letter-spacing: 2px;
-		text-transform: uppercase;
 	}
 
 }
@@ -565,6 +520,3 @@
 	}
 
 }
-
-
-/* ----- Grid Overlay ----- */
