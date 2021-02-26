@@ -2,7 +2,11 @@
 
 <cms:template title='Landing Page'>
 
-	<cms:editable name='hero_title' type='text' />
+	<cms:editable name='landing_hero' label='Landing Hero' type='group' />
+	<cms:editable name='kicker' label='Kicker' type='text' group='landing_hero' order='1' />
+	<cms:editable name='title' label='Title' type='text' group='landing_hero' order='2' />
+	<cms:editable name='button' label='Button text' type='text' group='landing_hero' order='3' />
+
 
 </cms:template>
 
@@ -13,42 +17,15 @@
 <head>
 
 	<cms:embed 'gtag.html' />
-
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<cms:embed 'opengraph.html' />
-
+	<cms:embed 'og-meta.html' />
 	<cms:embed 'favicons.html' />
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-	<link async href="/static/responsive.css" rel="stylesheet" type="text/css" media="all">
-	<link async href="/static/site.css" rel="stylesheet" type="text/css" media="all">
+	<cms:embed 'g-fonts.html' />
 
 </head>
 
-
-
 <body>
 
-	<div id="grid-wrapper" class="hide">
-		<div id="grid">
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-			<div class="col-1"></div>
-		</div>
-	</div>
+	<cms:embed 'grid-overlay.html' />
 
 	<div class="wrapper header">
 
@@ -57,26 +34,32 @@
 
 	</div>
 
-	<div class="wrapper content">
+	<div class="wrapper content" >
 
-		<div class="col-7">
+		<div class="col-8" >
 
-			<h1 class="h1-plus">Heading 1 - Lorem ipsum dolor sit amet ...</h1>
-			<h1>Heading 1+ - Lorem ipsum dolor sit amet ...</h1>
-			<h2>Heading 2 - Lorem ipsum dolor sit amet ...</h2>
-			<h3>Heading 3 - Lorem ipsum dolor sit amet ...</h3>
-			<h4>Heading 4 - Lorem ipsum dolor sit amet ...</h4>
-			<h5>Heading 5 - Lorem ipsum dolor sit amet ...</h5>
-			<h6>Heading 6 - Lorem ipsum dolor sit amet ...</h6>
-			<p>Paragraph 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p class="p-plus">Pargaraph+ - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<div>
-				<a class="button">Book now<img src="static/images/arrow-forward.svg"/></a>
-			</div>
-			<p class="caption">Caption - Lorem ipsum dolor sit amet ...</p>
-			<p class="kicker">Kicker - Lorem ipsum dolor sit amet ...</p>
+			<cms:if kicker >
+				<p class="kicker"><cms:show kicker /></p>
+			</cms:if>
+
+			<cms:if title >
+				<h1 class="h1-plus"><cms:show title /></h1>
+			</cms:if>
+
+			<cms:if button >
+				<div class="button-margin">
+				<a class="button"><cms:show button /><img src="static/images/arrow-forward.svg"/></a>
+				</div>
+			</cms:if>
 
 		</div>
+
+	</div>
+
+	<div class="wrapper footer">
+
+		<div class="col-3 caption">Footer text</div>
+		<div class="align-right"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></div>
 
 	</div>
 

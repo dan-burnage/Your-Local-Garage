@@ -1,3 +1,7 @@
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <title>
 
 	<cms:if 'page_title'>
@@ -14,6 +18,7 @@
 <meta name="theme-color" content="#111111">
 
 <!-- Open Graph data -->
+
 <cms:if 'seo_title'>
 	<meta property="og:title" content="<cms:get_custom_field 'seo_title' masterpage='settings.php' />">
 </cms:if>
@@ -27,6 +32,7 @@
 </cms:if>
 
 <!-- Twitter card data -->
+
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="<cms:show k_page_link />">
 <cms:if 'seo_title'>
