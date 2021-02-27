@@ -2,7 +2,7 @@
 
 <cms:template title='Global Settings' >
 
-	<cms:editable name='seo_group' label='SEO information' desc='SEO, Open Graph and Twitter card data - Shown on list view' type='group' order='2' />
+	<cms:editable name='seo_group' label='SEO Information' desc='SEO, Open Graph and Twitter card data - Shown on list view' type='group' order='1' />
 
 	<cms:editable name='page_title' label='Page title' desc='If different from global title' group='seo_group' type='text' />
 
@@ -11,6 +11,10 @@
 	<cms:editable name='seo_desc' label='SEO description' desc='Recomended length: 150–155 characters' group='seo_group' maxlength='155' type='textarea' />
 
 	<cms:editable name='seo_img' label='SEO image' desc='Recomended size: 1200px x 630px' group='seo_group' type='image' />
+
+	<cms:editable name='superuser' label='Super User Settings' desc='These settings only change the site for Burnage' type='group' order='2' />
+
+	<cms:editable name='show_grid' label='Show site grid' opt_values='Hide=false | Show=true' group='superuser' type='radio'/>
 
 </cms:template>
 

@@ -41,4 +41,3 @@ Thumbs.db
 /.htaccess
 /.htpasswd
 /couch/config.php
-/couch/snippets/grid-overlay.html
