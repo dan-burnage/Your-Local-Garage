@@ -35,9 +35,7 @@
 	--BahamaBlue-Gradient: linear-gradient(180deg, #006E97 0%, #3A4B78 100%);
 	--Rhino-Gradient: linear-gradient(180deg, #283453 0%, #192135 100%);
 
-	/* -- Colors -- */
-
-	--margin-col-1: calc(8.333% + 16px);
+	/* -- ######## -- */
 
 }
 
@@ -56,60 +54,87 @@ body {
 	padding: 0;
 	overflow: scroll;
 	background: var(--Rhino-Gradient);
-	font-family: 'Raleway' , sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 }
 
 /* ----- Layout Functions ----- */
 
-.hide {
-	display: none;
+
+/* Mobile */
+@media screen and (min-width: 0px) {
+
+	.align-right {
+		margin-left: auto;
+		margin-right: 8px;
+	}
+
+	.align-left {
+		margin-right: auto;
+		margin-left: 8px;
+	}
+
+	.header {
+		color: var(--White);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.content {
+		color: var(--White);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.footer {
+		color: var(--White);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		vertical-align: middle
+	}
+
+	.button-margin {
+		margin-top: 1.15rem;
+	}
+
 }
 
-.align-right {
-	margin-left: auto;
-	margin-right: 16px;
+/* Tablet */
+@media screen and (min-width: 720px) {
+
+	.align-right {
+		margin-right: 16px;
+	}
+
+	.align-left {
+		margin-left: 16px;
+	}
+
 }
 
-.left-1 {
-	margin-left: var(--margin-col-1);
+/* Desktop */
+@media screen and (min-width: 1280px) {
+
+
+
 }
 
-.align-left {
-	margin-right: auto;
-}
 
-.header {
-	color: var(--White);
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
 
-.content {
-	color: var(--White);
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-.footer {
-	color: var(--White);
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-.button-margin {
-	margin-top: 1.15rem;
-}
-
-.portfolio-link {
+.footer-link {
 	width: 24px;
-	height: 24px;
-	opacity: 50%;
-	transition: 0.4s;
+	margin: 2px 0 0 0;
+	opacity: 15%;
+	transition: 0.3s;
 }
 
-.portfolio-link:hover {
-	color: aqua;
-	transition: 0.4s;
+.footer-link:hover {
+	opacity: 75%;
+	transition: 0.3s;
 }
 
+.social-icon {
+	width: 20px;
+	vertical-align: middle;
+	margin: 0 0 4px 12px
+}
