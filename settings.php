@@ -1,6 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
 
-<cms:template title='Global Settings' >
+<cms:template title='Global Settings' order='2' >
 
 	<cms:editable name='seo_group' label='SEO Information' desc='SEO, Open Graph and Twitter card data - Shown on list view' type='group' order='1' />
 
@@ -12,9 +12,11 @@
 
 	<cms:editable name='seo_img' label='SEO image' desc='Recomended size: 1200px x 630px' group='seo_group' type='image' />
 
-	<cms:editable name='superuser' label='Super User Settings' desc='These settings only change the site for Burnage' type='group' order='2' />
+	<cms:editable name='superuser' label='Super User Settings' desc='You should check before changing these settings' type='group' order='2' />
 
-	<cms:editable name='show_grid' label='Show site grid' opt_values='Hide=false | Show=true' group='superuser' type='radio'/>
+	<cms:editable name='show_grid' label='Show site grid' desc='This change is only visible to Burnage' opt_values='Hide=false | Show=true' group='superuser' type='radio'/>
+
+	<cms:editable name='booking_link' label='Techman booking link' group='superuser' type='text' />
 
 </cms:template>
 
