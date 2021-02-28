@@ -16,6 +16,7 @@
 	<cms:editable name='twitter_link' label='Twitter page URL' type='text' group='footer'/>
 	<cms:editable name='header' label='Header'  type='group' order='2'/>
 	<cms:editable name='contact_button' label='Contact us text' type='text' group='header' />
+	<cms:editable name='contact_number' label='Contact us phone number' desc='Enter number with no spaces' type='text' group='header' />
 
 </cms:template>
 
@@ -36,8 +37,6 @@
 	<cms:embed 'favicons.html' />
 	<cms:embed 'g-fonts.html' />
 
-	<!-- Deployment Test -->
-
 </head>
 
 <body>
@@ -49,7 +48,7 @@
 		<div class="wrapper header">
 
 			<div class="col-3"><img src="static/images/icon-logo.svg" class="hero-logo" /></div>
-			<div class="align-right contact-link"><a href="tel:#" class="button-link"><cms:show contact_button /><img src="static/images/phone.svg"/></a></div>
+			<div class="align-right contact-link"><a href="tel:<cms:show contact_number />" class="button-link"><cms:show contact_button /><img src="static/images/phone.svg"/></a></div>
 
 		</div>
 
@@ -67,7 +66,7 @@
 
 				<cms:if button >
 					<div class="button-margin">
-					<a href="<cms:get_custom_field 'booking_link' masterpage='settings.php' />" target="_blank" class="button"><cms:show button /><img src="static/images/arrow-forward.svg"/></a>
+					<a href="<cms:get_custom_field 'booking_link' masterpage='settings.php' />" target="_blank" rel="noopener" class="button"><cms:show button /><img src="static/images/arrow-forward.svg"/></a>
 					</div>
 				</cms:if>
 
@@ -90,20 +89,20 @@
 			</cms:show_repeatable>
 
 			<cms:if facebook_link >
-			<span> &nbsp; |</span> <a href="<cms:show facebook_link />"><img class="social-icons" src="/static/images/facebook.svg" /></a>
+			<span> &nbsp; |</span> <a href="<cms:show facebook_link />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/facebook.svg" /></a>
 			</cms:if>
 
 			<cms:if instagram_link >
-				<a href="<cms:show instagram_link />"><img class="social-icons" src="/static/images/instagram.svg"/></a>
+				<a href="<cms:show instagram_link />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/instagram.svg"/></a>
 			</cms:if>
 
 			<cms:if twitter_link >
-				<a href="<cms:show twitter_link />"><img class="social-icons" src="/static/images/twitter.svg"/></a>
+				<a href="<cms:show twitter_link />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/twitter.svg"/></a>
 			</cms:if>
 
 		</div>
 
-		<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
+		<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank" rel="noopener"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
 
 		<div class="background-image"><img src="static/images/temp-bg-img.png" /></div>
 
