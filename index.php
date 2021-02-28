@@ -1,6 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
 
-<cms:template title='Landing Page'>
+<cms:template title='Landing Page' order='1'>
 
 	<cms:editable name='landing_hero' label='Landing Hero' type='group' order='1' />
 	<cms:editable name='kicker' label='Kicker' type='text' group='landing_hero' order='1' />
@@ -8,12 +8,12 @@
 	<cms:editable name='button' label='Button text' type='text' group='landing_hero' order='3' />
 	<cms:editable name='footer' label='Footer'  type='group' order='3'/>
 	<cms:repeatable name='footer_links' label='Footer Links' group='footer' order=''>
-		<cms:editable name='footer_links_text' label='Link Text' type='text' col_width='200' no_xss_check='1'/>
-		<cms:editable name='footer_links_link' label='Link URL' type='text' no_xss_check='1' />
+		<cms:editable name='footer_links_text' label='Link Text' type='text' col_width='200' />
+		<cms:editable name='footer_links_link' label='Link URL' type='text' />
 	</cms:repeatable>
-	<cms:editable name='facebook_link' label='Facebook page URL' type='text' no_xss_check='1' group='footer'/>
-	<cms:editable name='instagram_link' label='Instagram page URL' type='text' no_xss_check='1' group='footer'/>
-	<cms:editable name='twitter_link' label='Twitter page URL' type='text' no_xss_check='1' group='footer'/>
+	<cms:editable name='facebook_link' label='Facebook page URL' type='text' group='footer'/>
+	<cms:editable name='instagram_link' label='Instagram page URL' type='text' group='footer'/>
+	<cms:editable name='twitter_link' label='Twitter page URL' type='text' group='footer'/>
 	<cms:editable name='header' label='Header'  type='group' order='2'/>
 	<cms:editable name='contact_button' label='Contact us text' type='text' group='header' />
 
@@ -65,7 +65,7 @@
 
 				<cms:if button >
 					<div class="button-margin">
-					<a class="button"><cms:show button /><img src="static/images/arrow-forward.svg"/></a>
+					<a href="<cms:get_custom_field 'booking_link' masterpage='settings.php' />" target="_blank" class="button"><cms:show button /><img src="static/images/arrow-forward.svg"/></a>
 					</div>
 				</cms:if>
 
@@ -103,7 +103,7 @@
 
 		<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
 
-		<img src="static/images/temp-bg-img.png" class="background-image align-right" />
+		<div class="background-image"><img src="static/images/temp-bg-img.png" /></div>
 
 	</div>
 
