@@ -195,7 +195,7 @@
 		font-size: 14px;
 		line-height: 28px;
 		font-weight: 600;
-		background: var(--AzureRadiance);
+		background-color: var(--AzureRadiance);
 		padding: 12px 32px;
 		border-radius: 24px;
 		transition: 0.3s;
