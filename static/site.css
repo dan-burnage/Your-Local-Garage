@@ -43,7 +43,8 @@
 
 html {
 	height: 100%;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	/* -- REM Value -- */
 	font-size: 32px;
 }
@@ -52,7 +53,8 @@ body {
 	height: inherit;
 	margin: 0;
 	padding: 0;
-	overflow: scroll;
+    overflow-x: hidden;
+	overflow-y: scroll;
 	background: var(--Rhino-Gradient);
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
@@ -93,13 +95,14 @@ a {
 
 	.footer {
 		color: var(--White);
-		margin-top: 3rem;
-		margin-bottom: 1rem;
+		margin-top: 1rem;
+		/* margin-bottom: 1rem; */
 		vertical-align: middle;
 	}
 
 	.button-margin {
 		margin-top: 1.15rem;
+		margin-top: 0.75rem;
 	}
 
 	.mobile-hide {
@@ -107,14 +110,29 @@ a {
 	}
 
 	.fullpage-wrapper {
-		height: auto;
+		height: calc(100% - 4.25rem);
 	}
 
 	.hero-logo {
-	height: 32px;
+		height: 32px;
 	}
-}
 
+	.background-image {
+		width: 100%;
+		max-width: 100%;
+		position: absolute;
+		overflow: hidden;
+		z-index: -10;
+		bottom: 0;
+		left: 0;
+	}
+
+	.background-image > img {
+		width: 225vw;
+		margin: 0 0 0 -90vw;
+	}
+
+}
 
 
 /* Tablet */
@@ -141,43 +159,67 @@ a {
 	}
 
 	.content {
-		margin-top: 18vh;
+		margin-top: 16vh;
 	}
 
 	.hero-logo {
 		height: 40px;
+	}
 
-}
+	.button-margin {
+		margin-top: 1.15rem;
+	}
+
+	.background-image > img {
+		width: auto;
+		max-height: 50vh;
+		margin: 0 -5vw;
+		float: right;
+	}
 
 }
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
 	.content {
-		margin-top: 22vh;
+		margin-top: 17vh;
 	}
 
-	.background-image {
-		z-index: -10;
-		width: 90%;
-		position: absolute;
-		bottom: 0;
-		margin: auto;
+	.background-image > img {
+		width: 100vw;
+		max-width: 1366px;
+		max-height: 100vh;
+		margin: 0 0 0 0;
 	}
 
 }
 
+/* Desktop */
+@media screen and (min-width: 1700px) {
+	.content {
+		margin-top: 18vh;
+	}
+
+	.background-image > img {
+		margin: 0 25vh 0 0;
+	}
+
+}
+
+
+/* ----- Visual Adjustments ----- */
+
+
 .contact-link {
 	padding-top: 0.25rem;
-	opacity: 0.35;
+	opacity: 50%;
 	transition: 0.3s;
 }
 
 .contact-link:hover {
-	opacity: 100;
+	opacity: 100%;
 	transition: 0.3s;
 }
-
 
 .portfolio-link {
 	width: 24px;
@@ -209,15 +251,20 @@ span + .social-icons {
 }
 
 .caption > span {
-	opacity: 35%;
+	opacity: 50%;
 }
 
 .caption > a {
-	opacity: 35%;
+	opacity: 50%;
 	transition: 0.3s;
 }
 
 .caption > a:hover {
 	opacity: 100%;
+	transition: 0.3s;
+}
+
+.button:hover {
+	background: var(--BahamaBlue);
 	transition: 0.3s;
 }
