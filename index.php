@@ -108,6 +108,18 @@
 
 	</div>
 
+	<div id="modal" class="modal" >
+		<div class="modal-controls">
+			<span class="caption label"><img src="static/images/arrow-backwards.svg" />Back</span>
+			<span class="kicker label">Online booking system</span>
+			<span class="caption label align-right">Close<img src="static/images/close.svg" /></span>
+		</div>
+		<div class="techman-wrapper">
+			<cms:embed 'techman.html' />
+		</div>
+	</div>
+	<div id="modal-overlay" class="modal-overlay"></div>
+
 </body>
 
 </html>
