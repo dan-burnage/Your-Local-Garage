@@ -90,12 +90,14 @@
                         array(
                               'name'=>'',
                               'label'=>'',
+                              'auto_order'=>'1',
                               ),
                         $params)
                    );
             $name = trim( $name );
             if( !$name ){ die("ERROR: Tag \"".$node->name."\" needs a 'name' attribute"); }
             $label = trim( $label );
+            $auto_order = ( $auto_order==0 ) ? 0 : 1;
 
             // find associated template
             if( array_key_exists($name, $arr_config['orig_schema']) ){
@@ -117,7 +119,7 @@
             $custom_params['_parent_field'] = $arr_config['parent_field'];
             for( $x=0; $x<count($params); $x++ ){
                 $attr = strtolower(trim($params[$x]['lhs']));
-                if( $attr{0}=='_' ){ // prefixed by '_'
+                if( $attr[0]=='_' ){ // prefixed by '_'
                     $custom_params[$attr] = trim( $params[$x]['rhs'] );
                 }
             }
@@ -139,17 +141,19 @@
             foreach( $children as $child ){
                 if( $child->type==K_NODE_TYPE_CODE ){
                     $child_name = strtolower( $child->name );
-                    if( in_array($child_name, array('editable', 'repeatable', 'config_list_view', 'config_form_view')) ){ //supported tags
+                    if( in_array($child_name, array('editable', 'repeatable', 'config_list_view', 'config_form_view', 'func', 'embed')) ){ //supported tags
 
-                        // set 'order' according to occurance
-                        $arr_tmp = array();
-                        foreach( $child->attributes as $child_attr ){
-                            if( $child_attr['name']!='order' ){
-                                $arr_tmp[] = $child_attr;
+                        // set 'order' according to occurance (if not explicitly forbidden)
+                        if( $auto_order && ($child_name=='editable' || $child_name=='repeatable') ){
+                            $arr_tmp = array();
+                            foreach( $child->attributes as $child_attr ){
+                                if( $child_attr['name']!='order' ){
+                                    $arr_tmp[] = $child_attr;
+                                }
                             }
+                            $arr_tmp[] = array( 'name'=>'order', 'op'=>'=', 'quote_type'=>"'", 'value'=>$order++, 'value_type'=>K_VAL_TYPE_LITERAL);
+                            $child->attributes = $arr_tmp;
                         }
-                        $arr_tmp[] = array( name=>'order', op=>'=', quote_type=>"'", value=>$order++, value_type=>K_VAL_TYPE_LITERAL);
-                        $child->attributes = $arr_tmp;
 
                         $child->get_HTML();
                     }
@@ -196,6 +200,7 @@
 
                 if( $obj ){
                     $rows = $obj['ids'];
+                    if( !count($rows) ){ return; }
                     $tiles = $obj['tiles'];
 
                     if( $order=='desc' ){ $rows = array_reverse($rows); }
@@ -380,7 +385,7 @@
         // Handle posted data
         function store_posted_changes( $post_val ){
             global $FUNCS, $Config, $AUTH;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             // rearrange posted rows
             $data = is_array( $post_val ) ? $post_val : array();
@@ -414,6 +419,7 @@
         // before save
         function validate(){ // for now only checking for 'required'
             global $FUNCS;
+            if( $this->deleted || $this->k_inactive ) return true;
 
             if( $this->required && !count($this->items_selected) ){
                 $this->err_msg = $FUNCS->t('required_msg');

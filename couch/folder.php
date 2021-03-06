@@ -363,6 +363,7 @@
                     $CTX->set( 'k_level', $level );
 
                     if( $extended_info ){
+                        $this->children[$x]->set_in_context();
                         $CTX->set( 'k_element_end', 1 ); //e.g. </LI>
                         call_user_func_array( $callback, array(&$this->children[$x], &$param0, &$param1) );
                         $CTX->set( 'k_element_end', 0 );
@@ -414,7 +415,7 @@
         var $processed;
         var $consolidated_count=0; //includes all pages in child folders too
 
-        var $fields; // for admin form
+        var $fields = array(); // for admin form
 
         function __construct( $row, $template_name, &$root ){
             global $FUNCS, $Config;
@@ -427,7 +428,7 @@
 
             if( $this->image ){
                 $data = $this->image;
-                if( $data{0}==':' ){ // if marker
+                if( $data[0]==':' ){ // if marker
                     $data = substr( $data, 1 );
                     $domain_prefix = $Config['k_append_url'] . $Config['UserFilesPath'] . 'image/';
                     $data = $domain_prefix . $data;
@@ -556,7 +557,6 @@
 
             if( count($this->fields) ) return;
 
-            $this->fields = array();
             $fields = array(
                 'title'=>$FUNCS->t('title'),
                 'name'=>$FUNCS->t('name'),
@@ -869,7 +869,7 @@
 
                 // add domain info to internal links
                 $data = $this->pointer_link;
-                if( $data{0}==':' ){ // if marker, it is an internal link
+                if( $data[0]==':' ){ // if marker, it is an internal link
                     $this->is_internal_link = 1;
 
                     $data = substr( $data, 1 );
@@ -938,6 +938,7 @@
                 $arr_vars['k_masqueraded_template'] = $this->pointer_link_detail['masterpage'];
                 $arr_vars['k_masqueraded_links'] = $this->get_admin_link();
             }
+            $arr_vars['k_access_level'] = $this->access_level;
 
             // Dynamically calculated
             $arr_vars['k_is_active'] = $this->is_current;
@@ -1412,7 +1413,7 @@
                 if( !is_array($this->route['params']) )$this->route['params'] = array();
 
                 if( strlen($this->route['masterpage']) && strlen($this->route['name']) ){
-                    $this->href = $FUNCS->generate_route( $this->route['masterpage'], $this->route['name'], $this->route['params'] );
+                    $this->href = $FUNCS->generate_route( $this->route['masterpage'], $this->route['name'], $this->route['params'], $this->route['qs'] );
                     $this->is_internal_link = 1;
                 }
             }
@@ -1541,13 +1542,14 @@
                 $arr_vars['k_'.$label.'_is_collapsed'] = $f->collapsed;
                 $arr_vars['k_'.$label.'_data'] = $f->get_data( 1 );
                 $arr_vars['k_'.$label.'_definition'] = $FUNCS->escape_HTML( $f->_html );
-                $arr_vars['k_'.$label.'_err_msg'] = $CTX->get( 'k_error_'.$f->name );
+                $arr_vars['k_'.$label.'_err_msg'] = $f->err_msg;
                 if($f->system){
                     $arr_vars['k_'.$label.'_wrapper_id'] = $f->name;
                 }
                 else{
                     $arr_vars['k_'.$label.'_wrapper_id'] = 'k_element_'.$f->name;
                 }
+                $arr_vars['k_'.$label.'_obj'] = $f;
 
                 unset( $f );
             }

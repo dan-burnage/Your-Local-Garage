@@ -46,13 +46,19 @@
             // call parent
             parent::__construct( $row, $page, $siblings );
 
-            $this->orig_data = array();
+            $this->orig_data = $this->data = array();
             $this->requires_multipart = 1;
         }
 
         static function handle_params( $params ){
-            global $FUNCS, $AUTH;
+            global $AUTH;
             if( $AUTH->user->access_level < K_ACCESS_LEVEL_SUPER_ADMIN ) return;
+
+            return SecureFile::_handle_params( $params );
+        }
+
+        static function _handle_params( $params ){
+            global $FUNCS;
 
             // Default values for params
             $default_allowed_ext = array(
@@ -206,7 +212,7 @@
         // Handle posted data
         function store_posted_changes( $post_val ){
             global $FUNCS;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             $secure_file_id = $this->_get_input_name( 'secure_file_id' );
             if( isset($_POST[$secure_file_id]) ){ // existing attachment
@@ -253,6 +259,7 @@
 
         function validate(){
             global $FUNCS;
+            if( $this->deleted || $this->k_inactive ) return true;
 
             if( $this->err_msg_refresh ){
                 $this->err_msg = $this->err_msg_refresh;

@@ -69,37 +69,42 @@
             $children = $node->children;
             $schema = array();
             foreach( $children as $child ){
-                if( $child->type==K_NODE_TYPE_CODE && strtolower($child->name)=='editable' ){
-                    $child_params = $FUNCS->resolve_parameters( $child->attributes );
-                    $attr = $FUNCS->get_named_vars( array('type'=>'', 'name'=>''), $child_params );
-                    $child_type = strtolower( trim($attr['type']) );
-                    if( $FUNCS->is_core_type($child_type) ){
-                        if( in_array($child_type, array('thumbnail', 'hidden', 'message', 'group')) ){ //unsupported types
-                            continue;
+                if( $child->type==K_NODE_TYPE_CODE ){
+                    if( strtolower($child->name)=='editable' ){
+                        $child_params = $FUNCS->resolve_parameters( $child->attributes );
+                        $attr = $FUNCS->get_named_vars( array('type'=>'', 'name'=>''), $child_params );
+                        $child_type = strtolower( trim($attr['type']) );
+                        if( $FUNCS->is_core_type($child_type) ){
+                            if( in_array($child_type, array('thumbnail', 'hidden', 'group')) ){ //unsupported types
+                                continue;
+                            }
                         }
-                    }
-                    else{
-                        if( !$FUNCS->udfs[$child_type]['repeatable'] ){
-                            continue;
+                        else{
+                            if( !$FUNCS->udfs[$child_type]['repeatable'] ){
+                                continue;
+                            }
                         }
-                    }
 
-                    $child_name = trim($attr['name']);
-                    if( !$child_name ) {die("ERROR: Tag \"".$node->name."\" a child region's 'name' attribute is missing");}
-                    if( !$FUNCS->is_variable_clean($child_name) ){
-                        die( "ERROR: Tag \"".$node->name."\": a child region's 'name' attribute contains invalid characters. (Only lowercase[a-z], numerals[0-9] and underscore permitted. The first character cannot be a numeral)" );
-                    }
-                    if( substr($child_name, 0, 2)=='k_' ){
-                        die("ERROR: Tag \"".$node->name."\": a child region's 'name' attribute begins with 'k_'. Reserved for system fields only.");
-                    }
+                        $child_name = trim($attr['name']);
+                        if( !$child_name ) {die("ERROR: Tag \"".$node->name."\" a child region's 'name' attribute is missing");}
+                        if( !$FUNCS->is_title_clean($child_name) && !$FUNCS->is_variable_clean($child_name) ){ // retaining is_variable_clean() check for backward compatibility
+                            die( "ERROR: Tag \"".$node->name."\": a child region's 'name' attribute ({$child_name}) contains invalid characters. (Only lowercase[a-z], numerals[0-9], hyphen and underscore permitted.)" );
+                        }
+                        if( substr($child_name, 0, 2)=='k_' ){
+                            die("ERROR: Tag \"".$node->name."\": a child region's 'name' attribute begins with 'k_'. Reserved for system fields only.");
+                        }
 
-                    $tmp = $TAGS->editable( $child_params, $child, 1 ); // piggyback on the real 'editable' tag to handle constituent fields
-                    $html = '';
-                    foreach( $child->children as $grandchild ){
-                        $html .= $grandchild->get_HTML();
+                        $tmp = $TAGS->editable( $child_params, $child, 1 ); // piggyback on the real 'editable' tag to handle constituent fields
+                        $html = '';
+                        foreach( $child->children as $grandchild ){
+                            $html .= $grandchild->get_HTML();
+                        }
+                        $tmp['default_data'] = $html;
+                        $schema[] = $tmp;
                     }
-                    $tmp['default_data'] = $html;
-                    $schema[] = $tmp;
+                    elseif( strtolower($child->name)=='func' ){
+                        $child->get_HTML();
+                    }
                 }
             }
 
@@ -132,9 +137,10 @@
                         $arr_deleted[] = $cells[$x];
                     }
                 }
+
+                // preserve  the deleted columns in schema (just mark them as deleted)
+                if( count($arr_deleted) ) $schema = array_merge( $arr_deleted, $schema );
             }
-            // preserve  the deleted columns in schema (just mark them as deleted)
-            if( count($arr_deleted) ) $schema = array_merge( $arr_deleted, $schema );
 
             // create an editable region of type 'repeatable' with data of constituent fields as its custom_param
             $custom_params = $FUNCS->serialize( $schema );
@@ -157,6 +163,9 @@
                            'order'=>'asc',
                            'extended_info'=>'0',
                            'as_json'=>'0',
+                           'into'=>'',
+                           'scope'=>'',
+                           'token'=>'',
                     ),
                 $params)
             );
@@ -168,7 +177,9 @@
             if( $order!='desc' && $order!='asc' ) $order='asc';
             $extended_info = ( $extended_info==1 ) ? 1 : 0;
             $as_json = ( $as_json==1 ) ? 1 : 0;
-
+            $into = trim( $into );
+            $scope = strtolower( trim($scope) );
+            $token = trim( $token );
 
             if( $var ){
                 // get the data array from CTX
@@ -179,6 +190,13 @@
                     $data = $obj['data'];
 
                     if( $as_json ){ return $FUNCS->json_encode($data); }
+                    if( $into!='' ){
+                        if( $scope!='parent' && $scope!='global' ){ //local scope makes no sense
+                            die("ERROR: Tag \"".$node->name."\" has unknown scope " . $scope);
+                        }
+                        $CTX->set( $into, $data, $scope );
+                        return;
+                    }
 
                     if( $order=='desc' ){ $data = array_reverse($data); }
 
@@ -206,6 +224,11 @@
                             $CTX->set_object( 'k_bound_page', $pg );
                         }
 
+                        // HOOK: rr_alter_ctx_xxx
+                        if( $token ){
+                            $FUNCS->dispatch_event( 'rr_alter_ctx_'.$token, array($params, $node) );
+                        }
+
                         // and call the children providing each row's data
                         foreach( $node->children as $child ){
                             $html .= $child->get_HTML();
@@ -225,12 +248,14 @@
                     'max_rows'=>'',
                     'button_text'=>'Add a Row',
                     'stacked_layout'=>'0',
+                    'no_default_row'=>'0',
                 ),
                 $params
             );
             $attr['max_rows'] = $FUNCS->is_natural( $attr['max_rows'] ) ? intval( $attr['max_rows'] ) : 0; //unused for now
             $attr['button_text'] = trim( $attr['button_text'] ); //unused for now
             $attr['stacked_layout'] = ( $attr['stacked_layout']==1 ) ? 1 : 0;
+            $attr['no_default_row'] = ( $attr['no_default_row']==1 ) ? 1 : 0;
             return $attr;
         }
 
@@ -287,7 +312,7 @@
                                 <th class="col-actions"></th>
                             <?php else: ?>
                                 <?php foreach( $this->cells as $c ) :  ?>
-                                <th <?php if($c->col_width){ echo 'style="width:'.$c->col_width.'px;"'; } ?>>
+                                <th class="k_element_<?php echo $c->name; ?>" <?php if($c->col_width){ echo 'style="width:'.$c->col_width.'px;"'; } ?>>
                                     <span><?php echo $c->label; ?></span>
                                     <span class="carat"></span>
                                 </th>
@@ -322,6 +347,11 @@
                                         $c->store_data_from_saved( $data[$row_id][$c->name] );
                                         $c->err_msg = '';
 
+                                        if( $row_id==0 ){
+                                            // generate JS for conditional fields
+                                            $FUNCS->resolve_active( $c, $CTX->get('k_cur_form'), false, $this->name, $row_id, $y );
+                                        }
+
                                         // display
                                         $c_input_name = 'f_'. $this->name .'['. $row_id .']['. $c->name .']';
                                         $c_input_id = 'f_'. $this->name .'-'. $row_id .'-'. $c->name;
@@ -332,7 +362,7 @@
 
                                         if( $this->stacked_layout ){
                                             $html = "
-                                            <div class=\"row\">
+                                            <div class=\"row k_element_".$c->name."\">
                                                 <div class=\"cell cell-label col-md-2\">
                                                     <label>".$c->label."</label>
                                                 </div>
@@ -344,7 +374,7 @@
                                             </div>";
                                         }
                                         else{
-                                            $html = '<td class="editable"><div style="position:relative;">';
+                                            $html = '<td class="editable k_element_'.$c->name.'"><div style="position:relative;">';
                                             $html .= $field_html;
                                             $html .= '</div></td>';
                                         }
@@ -375,7 +405,7 @@
                                 }
                                 else{
                                     echo( '<td class="delete">' );
-                                    echo( '<input type="checkbox" name="delete[]" value="'.$row_id.'" id="delete'.$row_id.'" />' );
+                                    echo( '<input type="checkbox" name="delete[]" value="'.$row_id.'" id="delete'.$row_id.'" style="display: none;"/>' );
                                     echo( '<label for="delete'.$row_id.'">' );
                                     echo( '    <img src="'. REPEATABLE_URL .'tablegear/delete.gif" alt="Delete Row" />' );
                                     echo( '</label>' );
@@ -398,15 +428,21 @@
                     <?php endif; ?>
                 </div>
                 <input type="hidden" name="_<?php echo $input_id; ?>_sortorder" id="_<?php echo $input_id; ?>_sortorder"/>
-                <div id="addNewRow_<?php echo $input_id; ?>" class="newRow">
+                <div id="addNewRow_<?php echo $input_id; ?>" class="newRow" style="display:none;">
                     <table>
                         <tbody>
                             <tr id="newDataRow_<?php echo $input_id; ?>" class="newRow even">
                                 <td class="dg-arrange-table-rows-drag-icon">&nbsp;</td>
                                 <?php
                                 if( $this->stacked_layout ){ echo( '<td class="col-contents editable"><div class="mosaic-list">' ); };
-                                foreach( $this->cells as $c ) {
-                                    $c->data='';
+                                $y=0;
+                                foreach( $this->cells as $c ){
+                                    $c->data = is_array($c->data) ? array() : '';
+
+                                    if( !count($data) ){// no saved rows
+                                        // generate JS for conditional fields
+                                        $FUNCS->resolve_active( $c, $CTX->get('k_cur_form'), false, $this->name, 0, $y );
+                                    }
 
                                     $widget = $c->_render( 'data[xxx]['.$c->name.']', 'data-xxx-'.$c->name, '', 1 );
                                     // ID hack..innerHTML does not return 'id' so adding an 'idx' attribute with the same values.
@@ -418,7 +454,7 @@
 
                                     if( $this->stacked_layout ){
                                         $html = "
-                                        <div class=\"row\">
+                                        <div class=\"row k_element_".$c->name."\">
                                             <div class=\"cell cell-label col-md-2\">
                                                 <label>".$c->label."</label>
                                             </div>
@@ -430,12 +466,13 @@
                                         </div>";
                                     }
                                     else{
-                                        $html = '<td class="editable"><div style="position:relative;">';
+                                        $html = '<td class="editable k_element_'.$c->name.'"><div style="position:relative;">';
                                         $html .= $widget;
                                         $html .= '</div></td>';
                                     }
 
                                     echo $html;
+                                    $y++;
                                 }
                                 if( $this->stacked_layout ){
                                     echo( '</div>' );
@@ -461,7 +498,7 @@
                                 }
                                 else{
                                     echo( '<td class="delete">' );
-                                    echo( '<input type="checkbox" name="delete[]" value="" id="deleteNULL_STRING" />' );
+                                    echo( '<input type="checkbox" name="delete[]" value="" id="deleteNULL_STRING" style="display: none;"/>' );
                                     echo( '<label for="deleteNULL_STRING">' );
                                     echo( '    <img src="'. REPEATABLE_URL .'tablegear/delete.gif" alt="Delete Row" />' );
                                     echo( '</label>' );
@@ -476,9 +513,9 @@
             <script type="text/javascript">
                 $(function(){
                     <?php if( $this->stacked_layout ): ?>
-                        COUCH.rrInit('<?php echo $input_id; ?>');
+                        COUCH.rrInit('<?php echo $input_id; ?>', <?php echo( intval($this->no_default_row) ); ?>);
                     <?php else: ?>
-                        $('#<?php echo $input_id; ?>').tableGear();
+                        $('#<?php echo $input_id; ?>').tableGear({addDefaultRow:<?php echo( intval($this->no_default_row) ); ?>});
                     <?php endif; ?>
                 });
             </script>
@@ -495,8 +532,8 @@
 
         // Handle posted data
         function store_posted_changes( $post_val ){
-            global $FUNCS, $Config, $AUTH;
-            if( $this->deleted ) return; // no need to store
+            global $FUNCS, $Config, $AUTH, $CTX;
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             // rearrange posted rows
             //$data = is_array( $post_val ) ? $FUNCS->sanitize_deep( $post_val ) : array();
@@ -531,6 +568,7 @@
             $this->rendered_data = array();
             $this->search_data = '';
             $sep = '';
+            $without_form = ( func_num_args()>1 ) ? 1 : 0;
             for( $row=0; $row<count($data); $row++ ){
                 // recreate each row
                 for( $y=0; $y<count($this->cells); $y++ ){
@@ -540,6 +578,7 @@
                     $c->orig_data = null;
                     $c->store_data_from_saved( $this->orig_data[$row][$c->name] );
                     $c->err_msg = '';
+                    $c->k_inactive = 0;
 
                     // pass posted data to each cell
                     if( $set_explictly && $c->k_type== 'checkbox' ){
@@ -554,6 +593,14 @@
                             $sep2 = $separator;
                         }
                         $data[$row][$c->name] = $str_val;
+                    }
+
+                    // field conditionally inactive? Control fields can be siblings less than $y
+                    if( $without_form ){
+                        $c->k_inactive = !$FUNCS->resolve_active_without_form( $c, $this->page, true, $y );
+                    }
+                    else{
+                        $c->k_inactive = !$FUNCS->resolve_active( $c, $CTX->get('k_cur_form'), true, $this->name, $row, $y );
                     }
 
                     $c->store_posted_changes( $data[$row][$c->name] );
@@ -647,7 +694,7 @@
                     }
                     if( $this->stacked_layout ){
                         $html = "
-                        <div class=\"row\">
+                        <div class=\"row k_element_".$c->name."\">
                             <div class=\"cell cell-label col-md-2".$err_class."\">
                                 <label>".$c->label."</label>
                             </div>
@@ -659,7 +706,7 @@
                         </div>";
                     }
                     else{
-                        $html = '<td class="editable'.$err_class.'"><div style="position:relative;">';
+                        $html = '<td class="editable k_element_'.$c->name.$err_class.'"><div style="position:relative;">';
                         $html .= $field_html;
                         $html .= '</div></td>';
                     }
@@ -678,6 +725,8 @@
 
         // before save
         function validate(){
+            if( $this->deleted || $this->k_inactive ) return true;
+
             return ( $this->validation_errors ) ? false : true;
         }
 
@@ -747,8 +796,9 @@
 
                 ob_start();
                 ?>
+                    if ( !window.COUCH ) var COUCH = {};
                     $(function(){
-                        $('table.rr tbody').sortable({
+                        $('table.rr > tbody').sortable({
                             axis: "y",
                             handle: ".dg-arrange-table-rows-drag-icon",
                             helper: function (e, ui) { // https://paulund.co.uk/fixed-width-sortable-tables
@@ -773,9 +823,9 @@
                         });
                     });
 
-                    COUCH.rrInit = function( field_id ){
+                    COUCH.rrInit = function( field_id, default_row ){
                         var $field = $('#'+field_id);
-                        $field.tableGear({stackLayout:1});
+                        $field.tableGear({addDefaultRow:default_row, stackLayout:1});
                         $field.on('click', '.col-actions .add-row', function(){
                             var $this = $(this);
                             var row_id = $this.attr('data_mosaic_row');

@@ -61,7 +61,7 @@
         function __construct( $type, $name='', $attr='', $text='', $cleanXSS=0, $for_comments=0, $safe_tags=null ){
             global $FUNCS;
 
-            if( $name{0}=='/' ){
+            if( $name[0]=='/' ){
                 $this->is_end_tag = 1;
                 $name = trim( substr($name, 1) );
             }
@@ -181,6 +181,7 @@
 
             // invalidate other dangerous words
             // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
+            // https://gist.github.com/kurobeats/9a613c9ab68914312cbb415134795b45
             $ra2 = array(
                  'fscommand', 'onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate',
                  'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus',
@@ -204,6 +205,10 @@
                  'datafld', 'dataformatas', 'datasrc', 'binding', 'behavior',
                  'onformchange', 'onforminput', 'formaction', 'oninput', 'dirname', 'pattern', 'mhtml:',
                  'onhashchange', 'onmessage', 'onoffline', 'ononline', 'onpagehide', 'onpageshow', 'onpopstate', 'onstorage', 'onundo', 'onredo',
+                 'oninvalid', 'onsearch', 'onwheel', 'oncanplay', 'oncuechange', 'ondurationchange', 'onemptied', 'onplay', 'onratechange',
+                 'onstalled', 'onsuspend', 'ontimeupdate', 'onvolumechange', 'onwaiting', 'onshow', 'ontoggle',
+                 'onanimation', 'onauxclick', 'onfullscreen', 'ongotpointercapture', 'onlostpointercapture', 'onpointer', 'onorientationchange',
+                 'ontouch', 'ontransition', 'onvisibilitychange', 'onwebkit', 'onmoz',
                  );
 
             for( $i = 0; $i < count($ra2); $i++ ){

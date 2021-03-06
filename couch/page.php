@@ -128,8 +128,8 @@
                 }
             }
             if( $page_id ) $this->id = $page_id;
-            if( $page_name ) $this->page_name = $page_name;
-            if( $html ) $this->html = $html;
+            if( $page_name != '' ) $this->page_name = $page_name;
+            if( $html != '' ) $this->html = $html;
 
             $rs = $this->_fill_template_info();
             if( $FUNCS->is_error($rs) ){ $this->error=1; $this->err_msg=$rs->err_msg; return; }
@@ -300,32 +300,12 @@
             }
             else{
                 // The custom fields -
-                $rs = $DB->select( K_TBL_FIELDS, array('*'), "template_id='" . $DB->sanitize( $this->tpl_id ). "' ORDER BY k_group, k_order, id" );
+                $rs2 = $DB->select( K_TBL_FIELDS, array('*'), "template_id='" . $DB->sanitize( $this->tpl_id ). "' ORDER BY k_group, k_order, id" );
 
                 // HOOK: alter_custom_fields_info_db
                 // Array of custom fields info, as fetched from the database, can be manipulated at this point.
-                $FUNCS->dispatch_event( 'alter_custom_fields_info_db', array(&$rs, &$this) );
+                $FUNCS->dispatch_event( 'alter_custom_fields_info_db', array(&$rs2, &$this) );
 
-                // rearrange fields according to their groups (if in any)
-                $rs2 = array();
-                $i=0;
-                for( $x=0; $x<count($rs); $x++ ){
-                    $rs2[$i++] = $rs[$x];
-                    unset( $rs[$x--] );
-                    $rs = array_values( $rs );
-
-                    if( $rs2[$i-1]['k_type'] == 'group' ){
-                        $group_name = $rs2[$i-1]['name'];
-                        for( $y=0; $y<count($rs); $y++ ){
-                            if( $rs[$y]['k_group']==$group_name ){
-                                $rs2[$i++] = $rs[$y];
-                                unset( $rs[$y--] );
-                                $rs = array_values( $rs );
-                            }
-
-                        }
-                    }
-                }
                 for( $x=0; $x<count($rs2); $x++ ){
                     $rs2[$x]['module'] = 'pages';
                     $fieldtype = $rs2[$x]['k_type'];
@@ -485,9 +465,8 @@
                     elseif( $k=='k_pointer_link' ){
                         $field_info['required'] = '0';
                         $field_info['k_desc'] = $FUNCS->t('link_url_desc');
-                        $field_info['validator'] = 'regex=/^\s*(?:http:\/\/|https:\/\/)/i # KWebpage::validate_masquerade_link';
+                        $field_info['validator'] = 'KWebpage::validate_masquerade_link';
                         $field_info['k_separator'] ='#';
-                        $field_info['validator_msg'] ='regex=Must begin with http:// or https://';
                         $arr_sys_fields[] = new KLinkUrlField( $field_info, $this, $this->fields );
                     }
                     elseif( $k=='k_file_meta' ){
@@ -527,9 +506,12 @@
 
                 // HOOK: alter_fields_info
                 // All the field objects (system as well as custom) are ready and accessible by names.
-                $FUNCS->dispatch_event( 'alter_fields_info', array(&$this->_fields, &$this) );
+                $skip_cache = 0;
+                $FUNCS->dispatch_event( 'alter_fields_info', array(&$this->_fields, &$this, &$skip_cache) );
 
-                $FUNCS->cached_fields[$this->tpl_id] = $this->fields;
+                if( !$skip_cache ){
+                    $FUNCS->cached_fields[$this->tpl_id] = $this->fields;
+                }
             }
         }
 
@@ -835,27 +817,42 @@
         function _fill_custom_fields(){
             global $DB, $FUNCS;
 
-            // Text type
-            $rs = $DB->select( K_TBL_DATA_TEXT, array('field_id', 'value'), "page_id='" . $DB->sanitize( $this->id ). "'" );
-            // Numeric type
-            $rs2 = $DB->select( K_TBL_DATA_NUMERIC, array('field_id', 'value'), "page_id='" . $DB->sanitize( $this->id ). "'" );
-            $rs = array_merge( $rs, $rs2 );
+            $vals = $this->_get_field_values();
 
             // HOOK: alter_custom_fields_data
             // The data fetched from database to fill the custom fields can be manipulated at this point.
-            $FUNCS->dispatch_event( 'alter_custom_fields_data', array(&$rs, &$this) );
+            $FUNCS->dispatch_event( 'alter_custom_fields_data', array(&$vals, &$this) );
 
-            if( count($rs) ){
-                foreach( $rs as $rec ){
-                    for( $x=0; $x<count($this->fields); $x++ ){
-                        $dest = &$this->fields[$x];
-                        if( $dest->id == $rec['field_id'] && !$dest->system ){
-                            $dest->store_data_from_saved( $rec['value'] );
-                            break;
-                        }
+            if( count($vals) ){
+                for( $x=0; $x<count($this->fields); $x++ ){
+                    $dest = &$this->fields[$x];
+                    if( !$dest->system && array_key_exists($dest->id, $vals) ){
+                        $dest->store_data_from_saved( $vals[$dest->id] );
                     }
                 }
             }
+        }
+
+        function _get_field_values(){
+            global $DB;
+
+            $page_id = $DB->sanitize( $this->id );
+            $tbls = array( K_TBL_DATA_TEXT, K_TBL_DATA_NUMERIC );
+            $vals = array();
+            foreach( $tbls as $tbl ){
+                $sql = "SELECT field_id, value FROM ".$tbl." WHERE page_id='".$page_id."'";
+
+                $result = @mysql_query( $sql, $DB->conn );
+                if( !$result ){
+                    ob_end_clean();
+                    die( "Could not successfully run query: " . mysql_error( $DB->conn ) );
+                }
+                while( $row=mysql_fetch_row($result) ){
+                    $vals[$row[0]]=$row[1];
+                }
+            }
+
+            return $vals;
         }
 
         function get_template_name(){
@@ -881,6 +878,8 @@
 
             $DB->begin();
 
+            $this->__args = func_get_args();
+
             // HOOK: page_presave
             // the save process is about to begin.
             // Field values can be adjusted before subjecting them to the save routine.
@@ -892,8 +891,13 @@
             // If name empty, we create it from title field if set
             $title = trim( $this->_fields['k_page_title']->get_data() );
             $name = trim( $this->_fields['k_page_name']->get_data() );
-            if( $this->tpl_nested_pages || $this->_fields['k_page_name']->modified || ($name=='' && $title!='') ){
-                $this->_lock_template(); // serialize access.. lock template
+
+            // HOOK: lock_template
+            $skip = $FUNCS->dispatch_event( 'lock_template', array(&$this) );
+            if( !$skip ){
+                if( $this->tpl_nested_pages || $this->_fields['k_page_name']->modified || ($name=='' && $title!='') ){
+                    $this->_lock_template(); // serialize access.. lock template
+                }
             }
 
             if( $name=='' && $title!='' ){
@@ -1102,6 +1106,20 @@
                             for( $t=0; $t<count($this->fields); $t++ ){
                                 $tb = &$this->fields[$t];
                                 if( (!$tb->system) && $tb->k_type=='thumbnail' && $tb->assoc_field==$f->name ){
+                                    $existing_thumb = null;
+                                    if( strlen($tb->data) && strlen($f->data) ){
+                                        $path_parts = $FUNCS->pathinfo( $tb->data );
+                                        $match = preg_match("/^(.+)?-(?:\d+?)x(?:\d+?)$/i", $path_parts['filename'], $matches);
+                                        if( $match ){
+                                            $path_parts['dirname'] = ( $path_parts['dirname']=='.' || $path_parts['dirname']=='' ) ? '' : $path_parts['dirname'].'/';
+                                            $match = $path_parts['dirname'].$matches[1].'.'.$path_parts['extension'];
+                                            if( $f->data == $match ){
+                                                $existing_thumb = $path_parts['basename'];
+                                                if( $existing_thumb[0]==':' ) $existing_thumb = substr( $existing_thumb, 1 );
+                                            }
+                                        }
+                                    }
+
                                     if( $resized ){
                                         // create thumbnail
                                         $dest = null;
@@ -1113,7 +1131,12 @@
                                         $crop = ( $enforce_max ) ? 0 : 1;
                                         $quality = $tb->quality;
 
-                                        $thumbnail = k_resize_image( $src, $dest, $w, $h, $crop, $enforce_max, $quality );
+                                        if( !$existing_thumb ){
+                                            $thumbnail = k_resize_image( $src, $dest, $w, $h, $crop, $enforce_max, $quality );
+                                        }
+                                        else{
+                                            $thumbnail = $existing_thumb;
+                                        }
                                         if( $FUNCS->is_error($thumbnail) ){
                                             //$tb->err_msg = $thumbnail->err_msg;
                                             //$errors++;
@@ -1437,7 +1460,7 @@
                             $orig_img = $f->data;
                             $cur_img = $this->fields[$x]->data;
                                 if( $orig_img != $cur_img ){
-                                    if( $orig_img{0}==':' ){ // if local
+                                    if( $orig_img[0]==':' ){ // if local
                                     $orig_img = $Config['UserFilesAbsolutePath'] . 'image/' . substr( $orig_img, 1 );
                                     @unlink( $orig_img );
                                 }
@@ -1586,7 +1609,7 @@
                         $f = $this->fields[$x];
                         if( (!$f->system) && (($f->k_type=='image' && $f->name=='gg_image')||($f->k_type=='thumbnail' && $f->assoc_field=='gg_image')) ){
                             $src = $f->data;
-                            if( $src{0}==':' ){ // if local
+                            if( $src[0]==':' ){ // if local
                                 $src = $Config['UserFilesAbsolutePath'] . 'image/' . substr( $src, 1 );
                                 @unlink( $src );
                             }

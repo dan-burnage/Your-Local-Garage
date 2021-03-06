@@ -278,14 +278,14 @@
         // Handle posted data
         function store_posted_changes( $post_val ){
             global $FUNCS;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             $input_name = 'f_'.$this->name.'_chk';
             $arr_posted = array();
             if( $post_val ){
                 // check if '+' or '-' specified
                 $post_val = trim( $post_val );
-                $op = $post_val{0};
+                $op = $post_val[0];
                 if( $op=='+' || $op=='-' ){
                     $post_val = substr( $post_val, 1 );
                 }
@@ -329,12 +329,19 @@
         // before save
         function validate(){ // for now only checking for 'required'
             global $FUNCS;
+            if( $this->deleted || $this->k_inactive ) return true;
 
             if( $this->required && !count($this->items_selected) ){
                 $this->err_msg = $FUNCS->t('required_msg');
                 return false;
             }
             return true;
+        }
+
+        function get_data( $for_ctx=0 ){
+            if( $for_ctx ){
+                return implode( ',', $this->items_selected );
+            }
         }
 
         // Save to database.
@@ -633,7 +640,7 @@
                 }
                 $html .= '<option value="-">-- Select --</option>'; //TODO get label as parameter
 
-                while( list($key, $value) = each($rows) ){
+                foreach( $rows as $key=>$value ){
                     $html .= '<option value="'.$key.'"';
                     if( $selected && $key==$selected ) $html .= '  selected="selected"';
                     $html .= '>'.$value.'</option>';
@@ -655,7 +662,7 @@
                 $deleted = $f->deleted ? ' disabled="1"' : '';
                 $markup = !$f->simple_mode ? '<span class="ctrl-option"></span>' : '';
                 $x=0;
-                while( list($key, $value) = each($rows) ){
+                foreach( $rows as $key=>$value ){
                     $class = ( ($x+1)%2 ) ? ' class="alt"' : '';
                     $checked = $selected = '';
                     if( in_array($key, $f->items_selected) ){
