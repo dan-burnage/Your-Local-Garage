@@ -212,12 +212,12 @@ a {
 		opacity: 70%;
 		text-align: center;
 		margin: 10px auto 0 auto;
-		cursor: pointer;
 	}
 
 	.caption.label {
 		font-size: 12px;
 		margin: 8px 10px auto 10px;
+		cursor: pointer;
 	}
 
 	.caption.label > img {
