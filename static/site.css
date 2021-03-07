@@ -45,6 +45,7 @@ html {
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	outline: none;
 	/* -- REM Value -- */
 	font-size: 32px;
 }
@@ -63,6 +64,14 @@ body {
 a {
 	text-decoration: none;
 	color: var(--White);
+}
+
+:focus {
+	outline: none;
+}
+
+#button:focus {
+	outline-style: hidden;
 }
 
 /* ----- Layout Functions ----- */
@@ -132,6 +141,91 @@ a {
 		margin: 0 0 0 -90vw;
 	}
 
+	.modal {
+		position: fixed;
+		display:inherit;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 525px;
+		max-width: calc(100% - 48px);
+		height: 85%;
+		max-height: 100%;
+		border-radius: 16px;
+		-webkit-box-shadow: 0px 0px 0px 8px rgba(34, 34, 34, 0.3);
+		-moz-box-shadow: 0px 0px 8px 8px rgba(34, 34, 34, 0.3);
+		box-shadow: 0px 0px 8px 8px rgba(34, 34, 34, 0.3);
+		overflow: hidden;
+		z-index: 10;
+		background-color: var(--White);
+	}
+
+	#modal {
+		display: none;
+		animation-name: modal-transition;
+		animation-duration: 0.4s;
+		animation-timing-function: ease-in;
+	}
+
+	@keyframes modal-transition {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+
+	.techman-wrapper {
+		top: 0;
+		left: 0;
+		width: calc(100% - 1rem);
+		height: calc(100% - 60px);
+		overflow: hidden;
+		max-height: 100%;
+		padding: 0 0.5rem;
+	}
+
+	.modal-overlay {
+		position: fixed;
+		display: inherit;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		background-color: black;
+		opacity: 0.5;
+	}
+
+	.modal-controls {
+		width: 100%;
+		height: 40px;
+		display: flex;
+		background-color: var(--Onahau);
+	}
+
+	.modal-controls > span {
+		margin-top: auto;
+		margin-bottom: auto;
+
+	}
+
+	.kicker.label {
+		font-size: 10px;
+		opacity: 70%;
+		text-align: center;
+		margin: 10px auto 0 auto;
+		cursor: pointer;
+	}
+
+	.caption.label {
+		font-size: 12px;
+		margin: 8px 10px auto 10px;
+	}
+
+	.caption.label > img {
+		margin: 0 8px 0 8px;
+		transform: translateY(2px);
+
+	}
+
 }
 
 
@@ -175,6 +269,11 @@ a {
 		max-height: 50vh;
 		margin: 0 -5vw;
 		float: right;
+	}
+
+	.modal {
+		max-width: 100%;
+		height: 60%;
 	}
 
 }
@@ -228,7 +327,7 @@ a {
 	transition: 0.3s;
 }
 
-.portfolio-link:hover {
+.portfolio-link:hover  {
 	opacity: 100%;
 	transition: 0.3s;
 }

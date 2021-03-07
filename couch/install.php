@@ -136,9 +136,10 @@
       disable_uploader  int(1) DEFAULT '0',
       _html             text COMMENT 'Internal',
       dynamic           text,
-      custom_params     text,
+      custom_params     mediumtext,
       searchable        int(1) DEFAULT '1',
       class             tinytext,
+      not_active        text,
       PRIMARY KEY (id)
     ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;";
 
@@ -250,7 +251,7 @@
       registration_date  datetime,
       access_level       int DEFAULT '0',
       disabled           int DEFAULT '0',
-      system             int DEFAULT '0',
+      `system`           int DEFAULT '0',
       last_failed        bigint(11) DEFAULT '0',
       failed_logins      int DEFAULT '0',
       PRIMARY KEY (id)
@@ -492,7 +493,7 @@
     }
 
     function k_install( $name, $pwd, $email ){
-        global $CTX, $DB, $FUNCS, $k_couch_tables, $k_stmts;
+        global $CTX, $DB, $FUNCS, $AUTH, $k_couch_tables, $k_stmts;
         $err = '';
 
         // First check if any of the tables to be created do not already exist
@@ -541,7 +542,7 @@
             $pwd = $DB->sanitize( $pwd );
             $email = $DB->sanitize( $email );
             $creation_time = $FUNCS->get_current_desktop_time();
-            $k_stmts[] = "INSERT INTO ".K_TBL_USERS." (id, name, title, password, email, activation_key, password_reset_key, registration_date, access_level, disabled, system, last_failed, failed_logins) VALUES (1, '".$name."', '".$name."', '".$pwd."', '".$email."', '', '', '".$creation_time."', 10, 0, 1, 0, 0);";
+            $k_stmts[] = "INSERT INTO ".K_TBL_USERS." (id, name, title, password, email, activation_key, password_reset_key, registration_date, access_level, disabled, `system`, last_failed, failed_logins) VALUES (1, '".$name."', '".$name."', '".$pwd."', '".$email."', '', '', '".$creation_time."', 10, 0, 1, 0, 0);";
 
             foreach( $k_stmts as $sql ){
                 @mysql_query( $sql );
@@ -554,6 +555,13 @@
 
         if( !$err ){
             @mysql_query( "COMMIT" );
+            $FUNCS->dispatch_event( 'install_complete' );
+
+            // if dump file (extended inserts) available, redirect to it..
+            if( file_exists(K_COUCH_DIR . 'install-ex2.php') ){
+              $dest = K_ADMIN_URL.'restore_dump.php?offset=0&lines=0&splash=1&nonce='.$FUNCS->create_nonce( 'restore_dump_0_0' );
+              $AUTH->redirect( $dest );
+            }
         }
         else{
             @mysql_query( "ROLLBACK" );
@@ -637,6 +645,7 @@
     $html = ob_get_contents();
     ob_end_clean();
 
+    if( !defined('K_THEME_NAME') ) define( 'K_THEME_NAME', '' );
     $parser = new KParser( $html );
     echo $parser->get_HTML();
     die();

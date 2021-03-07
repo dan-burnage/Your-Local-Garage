@@ -42,16 +42,15 @@
         error_reporting(E_ALL & ~E_NOTICE); // Report all errors except notices
     }
     // Since PHP 5.1.0 every call to a date/time function generates a E_NOTICE if the timezone isn't valid,
-    if( version_compare( phpversion(), '5.1.0', '>=' ) ){
-        date_default_timezone_set("America/New_York");
+    if( !ini_get('date.timezone') || !date_default_timezone_set(ini_get('date.timezone')) ){
+        date_default_timezone_set( "America/New_York" );
     }
-
 
 
     if( !defined('K_COUCH_DIR') ) die(); // cannot be loaded directly
 
-    define( 'K_COUCH_VERSION', '2.1' ); // Changes with every release
-    define( 'K_COUCH_BUILD', '20180519' ); // YYYYMMDD - do -
+    define( 'K_COUCH_VERSION', '2.2.1' ); // Changes with every release
+    define( 'K_COUCH_BUILD', '20201114' ); // YYYYMMDD - do -
 
     if( file_exists(K_COUCH_DIR.'config.php') ){
         require_once( K_COUCH_DIR.'config.php' );
@@ -61,14 +60,19 @@
     }
     if( function_exists('mb_internal_encoding') ) mb_internal_encoding( K_CHARSET );
     define( 'K_CACHE_OPCODES', '1' );
-    define( 'K_CACHE_SETTINGS', '1' );
+    define( 'K_CACHE_SETTINGS', '0' );
 
     // Check license
     // Ultra-simplified now that there is no IonCube involved :)
     if( !defined('K_PAID_LICENSE') ) define( 'K_PAID_LICENSE', 0 );
     if( !defined('K_REMOVE_FOOTER_LINK') ) define( 'K_REMOVE_FOOTER_LINK', 0 );
 
-    if ( !defined('K_HTTPS') ) define( 'K_HTTPS', (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS'])=='on') ? 1 : 0 );
+    if( !defined('K_HTTPS') ) define( 'K_HTTPS', (
+        ( isset($_SERVER['HTTPS']) && (strtolower($_SERVER['HTTPS'])=='on' || strval($_SERVER['HTTPS'])=='1') ) ||
+        ( isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT']=='443' ) ||
+        ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO']=='https' ) ||
+        ( isset($_SERVER['HTTP_X_FORWARDED_SSL']) && strtolower($_SERVER['HTTP_X_FORWARDED_SSL'])=='on')
+    ) ? 1 : 0 );
 
     // Check if a cached version of the requested page may be used
     if ( !K_SITE_OFFLINE && !defined('K_ADMIN') && K_USE_CACHE && $_SERVER['REQUEST_METHOD']!='POST' ){
@@ -210,7 +214,7 @@
         }
         else{
             $path = str_replace( '\\', '/', $_SERVER['DOCUMENT_ROOT'] );
-            if( $path{strlen($path)-1}=='/' ){
+            if( $path[strlen($path)-1]=='/' ){
                 $path = substr( $path, 0, strlen($path)-1);
             }
 
@@ -234,12 +238,12 @@
                     $path = $_SERVER['SCRIPT_NAME'];
                 }
                 $path = str_replace( '\\', '/', trim($path) );
-                if( $path{strlen($path)-1}=='/' ){
+                if( $path[strlen($path)-1]=='/' ){
                     $path = substr( $path, 0, strlen($path)-1);
                 }
 
                 $path2 = str_replace( '\\', '/', realpath('./') );
-                if( $path2{strlen($path2)-1}=='/' ){
+                if( $path2[strlen($path2)-1]=='/' ){
                     $path2 = substr( $path2, 0, strlen($path2)-1);
                 }
 
@@ -294,10 +298,12 @@
     }
     unset( $t );
 
-    if( get_magic_quotes_gpc() ){
-        $_GET = $FUNCS->stripslashes_deep( $_GET );
-        $_POST = $FUNCS->stripslashes_deep( $_POST );
-        $_COOKIE = $FUNCS->stripslashes_deep( $_COOKIE );
+    if( version_compare(phpversion(), "5.4.0", "<") ){
+        if( get_magic_quotes_gpc() ){
+            $_GET = $FUNCS->stripslashes_deep( $_GET );
+            $_POST = $FUNCS->stripslashes_deep( $_POST );
+            $_COOKIE = $FUNCS->stripslashes_deep( $_COOKIE );
+        }
     }
     $__GET = $_GET; // save a pristine copy of $_GET before sanitizing the values
     $_GET = $FUNCS->sanitize_deep( $_GET );

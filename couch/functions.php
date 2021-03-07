@@ -108,6 +108,11 @@
 
             $this->_ed = new EventDispatcher();
             $this->add_event_listener( 'alter_parsed_dom', array('KFuncs', '_handle_extends') );
+            $this->add_event_listener( 'page_prevalidate', array($this, 'resolve_active_fallback') );
+            if( defined('K_ADMIN') ){
+                $this->add_event_listener( 'add_admin_js', array($this, 'gen_js_for_conditional_fields') );
+                $this->add_event_listener( 'add_admin_css', array($this, 'gen_css_for_conditional_fields') );
+            }
         }
 
         static function raise_error( $err_msg ){
@@ -180,7 +185,7 @@
             $s="";
             foreach( $attributes as $attr ){
                 if( isset($attr['name']) ){
-                    $s .= "'" . addslashes($CTX->get( $attr['name'] )) . "'";
+                    $s .= "'" . @addslashes($CTX->get( $attr['name'] )) . "'";
                 }
                 if( isset($attr['op']) ){
                     $op = $attr['op'];
@@ -196,7 +201,7 @@
                             $s .= "'" . addslashes( $attr['value'] ) . "'";
                             break;
                         case K_VAL_TYPE_VARIABLE:
-                            $s .= "'" . addslashes( $CTX->get($attr['value']) ) . "'";
+                            $s .= "'" . @addslashes( $CTX->get($attr['value']) ) . "'";
                             break;
                         case K_VAL_TYPE_SPECIAL:
                             $s .= "'" . addslashes( $attr['value']->get_HTML() ) . "'";
@@ -895,7 +900,22 @@
                     }
                 }
                 else{
-                    $strlen = strlen( utf8_decode($str_utf) );
+                    if( function_exists('utf8_decode') ){
+                        $strlen = strlen( utf8_decode($str_utf) );
+                    }
+                    else{
+                        // adapted from Symfony Polyfill (https://github.com/symfony/polyfill)
+                        $ulen_mask = array( "\xC0" => 2, "\xD0" => 2, "\xE0" => 3, "\xF0" => 4 );
+                        $i = $j = 0;
+                        $len = strlen( $str_utf );
+                        while( $i < $len ){
+                            $u = $str_utf[$i] & "\xF0";
+                            $i += isset($ulen_mask[$u]) ? $ulen_mask[$u] : 1;
+                            ++$j;
+                        }
+                        $strlen = $j;
+                    }
+
                     if( $count < $strlen ){
                         $pattern = '#^(.{'.$count.'})#us';
                         @preg_match( $pattern, $str_utf, $matches );
@@ -1712,6 +1732,7 @@
 
                 if( is_array($qv) ){ //checkboxes
                     foreach( $qv as $qvv ){
+                        if( is_array($qvv) ) continue;
                         $qs .= $sep . $qk . '[]=' . urlencode($qvv);
                         $sep = '&';
                     }
@@ -1855,7 +1876,7 @@
             global $DB, $FUNCS;
 
             //$rs = $DB->select( K_TBL_TEMPLATES, array('name'), 'clonable=1 AND executable=1' );
-            $rs = $DB->select( K_TBL_TEMPLATES, array('name', 'custom_params'), "ISNULL(type) || type=''" );
+            $rs = $DB->select( K_TBL_TEMPLATES, array('name', 'custom_params'), "hidden < 2 and (ISNULL(type) || type='')" );
             if( count($rs) ){
                 foreach( $rs as $key=>$val ){
                     $is_index = 0;
@@ -1995,12 +2016,12 @@
             $link = trim( $link );
             if( strpos($link, K_SITE_URL)!==0 ){ return; }
 
-            $link = substr( $link, strlen(K_SITE_URL) );
+            $link = trim( substr($link, strlen(K_SITE_URL)) );
             $link2 = explode( '#', $link ); // strip off querystring etc. for prettyURLs check
             $link2 = explode( '?', $link2[0] );
             $link2 = $link2[0];
 
-            $rs = $DB->select( K_TBL_TEMPLATES, array('name'), '1=1' );
+            $rs = $DB->select( K_TBL_TEMPLATES, array('name'), "ISNULL(type) || type=''" );
             if( count($rs) ){
                 foreach( $rs as $key=>$val ){
                     $is_index = 0;
@@ -2051,6 +2072,11 @@
                         $replacement = 'masterpage='.$val['name'].'&is_home=1';
                         $ret = @preg_replace( $pattern, $replacement, $link2 );
                         if( $ret!=$link2 ){ return $ret; }
+                    }
+                    else{
+                        if( $link2=='' ){
+                            return 'masterpage=index.php&is_home=1';
+                        }
                     }
 
                     // 6. page-view
@@ -2103,7 +2129,7 @@
             $key = '';
             for( $i = 0; $i < $len; $i++ ){
                 $pos = rand(0, strlen($chars)-1);
-                $key .= $chars{$pos};
+                $key .= $chars[$pos];
             }
             return $key;
         }
@@ -2206,7 +2232,7 @@
             $keylen = strlen( $key );
             $j = 0;
             for( $i = 0; $i < 256; $i++ ){
-                $j = ( $j + $S[$i] + $key{$i % $keylen} ) % 256;
+                $j = ( $j + $S[$i] + ord($key[$i % $keylen]) ) % 256;
                 // swap
                 $tmp = $S[$i];
                 $S[$i] = $S[$j];
@@ -2380,9 +2406,6 @@
                 if( strpos($callable, '::')!==false ){
                     $callable = explode( '::', $callable );
                 }
-            }
-            elseif( !is_array($callable) ){
-                return false;
             }
 
             return ( is_callable($callable, $syntax_only) ) ? $callable : false;
@@ -2672,6 +2695,12 @@
         }
 
         function invalidate_cache(){
+            global $FUNCS;
+
+            // HOOK: invalidate_cache
+            $skip = $FUNCS->dispatch_event( 'invalidate_cache' );
+            if( $skip ) return;
+
             // Invalidate cache
             $file = K_COUCH_DIR . 'cache/' . 'cache_invalidate.dat';
             if( file_exists($file) ) @unlink( $file );
@@ -4014,7 +4043,7 @@ OUT;
 
         }
 
-        function generate_route( $masterpage, $name, $values=array() ){
+        function generate_route( $masterpage, $name, $values=array(), $qs='' ){
             $masterpage = trim( $masterpage );
             $name = trim( $name );
 
@@ -4029,6 +4058,7 @@ OUT;
             $q = $route->generate( $values );
             $link = K_ADMIN_URL . K_ADMIN_PAGE . "?o=".urlencode($masterpage);
             if( strlen($q) ){ $link .= '&q=' . $q; }
+            if( strlen($qs) ){ $link .= '&' . $qs; }
 
             return $link;
         }
@@ -4332,11 +4362,23 @@ OUT;
                 $ch = curl_init();
                 curl_setopt( $ch, CURLOPT_URL, $url );
                 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+                curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
+                curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0 );
                 $html = curl_exec( $ch );
                 curl_close( $ch );
             }
             else{
-                $html = @file_get_contents( $url );
+                $urlparts = @parse_url( $url );
+                $opts = array();
+                if( $urlparts['scheme']=='https' ){
+                    $opts['ssl'] = array(
+                        'verify_peer' => false,
+                        'verify_host' => false,
+                        'capture_peer_cert' => false,
+                    );
+                }
+                $context = stream_context_create( $opts );
+                $html = @file_get_contents( $url, false, $context );
             }
             return $html;
         }
@@ -4579,6 +4621,252 @@ OUT;
             return $this->json->decode( $value );
         }
 
+        function get_checkbox_data( $f ){ // returns checkbox's data as array
+            $val = $f->get_data();
+            if( strlen($val) ){
+                $sep = ( $f->k_separator ) ? $f->k_separator : '|';
+                $val = array_map( function($item)use($sep){
+                    return trim( str_replace( '\\'.$sep, $sep, $item ) ); //unescape separator
+                }, preg_split( "/(?<!\\\)".preg_quote($sep, '/')."/", $val ) );
+            }
+            else{
+                $val = array();
+            }
+
+            return $val;
+        }
+
+        // applies conditional logic to figure out if a field is active or not in a form
+        function resolve_active( $f, $form_name, $form_submitted, $rr='', $rr_row=0, $rr_cell=0 ){
+            global $PAGE, $TAGS;
+            $active = 1; // by default the field is active
+            $cond_fields = array( 'checkbox', 'radio', 'dropdown' );
+            $rr = trim( $rr ); // field belongs to repeatable region
+
+            $func = $f->not_active;
+            if( $func ){
+                if( is_string($func) ){
+                    $func = @unserialize( base64_decode($func) );
+                    if( is_array($func) ){ $f->not_active = $func; }
+                }
+
+                if( is_array($func) ){
+                    if( isset($func['val']) ){ $func = $func['val']; } // bound field
+
+                    if( is_array($func) ){ // Couch code
+                        if( is_array($func['code']) && is_array($func['params']) ){
+
+                            // set params ..
+                            if( isset($PAGE->forms[$form_name]) ){
+                                $no_js = 0;
+                                $target = '';
+                                $tmp = array();
+                                foreach( $func['params'] as $k=>$v ){
+                                    if( $k=='_no_js' ){
+                                        $no_js = ( $v==1 ) ? 1 : 0;
+                                        continue;
+                                    }
+                                    if( $k=='_target' ){
+                                        $target = trim( $v );
+                                        continue;
+                                    }
+                                    $tmp[$k]=$v;
+                                }
+                                $func['params'] = $tmp;
+
+                                if( !$no_js && !is_array($PAGE->form_dependencies[$form_name]) ){
+                                    $PAGE->form_dependencies[$form_name]=array('control_fields'=>array(), 'dependent_fields'=>array());
+                                }
+
+                                $params = array();
+                                $params[] = array('lhs'=>null, 'op'=>'=', 'rhs'=>$func);
+
+                                foreach( $func['params'] as $k=>$v ){
+                                    if( $rr && strpos($k, 'parent-')!==0 ){
+                                        for( $x=0; $x<$rr_cell; $x++ ){
+                                            $f2 = $f->siblings[$x];
+                                            if( $f2->name==$k ){
+                                                $val = ( $f2->k_type=='checkbox' ) ? $this->get_checkbox_data($f2) : $f2->get_data( 1 );
+                                                $params[] = array('lhs'=>$k, 'op'=>'=', 'rhs'=>$val);
+
+                                                if( !$no_js && $rr_row==0 ){
+                                                    if( in_array($f2->k_type, $cond_fields) ){
+                                                        $f->_depends_on[]=$f2;
+                                                        $f2->_dependents[]=$f;
+
+                                                        $obj_id = spl_object_hash( $f2 );
+                                                        if( !array_key_exists($obj_id, $PAGE->form_dependencies[$form_name]['control_fields']) ){
+                                                            $PAGE->form_dependencies[$form_name]['control_fields'][$obj_id]=$f2;
+                                                        }
+                                                    }
+                                                }
+
+                                                unset( $f2 );
+                                                continue 2;
+                                            }
+                                            unset( $f2 );
+                                        }
+                                    }
+
+                                    $orig_k = $k;
+                                    if( strpos($k, 'parent-')===0 ){ $k = substr( $k, 7 ); }
+
+                                    if( array_key_exists($k, $PAGE->forms[$form_name]) ){
+                                        $f2 = &$PAGE->forms[$form_name][$k];
+                                        $val = ( $f2->k_type=='checkbox' ) ? $this->get_checkbox_data($f2) : $f2->get_data( 1 );
+                                        $params[] = array('lhs'=>$orig_k, 'op'=>'=', 'rhs'=>$val);
+
+                                        if( !$no_js ){
+                                            if( in_array($f2->k_type, $cond_fields) ){
+                                                if( !$rr || ($rr && $rr_row==0) ){
+                                                    $f->_depends_on[]=$f2;
+                                                    $f2->_dependents[]=$f;
+                                                }
+
+                                                $obj_id = spl_object_hash( $f2 );
+                                                if( !array_key_exists($obj_id, $PAGE->form_dependencies[$form_name]['control_fields']) ){
+                                                    $PAGE->form_dependencies[$form_name]['control_fields'][$obj_id]=$f2;
+                                                }
+                                            }
+                                        }
+
+                                        unset( $f2 );
+                                    }
+                                }
+
+                                if( is_array($f->_depends_on) && count($f->_depends_on) ){
+                                    $obj_id = spl_object_hash( $f );
+                                    if( !array_key_exists($obj_id, $PAGE->form_dependencies[$form_name]['dependent_fields']) ){
+                                        if( $target && !$rr ){ $f->_dependent_target = $target; }
+                                        $PAGE->form_dependencies[$form_name]['dependent_fields'][$obj_id]=$f;
+                                    }
+                                }
+                            }
+
+                            // and execute code
+                            $ret = $TAGS->call($params, new stdClass() );
+                            $ret = strtolower( trim($ret) );
+                            if( $ret==='1' || $ret==='true' || $ret==='yes' || $ret==='hide' ){ $active=0; } // make field inactive only if this func explicitly states so
+                        }
+                    }
+                }
+            }
+
+            return $active;
+        }
+
+        // fallback for pages saved without using a form
+        function resolve_active_fallback( &$fields, &$pg ){
+            if( !count($pg->__args) || $pg->__args[0]=='db_persist' ){
+                for( $x=0; $x<count($pg->fields); $x++ ){
+                    $f = &$pg->fields[$x];
+                    if( $f->not_active ){
+                        $f->k_inactive = !$this->resolve_active_without_form( $f, $pg );
+                    }
+                    unset( $f );
+                }
+            }
+        }
+
+        function resolve_active_without_form( $f, $pg, $rr=false, $rr_cell=0 ){
+            global $TAGS;
+            $active = 1; // by default the field is active
+
+            $func = $f->not_active;
+            if( $func ){
+                if( is_string($func) ){
+                    $func = @unserialize( base64_decode($func) );
+                    if( is_array($func) ){ $f->not_active = $func; }
+                }
+
+                if( is_array($func) ){
+                    if( isset($func['val']) ){ $func = $func['val']; } // bound field
+
+                    if( is_array($func) ){ // Couch code
+                        if( is_array($func['code']) && is_array($func['params']) ){
+
+                            // set params ..
+                            $tmp = array();
+                            foreach( $func['params'] as $k=>$v ){
+                                if( $k=='_no_js' || $k=='_target' ){
+                                    continue;
+                                }
+                                $tmp[$k]=$v;
+                            }
+                            $func['params'] = $tmp;
+
+                            $params = array();
+                            $params[] = array('lhs'=>null, 'op'=>'=', 'rhs'=>$func);
+
+                            foreach( $func['params'] as $k=>$v ){
+                                if( $rr && strpos($k, 'parent-')!==0 ){
+                                    for( $x=0; $x<$rr_cell; $x++ ){
+                                        $f2 = $f->siblings[$x];
+                                        if( $f2->name==$k ){
+                                            $val = ( $f2->k_type=='checkbox' ) ? $this->get_checkbox_data($f2) : $f2->get_data( 1 );
+                                            $params[] = array('lhs'=>$k, 'op'=>'=', 'rhs'=>$val);
+
+                                            unset( $f2 );
+                                            continue 2;
+                                        }
+                                        unset( $f2 );
+                                    }
+                                }
+
+                                $orig_k = $k;
+                                if( strpos($k, 'parent-')===0 ){ $k = substr( $k, 7 ); }
+
+                                if( array_key_exists($k, $pg->_fields) ){
+                                    $f2 = &$pg->_fields[$k];
+                                    $val = ( $f2->k_type=='checkbox' ) ? $this->get_checkbox_data($f2) : $f2->get_data( 1 );
+                                    $params[] = array('lhs'=>$orig_k, 'op'=>'=', 'rhs'=>$val);
+
+                                    unset( $f2 );
+                                }
+                            }
+
+                            // and execute code
+                            $ret = $TAGS->call($params, new stdClass() );
+                            $ret = strtolower( trim($ret) );
+                            if( $ret==='1' || $ret==='true' || $ret==='yes' || $ret==='hide' ){ $active=0; } // make field inactive only if this func explicitly states so
+                        }
+                    }
+                }
+            }
+
+            return $active;
+        }
+
+        function gen_js_for_conditional_fields( $return_js=0 ){
+            global $PAGE;
+
+            if( is_array($PAGE->form_dependencies) ){
+                if( !class_exists('KCondFields') ){ require_once( K_COUCH_DIR . 'conditional-fields.php' ); }
+                $js = KCondFields::gen_js();
+
+                if( $js ){
+                    if( $return_js ){
+                        return $js;
+                    }
+                    else{
+                        $this->add_js( $js );
+                    }
+                }
+            }
+        }
+
+        function gen_css_for_conditional_fields(){
+            global $PAGE;
+
+            if( is_array($PAGE->form_dependencies) ){
+                if( !class_exists('KCondFields') ){ require_once( K_COUCH_DIR . 'conditional-fields.php' ); }
+                $css = KCondFields::gen_css();
+
+                if( $css ){
+                    $this->add_css( $css );
+                }
+            }
+        }
     }// end class KFuncs
 
 

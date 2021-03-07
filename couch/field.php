@@ -82,6 +82,7 @@
         var $custom_params;
         var $searchable;
         var $class;
+        var $not_active;
 
 
         var $page;
@@ -100,6 +101,7 @@
         var $no_js = 0;
         var $orig_data = null;
         var $module = null;
+        var $k_inactive = 0;
 
         var $no_render = 0;
 
@@ -184,6 +186,10 @@
             $this->siblings = &$siblings;
         }
 
+        public function __toString(){
+            return get_class();
+        }
+
         // Invoked only while editing a page where all parameters of a field (instead of just the usual data) are needed.
         function resolve_dynamic_params(){
             if( !$this->system && $this->dynamic ){
@@ -193,7 +199,7 @@
                         $dyn_param = 'k_'.$dyn_param;
                     }
 
-                    if( array_key_exists($dyn_param, $this) && $this->$dyn_param ){
+                    if( property_exists($this, $dyn_param) && $this->$dyn_param ){
                         if( defined('K_SNIPPETS_DIR') ){ // always defined relative to the site
                             $base_snippets_dir = K_SITE_DIR . K_SNIPPETS_DIR . '/';
                         }
@@ -216,7 +222,7 @@
 
         function store_posted_changes( $post_val ){
             global $FUNCS, $Config;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
             if( in_array($this->k_type, array('thumbnail', 'hidden', 'message', 'group')) ) return;
 
             if( $this->k_type== 'checkbox' && is_array($post_val) ){
@@ -339,7 +345,9 @@
         // Used primarily for display on front-end (by feeding the content of this field into $CTX ) but is
         // also used by _render() of built-in fields to render the field in admin panel.
         function get_data(){
-            global $Config;
+            global $Config, $CTX;
+
+            if( $this->k_type=='message' ){ return $this->default_data; }
 
             if( !$this->data ){
                 // make sure it is not numeric 0
@@ -358,12 +366,22 @@
             else{
                 // add domain info to uploaded items
                 if( $this->k_type=='image' || $this->k_type=='thumbnail' || $this->k_type=='file' ){
-                    if( $data{0}==':' ){ // if marker
+                    if( $data[0]==':' ){ // if marker
                         $data = substr( $data, 1 );
                         $folder = ( $this->k_type=='thumbnail' ) ? 'image' : $this->k_type;
                         $domain_prefix = $Config['k_append_url'] . $Config['UserFilesPath'] . $folder . '/';
                         $data = $domain_prefix . $data;
                     }
+                }
+                elseif( $this->k_type=='checkbox' ){
+                    $arr_data = array();
+                    if( strlen($data) ){
+                        $sep = ( $this->k_separator ) ? $this->k_separator : '|';
+                        $arr_data = array_map( function($item)use($sep){
+                            return trim( str_replace( '\\'.$sep, $sep, $item ) ); //unescape separator
+                        }, preg_split( "/(?<!\\\)".preg_quote($sep, '/')."/", $data ) );
+                    }
+                    $CTX->set( '__'.$this->name, $arr_data );
                 }
             }
 
@@ -373,7 +391,7 @@
         function validate(){
             global $FUNCS;
 
-            if( $this->deleted ) return true; // skip deleted fields
+            if( $this->deleted || $this->k_inactive ) return true; // skip deleted fields
             if( $this->page->tpl_nested_pages && !$this->system && $this->page->_fields['k_is_pointer']->get_data() ) return true; // skip custom fields if this nested page is a pointer_page
 
             $this->err_msg = '';
@@ -602,7 +620,7 @@
                 $f->page->CKEditor->config['height'] = 240;
 
             }
-            $f->page->CKEditor->textareaAttributes = array("style" => "visibility:hidden", "id" => $input_id, "cols" => 80, "rows" => 15);
+            $f->page->CKEditor->textareaAttributes = array("style" => "visibility:hidden", "class" => "ckeditor", "id" => $input_id, "cols" => 80, "rows" => 15);
 
             //$config['baseHref'] = K_SITE_URL;
             // RTL
@@ -629,7 +647,7 @@
                 $arr_custom_css = array_map( "trim", explode( $separator, $f->css ) );
                 foreach( $arr_custom_css as $css ){
                     if( strpos($css, '://')===false ){
-                        $css = K_SITE_URL . (( $css{0}=='/' ) ? substr($css, 1) : $css);
+                        $css = K_SITE_URL . (( $css[0]=='/' ) ? substr($css, 1) : $css);
                     }
                     $arr_css[] = $css;
                 }
@@ -641,7 +659,7 @@
             if( $f->custom_styles ){
                 list( $custom_style_name, $custom_style_file ) = array_map( "trim", explode( $val_separator, $f->custom_styles ) );
                 if( strpos($custom_style_file, '://')===false ){
-                    $custom_style_file = K_SITE_URL . (( $custom_style_file{0}=='/' ) ? substr($custom_style_file, 1) : $custom_style_file);
+                    $custom_style_file = K_SITE_URL . (( $custom_style_file[0]=='/' ) ? substr($custom_style_file, 1) : $custom_style_file);
                 }
                 $config['stylesCombo_stylesSet'] = $custom_style_name . ':' . $custom_style_file;
             }
@@ -725,6 +743,9 @@
                     array( 'ShowBlocks', 'Preview', 'Maximize', '-', 'Source'  )
                 );
             }
+
+            // HOOK: ckeditor_alter_config
+            $FUNCS->dispatch_event( 'ckeditor_alter_config', array(&$config, $f, $input_name, $input_id, $dynamic_insertion) );
 
             if( $repeatable ){
                 ob_start();
@@ -810,7 +831,7 @@
 
                 }
                 else{ /* not dynamically inserted but is being rendered within repeatable regions */
-                    $config['removePlugins']='resize';
+                    $config['removePlugins'] = ( trim($config['removePlugins'])!='' ) ? $config['removePlugins'].',resize' : 'resize';
 
                     static $done=0;
                     if( !$done ){
@@ -1012,7 +1033,7 @@
 
         function store_posted_changes( $post_val ){
             global $FUNCS;
-            if( $this->k_type=='hidden' ) return;
+            if( $this->k_type=='hidden' || $this->k_inactive ) return;
 
             if( $this->k_type== 'checkbox' && is_array($post_val) ){
                 $separator = ( $this->k_separator ) ? $this->k_separator : '|';
@@ -1051,7 +1072,7 @@
             elseif( $this->k_type=='captcha' ){
                 $fmt = $this->captcha_format;
                 for( $x=0; $x<7; $x++ ){
-                    switch( @$fmt{$x} ){
+                    switch( @$fmt[$x] ){
                         case '-':
                             $html .= '<br>';
                             break;
@@ -1097,6 +1118,7 @@
 
         function validate(){
             global $FUNCS;
+            if( $this->k_inactive ) return true;
 
             if( $this->k_type=='captcha' ){
                 if ( session_id() == '' ) { // session needed for validation
@@ -1292,6 +1314,8 @@
         }
 
         function store_posted_changes( $post_val ){
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
+
             $post_val = trim( $post_val );
             if( $post_val !== '1' ){ $post_val = '0'; }
 
@@ -1400,7 +1424,7 @@
     class KLinkUrlField extends KField{
         function store_posted_changes( $post_val ){
             global $FUNCS;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             if( is_null($this->orig_data) ) $this->orig_data = $this->data;
 
@@ -1425,7 +1449,7 @@
             $data = $this->data;
 
             // add domain info to internal links
-            if( $data{0}==':' ){ // if marker
+            if( $data[0]==':' ){ // if marker
                 $data = substr( $data, 1 );
                 $data = K_SITE_URL . $data;
             }
@@ -1512,7 +1536,7 @@
         // Posted data
         function store_posted_changes( $post_val ){
             global $FUNCS;
-            if( $this->deleted ) return; // no need to store
+            if( $this->deleted || $this->k_inactive ) return; // no need to store
 
             if( is_null($this->orig_data) ) $this->orig_data = $this->data;
             $this->data = $FUNCS->cleanXSS( $post_val );
@@ -1640,6 +1664,8 @@
         // Handle Posted data
         function store_posted_changes( $post_val ){
             global $FUNCS;
+
+            if( $this->k_inactive ) return; // no need to store
 
             if( is_null($this->orig_data) ) $this->orig_data = $this->data;
             $this->data = $FUNCS->cleanXSS( $post_val );

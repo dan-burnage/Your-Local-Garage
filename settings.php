@@ -1,6 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
 
-<cms:template title='Global Settings' order='2' >
+<cms:template title='Global Settings' order='2'>
 
 	<cms:editable name='seo_group' label='SEO Information' desc='SEO, Open Graph and Twitter card data - Shown on list view' type='group' order='1' />
 
@@ -14,9 +14,19 @@
 
 	<cms:editable name='superuser' label='Super User Settings' desc='You should check before changing these settings' type='group' order='2' />
 
-	<cms:editable name='show_grid' label='Show site grid' desc='This change is only visible to Burnage' opt_values='Hide=false | Show=true' group='superuser' type='radio'/>
+	<cms:editable name='show_grid' label='Show site grid' desc='This change is only visible to Burnage' opt_values='Hide=false | Show=true' group='superuser' type='radio' />
 
 	<cms:editable name='booking_link' label='Techman booking link' group='superuser' type='text' />
+
+	<cms:editable name='php_version' type="message" group='superuser'>
+
+		<div class="field k_element k_text ">
+			<label class="field-label" >
+				<span title="php_version">PHP Version</span> </label><br>
+			<?php echo '' . phpversion(); ?>
+		</div>
+
+	</cms:editable>
 
 </cms:template>
 

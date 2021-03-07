@@ -314,7 +314,7 @@
 
         static function handle_params( $params, $node ){
             // piggyback on securefile ..
-            $attr = SecureFile::handle_params( $params, $node );
+            $attr = SecureFile::_handle_params( $params );
 
             // remove parameters no applicable ..
             $nop = array( 'thumb_width', 'thumb_height', 'thumb_enforce_max', 'thumb_quality', 'use_thumb_for_preview' );
@@ -367,6 +367,7 @@
 
         function store_posted_changes( $post_val ){
             global $FUNCS;
+            if( $this->k_inactive ) return; // no need to store
 
             $secure_file_id = $this->_get_input_name( 'secure_file_id' );
             if( isset($_POST[$secure_file_id]) ){ // existing attachment
@@ -415,6 +416,7 @@
 
         function validate(){
             global $FUNCS;
+            if( $this->k_inactive ) return true;
 
             if( $this->err_msg_refresh ){
                 $this->err_msg = $this->err_msg_refresh;
