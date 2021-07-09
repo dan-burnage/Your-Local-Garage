@@ -38,6 +38,10 @@
 		opacity: 0.2;
 	}
 
+	.mobile-hide {
+		display: none;
+	}
+
 	/* -- Grid - Mobile -- */
 
 	.wrapper {
@@ -195,11 +199,22 @@
 		line-height: 28px;
 		font-weight: 500;
 		color: var(--White) !important;
+		border: 2px;
+		border-style: solid;
+		border-color: var(--AzureRadiance);
 		background-color: var(--AzureRadiance);
-		padding: 12px 32px;
+		padding: 10px 32px;
 		border-radius: 24px;
 		transition: 0.3s;
 		cursor: pointer;
+	}
+
+	.button.secondary {
+		color: var(--Rhino) !important;
+		background-color: transparent;
+		border: 2px;
+		border-style: solid;
+		border-color: var(--AzureRadiance);
 	}
 
 	.button > img {
@@ -239,6 +254,10 @@
 
 	#grid > .col-1 {
 		flex-basis: calc(8.333% - 32px);
+	}
+
+	.mobile-hide {
+		display: inherit;
 	}
 
 	/* -- Grid - Tablet -- */
