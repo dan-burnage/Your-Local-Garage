@@ -1,6 +1,34 @@
 <?php require_once( 'couch/cms.php' ); ?>
 
-<cms:template title='Test' >
+<cms:template title='Homepage' >
+
+	<cms:repeatable name='sections' label='Sections' stacked_layout='1'>
+
+		<cms:editable name='section_id' label='Section ID' type='text' />
+
+		<cms:editable name='section_type' type='dropdown' label='Choose section type' opt_values='Image-split Left | Image-split Right' />
+
+		<cms:func _into='my_cond' section_type=''>
+			<cms:if section_type='Image-split Left'>show<cms:else />hide</cms:if>
+		</cms:func>
+
+			<cms:editable name='sec-isl-image' label='Image' type='image' show_preview='1' preview_width='150' not_active=my_cond />
+
+			<cms:editable name='sec-isl-title' label='Title' type='text' not_active=my_cond />
+
+			<cms:editable name='sec-isl-content' label='Content' type='textarea' not_active=my_cond />
+
+		<cms:func _into='my_cond' section_type=''>
+			<cms:if section_type='Image-split Right'>show<cms:else />hide</cms:if>
+		</cms:func>
+
+			<cms:editable name='sec-isr-image' label='Image' type='image' show_preview='1' preview_width='150' not_active=my_cond />
+
+			<cms:editable name='sec-isr-title' label='Title' type='text' not_active=my_cond />
+
+			<cms:editable name='sec-isr-content' label='Content' type='textarea' not_active=my_cond />
+
+	</cms:repeatable>
 
 </cms:template>
 
