@@ -491,8 +491,8 @@ body {
 
 	.sec-hero .background-image img {
 		width: 70vw;
-		max-width: 1266px;
-		max-height: 10vh;
+		max-width: 1366px;
+		max-height: 100vh;
 		margin: 0 0 0 0;
 	}
 
@@ -511,7 +511,6 @@ body {
 
 	.sec-cta-container {
 		padding: 2.25rem 43.332% 2.25rem 8.333%;
-
 	}
 
 }
@@ -904,36 +903,61 @@ body {
 
 
 
-
-
-	.footer {
-		color: var(--White);
-		background: aqua;
-		margin-top: 1rem;
-		/* margin-bottom: 1rem; */
-		vertical-align: middle;
+	.sec-footer {
+		margin: 4rem 0 0 0 0;
+		padding: 2.5rem 0 1rem 0 ;
+		background: var(--Rhino-Gradient)
 	}
 
-	.contact-link {
-		padding-top: 0.25rem;
-		opacity: 50%;
-		transition: 0.3s;
-		text-align: right;
+	.sec-footer-content {
 	}
 
-	.contact-link a {
+	.sec-footer .caption {
 		color: var(--White);
 	}
 
-	.contact-link:hover {
-		opacity: 100%;
-		transition: 0.3s;
+	.sec-footer-content li {
+		display: inline;
+	}
+
+	.sec-footer-content:last-of-type {
+		margin-left: 16px;
+	}
+	.sec-footer-content:first-of-type {
+		margin-right: 7%;
+	}
+
+	.sec-footer span {
+		display: inline-block;
+		line-height: 22px;
+		opacity: 80%;
+	}
+
+	.sec-footer li {
+		display: inline;
+		line-height: 22px;
+		opacity: 90%;
+	}
+
+	.caption.opacity {
+		opacity: 30%;
+		font-size: 13px;
+		line-height: 18px;
+	}
+
+	.sec-footer-content img {
+		height: 70px;
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-bottom {
+		margin-top: 3rem;
 	}
 
 	.portfolio-link {
 		width: 24px;
 		margin: 2px 0 0 0;
-		opacity: 30%;
+		opacity: 20%;
 		transition: 0.3s;
 	}
 
@@ -946,11 +970,12 @@ body {
 		width: 18px;
 		vertical-align: middle;
 		margin: 0 0 2px 10px;
-		opacity: 75%;
+		opacity: 76%;
 		transition: 0.3s;
 	}
 
 	.social-icons:hover {
+		fill: var(--AzureRadiance);
 		opacity: 100%;
 		transition: 0.3s;
 	}
@@ -959,16 +984,12 @@ body {
 		margin: 0 0 2px 0px;
 	}
 
-	.caption > span {
-		opacity: 60%;
-	}
-
-	.caption > a {
-		opacity: 60%;
+	a > .caption {
+		color: var(--White);
 		transition: 0.3s;
 	}
 
-	.caption > a:hover {
-		opacity: 100%;
+	a > .caption:hover {
+		color: var(--AzureRadiance);
 		transition: 0.3s;
 	}

@@ -117,6 +117,9 @@
 	<cms:set g_nav_booking=nav_booking 'global' />
 	<cms:set g_nav_contact=nav_contact 'global' />
 	<cms:set g_nav_button=nav_button 'global' />
+	<cms:set g_facebook_link=facebook_link 'global' />
+	<cms:set g_instagram_link=instagram_link 'global' />
+	<cms:set g_twitter_link=twitter_link 'global' />
 </cms:pages>
 
 <!DOCTYPE html>
@@ -374,24 +377,77 @@
 	</cms:show_repeatable>
 
 
-	<!-- Site footer wrapper -->
-	<!-- <div class="wrapper footer">
+	<div class="sec-footer">
 
-		<div class="caption align-left">
+		<div class="wrapper" >
 
-			<span>Copyright &copy; <cms:date format='Y' /> — Your Local Garage Ltd &nbsp;</span>
+			<div class="col-3 align-left sec-footer-content">
+				<img src="static/images/joint-logo-full.svg"/>
+				<span class="caption opacity">Your Local Garage and FRESH MOTORS are <br>® registered trademarks of Fresh Motors Ltd</span>
+			</div>
 
-			<span> &nbsp; |</span> <a href="#" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/facebook.svg" /></a>
+			<div class="col-4 sec-footer-content">
+				<span class="caption"><strong>Your Local Garage at Fresh Motors</strong></span>
+				<span class="caption">Ut placet, inquam tum dicere exorsus est primum igitur, inquit, sic agam, ut. Sunt autem quibusdam et expedita distinctio nam libero tempore, cum a se texit. <br><br> Tel: <a>01953 797272</a><br>Email:  <a>help@yourlocalgarage.co.uk</a></span>
+			</div>
 
-			<a href="#" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/instagram.svg" /></a>
+			<div class="col-2 align-right sec-footer-content">
+				<li class="caption"><strong>List Item<br></strong></li>
+				<li class="caption">Fresh Motors,<br>Norwich Road,<br>Watton, Norfolk,<br>IP25 6HW</li>
 
-			<a href="#" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/twitter.svg" /></a>
+			</div>
+
+			<div class="col-2 align-right sec-footer-content">
+				<li class="caption"><strong>Quick links<br></strong></li>
+				<li class="caption">About us<br></li>
+				<li class="caption">Our services<br></li>
+				<li class="caption">Our reviews<br></li>
+				<li class="caption">Fresh Motors<br></li>
+			</div>
 
 		</div>
 
-		<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank" rel="noopener"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
+		<div class="wrapper footer-bottom">
 
-	</div> -->
+			<div class="align-left ">
+
+				<span class="caption">Copyright &copy;
+					<cms:date format='Y' /> — Your Local Garage Ltd &nbsp;
+				</span>
+
+				<cms:get_field 'footer_links' masterpage='settings.php' >
+
+					<cms:show_repeatable 'footer_links'>
+
+						<cms:if footer_links_link>
+							<span class="caption">| &nbsp;</span><a href="<cms:show footer_links_link />"><span class="caption">
+									<cms:show footer_links_text />
+								</span></a>
+						</cms:if>
+
+					</cms:show_repeatable>
+
+				</cms:get_field>
+
+				<cms:if g_facebook_link>
+					<span> &nbsp; |</span> <a href="<cms:get_field 'facebook_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/facebook.svg" /></a>
+				</cms:if>
+
+				<cms:if g_instagram_link>
+					<a href="<cms:get_field 'instagram_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/instagram.svg" /></a>
+				</cms:if>
+
+				<cms:if g_twitter_link>
+					<a href="<cms:get_field 'twitter_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/twitter.svg" /></a>
+				</cms:if>
+
+			</div>
+
+			<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank" rel="noopener"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
+
+		</div>
+
+	</div>
 
 	<!-- Booking Modal Wrapper -->
 	<div id="modal">
