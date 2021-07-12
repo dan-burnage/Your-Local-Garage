@@ -387,23 +387,23 @@
 			</div>
 
 			<div class="col-4 sec-footer-content">
-				<span class="caption"><strong>Your Local Garage at Fresh Motors</strong></span>
-				<span class="caption">Ut placet, inquam tum dicere exorsus est primum igitur, inquit, sic agam, ut. Sunt autem quibusdam et expedita distinctio nam libero tempore, cum a se texit. <br><br> Tel: <a>01953 797272</a><br>Email:  <a>help@yourlocalgarage.co.uk</a></span>
+				<span class="caption"><strong><cms:get_field 'footer_info_title' masterpage='settings.php' /></strong></span>
+				<span class="caption"><cms:get_field 'footer_info' masterpage='settings.php' /><br><br> Tel: <a href="">01953 797272</a><br>Email: <a href="">help@yourlocalgarage.co.uk</a></span>
 			</div>
 
-			<div class="col-2 align-right sec-footer-content">
-				<li class="caption"><strong>List Item<br></strong></li>
-				<li class="caption">Fresh Motors,<br>Norwich Road,<br>Watton, Norfolk,<br>IP25 6HW</li>
+			<ul class="col-2 align-right sec-footer-content">
+				<li class="caption"><strong><cms:get_field 'footer_address_title' masterpage='settings.php' /><br></strong></li>
+				<li class="caption"><cms:nl2br><cms:get_field 'footer_address' masterpage='settings.php' /></cms:nl2br></li>
+			</ul>
 
-			</div>
-
-			<div class="col-2 align-right sec-footer-content">
+			<ul class="col-2 align-right sec-footer-content">
 				<li class="caption"><strong>Quick links<br></strong></li>
-				<li class="caption">About us<br></li>
-				<li class="caption">Our services<br></li>
-				<li class="caption">Our reviews<br></li>
-				<li class="caption">Fresh Motors<br></li>
-			</div>
+				<cms:get_field 'quick_links' masterpage='settings.php' >
+					<cms:show_repeatable 'quick_links'>
+						<a href="<cms:show quick_links_link />"><li class="caption"><cms:show quick_links_text /><br></li></a>
+					</cms:show_repeatable>
+				</cms:get_field>
+			</ul>
 
 		</div>
 

@@ -905,11 +905,19 @@ body {
 
 	.sec-footer {
 		margin: 4rem 0 0 0 0;
-		padding: 2.5rem 0 1rem 0 ;
-		background: var(--Rhino-Gradient)
+		padding: 2.5rem 0 1.5rem 0 ;
+		background: var(--Rhino-Gradient);
 	}
 
-	.sec-footer-content {
+	.sec-footer-content a {
+		color: var(--White);
+		text-decoration: none;
+		transition: 0.4s;
+	}
+
+	.sec-footer-content a:hover {
+		color: var(--AzureRadiance);
+		transition: 0.4s;
 	}
 
 	.sec-footer .caption {
@@ -930,13 +938,11 @@ body {
 	.sec-footer span {
 		display: inline-block;
 		line-height: 22px;
-		opacity: 80%;
 	}
 
 	.sec-footer li {
 		display: inline;
 		line-height: 22px;
-		opacity: 90%;
 	}
 
 	.caption.opacity {
@@ -946,7 +952,7 @@ body {
 	}
 
 	.sec-footer-content img {
-		height: 70px;
+		height: 74px;
 		margin-bottom: 0.5rem;
 	}
 
