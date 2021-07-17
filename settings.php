@@ -13,7 +13,7 @@
 
 		<cms:editable name='nav_button' label='Navigation Button' desc='' type='text' group='nav_group' />
 
-		<cms:editable name='nav_buttonlink' label='Navigation Button' desc='' type='text' group='nav_group' />
+		<cms:editable name='nav_buttonlink' label='Button link' desc='' type='text' group='nav_group' />
 
 		<cms:editable name='nav_booking' label='Add booking link' type='radio' opt_values='No=false | Yes=true' group='nav_group' />
 

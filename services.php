@@ -54,7 +54,7 @@
 
 			<cms:editable name='serv-sidebar-button' label='Button' type='text' />
 
-			<cms:editable name='serv-sidebar-link' label='Buttonlink' type='text' />
+			<cms:editable name='serv-sidebar-link' label='Button link' type='text' />
 
 			<cms:editable name='serv-sidebar-image' label='Image' type='image' show_preview='1' preview_width='150' />
 
@@ -105,7 +105,7 @@
 
 		<nav class="wrapper">
 
-			<div class="col-3 align-left nav-logo"><img src="static/images/joint-logo.svg" class="header-logo" /></div>
+			<div class="col-3 align-left nav-logo"><a href="/"><img src="static/images/joint-logo.svg" class="header-logo" /></a></div>
 
 			<ul class="nav-menu col-9 align-right">
 
@@ -144,17 +144,20 @@
 
 	</header>
 
-	<div class="sec-hero">
+	<div class="sec-hero small-hero">
 		<div class="wrapper">
-			<div class="col-8 align-left">
+			<div class="col-6 align-left">
 				<cms:if hero_kicker>
 					<p class="kicker">
 						<cms:show hero_kicker />
 					</p>
 				</cms:if>
-				<h1 class="h1-plus">
+				<h1 class="h1">
 					<cms:show hero_title />
 				</h1>
+				<p class="p-plus">
+					<cms:show hero_content />
+				</p>
 				<cms:if hero_button>
 					<a href="<cms:show hero_buttonlink />"><span class="button secondary">
 							<cms:show hero_button /><img src="static/images/arrow-forward.svg" />
@@ -162,7 +165,55 @@
 				</cms:if>
 			</div>
 		</div>
-		<div class="background-image"><img src="<cms:show hero_image />" /></div>
+		<div class="hero-image"><img src="<cms:show hero_image />" /></div>
+	</div>
+
+	<div class="serv-content">
+
+		<div class="wrapper">
+
+			<div class="col-7 align-left service-list">
+
+				<cms:show_repeatable 'services' >
+
+					<div class="service-item">
+						<img src="/static/images/service-icons/<cms:show serv-li-icon />.svg" />
+						<div>
+						<h5><cms:show serv-li-title /></h5>
+						<cms:show serv-li-content />
+						</div>
+					</div>
+
+				</cms:show_repeatable>
+
+			</div>
+
+			<div class="col-4 align-right">
+
+				<div class="sidebar booking">
+					<h4>Book your MOT or service online</h4>
+					<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+					<img class="sidebar-image" src="<cms:show serv_cta_image />">
+				</div>
+
+				<cms:show_repeatable 'sidebar' >
+
+					<div class="sidebar" style="background:<cms:show serv-sidebar-bg />">
+						<h4><cms:show serv-sidebar-title /></h4>
+						<cms:if serv-sidebar-button>
+							<a href="<cms:show serv-sidebar-link />"><span class="button secondary">
+									<cms:show serv-sidebar-button /><img src="static/images/arrow-forward.svg" />
+								</span></a>
+						</cms:if>
+						<img class="sidebar-image" src="<cms:show serv-sidebar-image />">
+					</div>
+
+				</cms:show_repeatable>
+
+			</div>
+
+		</div>
+
 	</div>
 
 	<div class="sec-cta">
@@ -171,25 +222,25 @@
 
 				<div class="sec-cta-content">
 					<h1 class="h1">
-						<cms:show sec-cta-title />
+						<cms:show serv_cta_title />
 					</h1>
 
-					<cms:if sec-cta-booking='Yes' >
+					<cms:if serv_cta_booking='Yes' >
 						<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
 					</cms:if>
 
-					<cms:if sec-cta-button>
-						<a href="<cms:show sec-cta-link />"><span class="button">
-								<cms:show sec-cta-button /><img src="static/images/arrow-forward.svg" />
+					<cms:if serv_cta_button>
+						<a href="<cms:show serv_cta_link />"><span class="button">
+								<cms:show serv_cta_button /><img src="static/images/arrow-forward.svg" />
 							</span></a>
 					</cms:if>
 
-					<cms:if sec-cta-contact='Yes'>
+					<cms:if serv_cta_contact='Yes'>
 						<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary"><cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" /></span></a>
 					</cms:if>
 				</div>
 
-				<div class="sec-cta-image"><img src="<cms:show sec-cta-image />" /></div>
+				<div class="sec-cta-image"><img src="<cms:show serv_cta_image />" /></div>
 
 			</div>
 
