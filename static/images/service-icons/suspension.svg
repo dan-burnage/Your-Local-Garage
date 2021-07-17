@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Suspension</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Suspension" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-36">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M9.71586009,43.733072 C9.71586009,46.4168068 7.54094681,48.5923022 4.85793004,48.5923022 C2.17491327,48.5923022 0,46.4168068 0,43.733072 C0,41.0493371 2.17491327,38.8738418 4.85793004,38.8738418 C7.54094681,38.8738418 9.71586009,41.0493371 9.71586009,43.733072 Z" id="Stroke-274" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="6.47724006" y1="32.3948681" x2="19.4317202" y2="38.8738418" id="Stroke-275" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M48.5793004,6.47897363 C48.5793004,10.0571668 45.6792961,12.9579473 42.1020604,12.9579473 C38.5248246,12.9579473 35.6248203,10.0571668 35.6248203,6.47897363 C35.6248203,2.90078047 38.5248246,0 42.1020604,0 C45.6792961,0 48.5793004,2.90078047 48.5793004,6.47897363 Z" id="Stroke-276" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="42.0858493" y1="6.47897363" x2="42.1182355" y2="6.47897363" id="Stroke-277" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="38.8738418" x2="9.71586009" y2="34.0146115" id="Stroke-278" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="16.1931001" y1="37.2540984" x2="9.71586009" y2="43.733072" id="Stroke-279" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.84171895" y1="43.733072" x2="4.87410515" y2="43.733072" id="Stroke-280" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="10.5255151" y1="28.3455096" x2="23.4799952" y2="34.8244833" id="Stroke-281" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="14.5737901" y1="24.2961511" x2="27.5282702" y2="30.7751247" id="Stroke-282" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.6220652" y1="20.2467926" x2="31.5765453" y2="26.7257662" id="Stroke-283" stroke="#50505A" stroke-width="2.5"></line>
+                <polygon id="Stroke-284" stroke="#50505A" stroke-width="2.5" points="32.3862003 6.47897363 22.6703402 16.1974341 35.6248203 22.6764077 42.1020604 16.1974341"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

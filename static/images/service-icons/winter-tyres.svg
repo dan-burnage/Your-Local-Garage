@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Winter Tyres</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Winter-Tyres" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-40">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M48.5793004,24.2961511 C48.5793004,37.7144654 37.7043742,48.5923022 24.2896502,48.5923022 C10.8749262,48.5923022 0,37.7144654 0,24.2961511 C0,10.8778368 10.8749262,0 24.2896502,0" id="Stroke-203" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M37.2441303,24.2961511 C37.2441303,31.4527174 31.4443016,37.2540984 24.2896502,37.2540984 C17.1349988,37.2540984 11.3351701,31.4527174 11.3351701,24.2961511 C11.3351701,17.1395848 17.1349988,11.3382038 24.2896502,11.3382038" id="Stroke-204" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="24.2896502" y1="0" x2="24.2896502" y2="3.23948681" id="Stroke-205" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="45.3528154" x2="24.2896502" y2="48.5923022" id="Stroke-206" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.0030389" y1="0.827868852" x2="18.8413017" y2="3.95703314" id="Stroke-207" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.7380707" y1="44.6353231" x2="30.5763335" y2="47.7644873" id="Stroke-208" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.1448251" y1="3.25503635" x2="13.7641351" y2="6.0606119" id="Stroke-209" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="34.8151653" y1="42.5317623" x2="36.4344753" y2="45.3373378" id="Stroke-210" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="7.11427662" y1="7.11616269" x2="9.40434082" y2="9.40683981" id="Stroke-211" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="39.1749596" y1="39.1854444" x2="41.4650238" y2="41.4761215" id="Stroke-212" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.25420139" y1="12.1480756" x2="6.05884633" y2="13.767819" id="Stroke-213" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.5203821" y1="34.8244833" x2="45.325207" y2="36.4442267" id="Stroke-214" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0.827647341" y1="18.0078213" x2="3.95597437" y2="18.8463084" id="Stroke-215" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.62338" y1="29.7460298" x2="47.7517071" y2="30.5845169" id="Stroke-216" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.23862003" y1="24.2961511" x2="0" y2="24.2961511" id="Stroke-217" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.95592039" y1="29.7459938" x2="0.827593364" y2="30.5844809" id="Stroke-218" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="6.0589183" y1="34.8244833" x2="3.25409344" y2="36.4442267" id="Stroke-219" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="9.40432283" y1="39.1854444" x2="7.11425862" y2="41.4761215" id="Stroke-220" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="13.7641351" y1="42.5317623" x2="12.1448251" y2="45.3371579" id="Stroke-221" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.8412298" y1="44.6353231" x2="18.002967" y2="47.7644873" id="Stroke-222" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="38.8634403" y1="19.4369209" x2="38.8634403" y2="1.42108547e-14" id="Stroke-223" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="35.6248203" y1="0.809871703" x2="38.8634403" y2="4.04935852" id="Stroke-224" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.1020604" y1="0.809871703" x2="38.8634403" y2="4.04935852" id="Stroke-225" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="35.6248203" y1="18.6270492" x2="38.8634403" y2="15.3875624" id="Stroke-226" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.1020604" y1="18.6270492" x2="38.8634403" y2="15.3875624" id="Stroke-227" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="47.2776271" y1="14.5776907" x2="30.4492176" y2="4.85923022" id="Stroke-228" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.5311228" y1="8.06965164" x2="33.9552577" y2="6.88381949" id="Stroke-229" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.7697429" y1="2.45868051" x2="33.9552577" y2="6.88399947" id="Stroke-230" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.9571378" y1="16.9782404" x2="43.771623" y2="12.5529214" id="Stroke-231" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48.1957579" y1="11.3672692" x2="43.771623" y2="12.5531014" id="Stroke-232" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="30.4492536" y1="14.5776907" x2="47.2776631" y2="4.85923022" id="Stroke-233" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.9571378" y1="2.45868051" x2="43.771623" y2="6.88399947" id="Stroke-234" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48.1957579" y1="8.06965164" x2="43.771623" y2="6.88381949" id="Stroke-235" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.5311228" y1="11.3672692" x2="33.9552577" y2="12.5531014" id="Stroke-236" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.7697429" y1="16.9782404" x2="33.9552577" y2="12.5529214" id="Stroke-237" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

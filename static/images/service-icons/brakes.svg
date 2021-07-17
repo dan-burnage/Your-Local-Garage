@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Brakes</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Brakes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-46">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M34.0055103,25.9158945 C34.0055103,32.1778225 28.9305927,37.2540984 22.6703402,37.2540984 C16.4100877,37.2540984 11.3351701,32.1778225 11.3351701,25.9158945 C11.3351701,19.6539665 16.4100877,14.5776907 22.6703402,14.5776907 C28.9305927,14.5776907 34.0055103,19.6539665 34.0055103,25.9158945 Z" id="Stroke-492" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="22.6541471" y1="32.3948681" x2="22.6865333" y2="32.3948681" id="Stroke-493" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="22.6541471" y1="19.4369209" x2="22.6865333" y2="19.4369209" id="Stroke-494" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="28.2717135" y1="29.1694011" x2="28.2879066" y2="29.1413256" id="Stroke-495" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="17.0527918" y1="22.6904275" x2="17.0689849" y2="22.6623519" id="Stroke-496" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="17.0527918" y1="29.1413615" x2="17.0689849" y2="29.1694371" id="Stroke-497" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="28.2717135" y1="22.6623879" x2="28.2879066" y2="22.6904635" id="Stroke-498" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M25.0993052,25.9158945 C25.0993052,27.2577619 24.0118486,28.3455096 22.6703402,28.3455096 C21.3288318,28.3455096 20.2413752,27.2577619 20.2413752,25.9158945 C20.2413752,24.5740271 21.3288318,23.4862794 22.6703402,23.4862794 C24.0118486,23.4862794 25.0993052,24.5740271 25.0993052,25.9158945 Z" id="Stroke-499" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,24.2961511 L43.7213704,24.2961511 L24.2896502,4.85923022 L24.2896502,0 C37.7153495,0 48.5793004,10.8668585 48.5793004,24.2961511 Z" id="Stroke-500" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M45.3406804,24.2961511 L45.3406804,25.9158945 C45.3406804,38.4397505 35.1908452,48.5923022 22.6703402,48.5923022 C10.1498352,48.5923022 0,38.4397505 0,25.9158945 C0,13.3920385 10.1498352,3.23948681 22.6703402,3.23948681 L24.2896502,3.23948681" id="Stroke-501" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

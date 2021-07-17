@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Bulbs</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Bulbs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-19">
+            <g transform="translate(8.000000, 8.000000)">
+                <line x1="6.47724006" y1="35.634319" x2="0" y2="42.1132926" id="Stroke-413" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.9544801" y1="42.1132926" x2="6.47724006" y2="48.5922662" id="Stroke-414" stroke="#50505A" stroke-width="2.5"></line>
+                <polyline id="Stroke-415" stroke="#50505A" stroke-width="2.5" points="11.3351701 24.2961151 3.23862003 32.3948321 16.1931001 45.3527794 24.2896502 37.2540624"></polyline>
+                <line x1="6.47724006" y1="19.4368849" x2="29.1475803" y2="42.1132926" id="Stroke-416" stroke="#50505A" stroke-width="2.5"></line>
+                <polyline id="Stroke-417" stroke="#50505A" stroke-width="2.5" points="9.71586009 22.6763717 14.5737901 17.8171415 30.7668903 34.0145756 25.9089602 38.8738058"></polyline>
+                <polyline id="Stroke-418" stroke="#50505A" stroke-width="2.5" points="16.1931001 19.4368849 21.0510302 14.5776547 34.0055103 27.5356019 29.1475803 32.3948321"></polyline>
+                <line x1="46.9193098" y1="1.66039897" x2="48.5386198" y2="0.0406555595" id="Stroke-419" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="30.7668903" y1="17.8171415" x2="40.4827504" y2="8.09868104" id="Stroke-420" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="40.4827504" y1="8.09868104" x2="40.4827504" y2="6.47893763" id="Stroke-421" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.1020604" y1="8.09868104" x2="40.4827504" y2="8.09868104" id="Stroke-422" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M32.1083627,25.6379285 L46.6821528,11.0602379 C49.211695,8.53001871 49.211695,4.42774857 46.6821528,1.8975294 C44.1526106,-0.6325098 40.0514381,-0.6325098 37.521896,1.8975294 L22.9481058,16.4752201" id="Stroke-423" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

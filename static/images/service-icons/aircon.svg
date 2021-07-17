@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Aircon</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Aircon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-40-Copy">
+            <g transform="translate(8.000000, 7.000000)">
+                <line x1="24" y1="49.9860941" x2="24" y2="0" id="Stroke-223" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="15.6712134" y1="2.08275392" x2="24" y2="10.4137696" id="Stroke-224" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.3287866" y1="2.08275392" x2="24" y2="10.4137696" id="Stroke-225" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="15.6712134" y1="47.9033402" x2="24" y2="39.5723245" id="Stroke-226" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.3287866" y1="47.9033402" x2="24" y2="39.5723245" id="Stroke-227" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="45.6388353" y1="37.4895706" x2="2.36107218" y2="12.4965235" id="Stroke-228" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0" y1="20.7527915" x2="11.3775852" y2="17.7031769" id="Stroke-229" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="8.32878656" y1="6.32300948" x2="11.3775852" y2="17.7036397" id="Stroke-230" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="39.6712134" y1="43.6630846" x2="36.6224148" y2="32.2824543" id="Stroke-231" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48" y1="29.2333026" x2="36.6224148" y2="32.2829172" id="Stroke-232" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="2.36116472" y1="37.4895706" x2="45.6389278" y2="12.4965235" id="Stroke-233" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="39.6712134" y1="6.32300948" x2="36.6224148" y2="17.7036397" id="Stroke-234" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48" y1="20.7527915" x2="36.6224148" y2="17.7031769" id="Stroke-235" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0" y1="29.2333026" x2="11.3775852" y2="32.2829172" id="Stroke-236" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="8.32878656" y1="43.6630846" x2="11.3775852" y2="32.2824543" id="Stroke-237" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

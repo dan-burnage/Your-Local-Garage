@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Windscreen Wipers</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Windscreen-Wipers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-50">
+            <g transform="translate(7.527552, 17.863863)">
+                <line x1="38.8634403" y1="9.71846044" x2="25.9089602" y2="22.6764077" id="Stroke-169" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M3.23862003,0 L0,19.4369209 C0,24.8087099 8.17877504,29.1553813 24.2896502,29.1553813 C36.8204109,29.1553813 48.5793004,24.8087099 48.5793004,19.4369209 L45.3406804,0 C43.1628884,0.473145046 36.8204109,3.23948681 24.2896502,3.23948681 C11.7588896,3.23948681 5.41623215,0.473145046 3.23862003,0 Z" id="Stroke-170" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="22.6703402" y1="9.71846044" x2="9.71586009" y2="22.6764077" id="Stroke-171" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="16.1931001" y1="16.1974341" x2="16.1931001" y2="28.5195421" id="Stroke-172" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.3862003" y1="16.1974341" x2="32.3862003" y2="28.5195421" id="Stroke-173" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

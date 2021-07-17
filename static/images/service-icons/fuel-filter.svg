@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Fuel Filter</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Fuel-Filter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-28">
+            <g transform="translate(14.000000, 8.000000)">
+                <line x1="0.809655007" y1="42.1133286" x2="0.809655007" y2="11.3382038" id="Stroke-347" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="5.66758505" y1="42.1133286" x2="5.66758505" y2="11.3382038" id="Stroke-348" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="10.5255151" y1="42.1133286" x2="10.5255151" y2="11.3382038" id="Stroke-349" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="15.3834451" y1="42.1133286" x2="15.3834451" y2="11.3382038" id="Stroke-350" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="20.2413752" y1="42.1133286" x2="20.2413752" y2="11.3382038" id="Stroke-351" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="25.0993052" y1="42.1133286" x2="25.0993052" y2="11.3382038" id="Stroke-352" stroke="#50505A" stroke-width="2.5"></line>
+                <polyline id="Stroke-353" stroke="#50505A" stroke-width="2.5" points="25.9089602 4.85923022 25.9089602 0 9.71586009 0 9.71586009 4.85923022"></polyline>
+                <line x1="29.9572353" y1="42.1133286" x2="29.9572353" y2="11.3382038" id="Stroke-354" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="34.8151653" y1="42.1133286" x2="34.8151653" y2="11.3382038" id="Stroke-355" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M0,42.1133286 L0,46.9725588 C0,47.867917 0.724191423,48.5923022 1.61931001,48.5923022 L34.0055103,48.5923022 C34.9006289,48.5923022 35.6248203,47.867917 35.6248203,46.9725588 L35.6248203,42.1133286 L0,42.1133286 Z" id="Stroke-356" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M35.6248203,6.47897363 L35.6248203,11.3382038 L0,11.3382038 L0,6.47897363 C0,5.58361547 0.724191423,4.85923022 1.61931001,4.85923022 L34.0055103,4.85923022 C34.9006289,4.85923022 35.6248203,5.58361547 35.6248203,6.47897363 Z" id="Stroke-357" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

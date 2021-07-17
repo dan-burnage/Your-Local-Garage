@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Battery</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Battery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-56">
+            <g transform="translate(8.000000, 15.000000)">
+                <line x1="6.4" y1="15.9090909" x2="12.8" y2="15.9090909" id="Stroke-303" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="35.2" y1="15.9090909" x2="41.6" y2="15.9090909" id="Stroke-304" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="38.4" y1="12.7272727" x2="38.4" y2="19.0909091" id="Stroke-305" stroke="#50505A" stroke-width="2.475"></line>
+                <path d="M0,33.4090909 C0,34.2885101 0.715555556,35 1.6,35 L46.4,35 C47.2844444,35 48,34.2885101 48,33.4090909 L48,7.95454545 C48,7.07512626 47.2844444,6.36363636 46.4,6.36363636 L1.6,6.36363636 C0.715555556,6.36363636 0,7.07512626 0,7.95454545 L0,33.4090909 Z" id="Stroke-306" stroke="#50505A" stroke-width="2.475"></path>
+                <path d="M12.8,6.36363636 L12.8,1.59090909 C12.8,0.711489899 12.0844444,0 11.2,0 L8,0 C7.11555556,0 6.4,0.711489899 6.4,1.59090909 L6.4,6.36363636" id="Stroke-307" stroke="#50505A" stroke-width="2.475"></path>
+                <path d="M41.6,6.36363636 L41.6,1.59090909 C41.6,0.711489899 40.8844444,0 40,0 L36.8,0 C35.9155556,0 35.2,0.711489899 35.2,1.59090909 L35.2,6.36363636" id="Stroke-308" stroke="#50505A" stroke-width="2.475"></path>
+            </g>
+        </g>
+    </g>
+</svg>

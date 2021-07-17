@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Coolant</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Coolant" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-49">
+            <g transform="translate(17.000000, 8.000000)">
+                <polyline id="Stroke-166" stroke="#50505A" stroke-width="2.5" points="3.23862003 6.47897363 3.23862003 0 12.9544801 0 12.9544801 6.47897363"></polyline>
+                <path d="M25.9089602,16.1974341 L19.4317202,9.71846044 C17.7618517,8.04814505 16.5345946,6.47897363 12.9544801,6.47897363 L3.23862003,6.47897363 C1.44856277,6.47897363 0,7.92792409 0,9.71846044 L0,45.3528154 C0,47.1433517 1.44856277,48.5923022 3.23862003,48.5923022 L25.9089602,48.5923022 C27.6990175,48.5923022 29.1475803,47.1433517 29.1475803,45.3528154 L29.1475803,22.6764077 C29.1475803,19.095335 27.5788287,17.8677495 25.9089602,16.1974341 Z" id="Stroke-167" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M19.4317202,34.0146115 C19.4317202,36.6983464 17.2568069,38.8738418 14.5737901,38.8738418 C11.8907734,38.8738418 9.71586009,36.6983464 9.71586009,34.0146115 C9.71586009,31.3308767 12.1448251,28.3455096 14.5737901,25.9158945 C17.0027552,28.3455096 19.4317202,31.3308767 19.4317202,34.0146115 Z" id="Stroke-168" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

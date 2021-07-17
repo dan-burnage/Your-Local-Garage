@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Drive Shaft</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Drive-Shaft" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-18">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M3.23862003,38.48082 C5.13573167,36.5832006 8.21170101,36.5832006 10.1088126,38.48082 C12.0059243,40.3784394 12.0059243,43.455232 10.1088126,45.3528514" id="Stroke-424" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="-1.42108547e-14" y1="42.1133286" x2="6.47724006" y2="48.5923022" id="Stroke-425" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.23862003" y1="45.3528154" x2="6.47724006" y2="42.1133286" id="Stroke-426" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M45.3406804,10.1114822 C43.4435688,12.0091016 40.3675994,12.0091016 38.4704878,10.1114822 C36.5733761,8.21386279 36.5733761,5.13707021 38.4704878,3.23945082" id="Stroke-427" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="48.5793004" y1="6.47897363" x2="42.1020604" y2="-5.68434189e-14" id="Stroke-428" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="45.3406804" y1="3.23948681" x2="42.1020604" y2="6.47897363" id="Stroke-429" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="32.3862003" y1="16.1974341" x2="38.4704878" y2="10.1115182" id="Stroke-430" stroke="#50505A" stroke-width="2.5"></line>
+                <polyline id="Stroke-431" stroke="#50505A" stroke-width="2.5" points="8.09655007 37.2540984 30.7668903 14.5776907 34.0055103 17.8171775 11.3351701 40.4935852"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

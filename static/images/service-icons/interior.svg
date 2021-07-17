@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Interior</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Interior" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-11">
+            <g transform="translate(13.000000, 8.000000)">
+                <line x1="14.5737901" y1="8.18870278" x2="14.5737901" y2="13.047933" id="Stroke-625" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="8.18870278" x2="24.2896502" y2="13.047933" id="Stroke-626" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M11.3351701,6.56895937 C11.3351701,7.46431753 12.0593615,8.18870278 12.9544801,8.18870278" id="Stroke-627" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M27.5282702,6.56895937 C27.5282702,7.46431753 26.8040788,8.18870278 25.9089602,8.18870278" id="Stroke-628" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="12.1448251" y1="1.70972915" x2="11.3351701" y2="6.56895937" id="Stroke-629" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="26.7186152" y1="1.70972915" x2="27.5282702" y2="6.56895937" id="Stroke-630" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.9544801" y1="8.18870278" x2="25.9089602" y2="8.18870278" id="Stroke-631" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="11.3351701" y1="13.047933" x2="27.5282702" y2="13.047933" id="Stroke-632" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="6.47724006" y1="48.682288" x2="32.3862003" y2="48.682288" id="Stroke-633" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M0,40.5835709 C0,38.7930346 1.44856277,37.3440841 3.23862003,37.3440841" id="Stroke-634" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M38.8634403,40.5835709 C38.8634403,38.7930346 37.4148776,37.3440841 35.6248203,37.3440841" id="Stroke-635" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="3.23862003" y1="37.3440841" x2="4.85793004" y2="37.3440841" id="Stroke-636" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M12.1448251,1.70972915 C12.3166519,0.816890592 12.8690165,0.0899857448 13.7641351,0.0899857448" id="Stroke-637" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="25.0993052" y1="0.0899857448" x2="13.7641351" y2="0.0899857448" id="Stroke-638" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="34.0055103" y1="37.3440841" x2="35.6248203" y2="37.3440841" id="Stroke-639" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="11.3351701" y1="40.5835709" x2="27.5282702" y2="40.5835709" id="Stroke-640" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M4.85793004,37.3440841 C4.85793004,21.14665 7.75505558,13.047933 11.3351701,13.047933" id="Stroke-641" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M34.0055103,37.3440841 C34.0055103,21.14665 31.1083848,13.047933 27.5282702,13.047933" id="Stroke-642" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M11.3351701,40.5835709 C8.09655007,40.5835709 8.43804456,37.3440841 4.85793004,37.3440841" id="Stroke-643" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M27.5282702,40.5835709 C30.7668903,40.5835709 30.4253958,37.3440841 34.0055103,37.3440841" id="Stroke-644" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M26.7186152,1.70972915 C26.5467885,0.816890592 25.9944238,0.0899857448 25.0993052,0.0899857448" id="Stroke-645" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M0,40.5835709 C0,45.0600018 2.89712554,48.682288 6.47724006,48.682288" id="Stroke-646" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M38.8634403,40.5835709 C38.8634403,45.0600018 35.9663148,48.682288 32.3862003,48.682288" id="Stroke-647" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

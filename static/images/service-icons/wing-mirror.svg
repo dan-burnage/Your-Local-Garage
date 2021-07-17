@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Wing Mirror</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Wing-Mirror" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-29">
+            <g transform="translate(8.000000, 17.000000)">
+                <line x1="32.3862003" y1="6.47897363" x2="25.9089602" y2="12.9579473" id="Stroke-463" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="25.9089602" y1="6.47897363" x2="22.6703402" y2="9.71846044" id="Stroke-464" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M29.1475803,0 C13.0367051,0 0,7.24457234 0,16.1974341 C0,23.3597594 7.24263392,29.1553813 16.1931001,29.1553813 L32.3862003,29.1553813 C37.756552,29.1553813 42.1020604,24.8087099 42.1020604,19.4369209 L42.1020604,9.71846044 C42.1020604,4.34667142 36.3079892,0 29.1475803,0 Z" id="Stroke-465" stroke="#50505A" stroke-width="2.5"></path>
+                <polyline id="Stroke-466" stroke="#50505A" stroke-width="2.5" points="32.3862003 29.1553813 48.5793004 29.1553813 48.5793004 16.1974341 42.1020604 16.1974341"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Summer Tyres</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Summer-Tyres" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-41">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M48.5793004,24.2961511 C48.5793004,37.7144654 37.7043742,48.5923022 24.2896502,48.5923022 C10.8749262,48.5923022 0,37.7144654 0,24.2961511 C0,10.8778368 10.8749262,0 24.2896502,0" id="Stroke-174" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M37.2441303,24.2961511 C37.2441303,31.4527174 31.4443016,37.2540984 24.2896502,37.2540984 C17.1349988,37.2540984 11.3351701,31.4527174 11.3351701,24.2961511 C11.3351701,17.1395848 17.1349988,11.3382038 24.2896502,11.3382038" id="Stroke-175" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="24.2896502" y1="0" x2="24.2896502" y2="3.23948681" id="Stroke-176" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="45.3528154" x2="24.2896502" y2="48.5923022" id="Stroke-177" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.0030389" y1="0.827868852" x2="18.8413017" y2="3.95703314" id="Stroke-178" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.7380527" y1="44.6353231" x2="30.5763155" y2="47.7644873" id="Stroke-179" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.1448251" y1="3.25503635" x2="13.7641351" y2="6.0606119" id="Stroke-180" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="34.8151653" y1="42.5317623" x2="36.4344753" y2="45.3373378" id="Stroke-181" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="7.11427662" y1="7.11616269" x2="9.40434082" y2="9.40683981" id="Stroke-182" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="39.1749776" y1="39.1854444" x2="41.4650418" y2="41.4761215" id="Stroke-183" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.25420139" y1="12.1480756" x2="6.05884633" y2="13.767819" id="Stroke-184" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.5203821" y1="34.8244833" x2="45.3250271" y2="36.4442267" id="Stroke-185" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0.827647341" y1="18.0078213" x2="3.95597437" y2="18.8463084" id="Stroke-186" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.62338" y1="29.7460298" x2="47.7517071" y2="30.5845169" id="Stroke-187" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.23862003" y1="24.2961511" x2="0" y2="24.2961511" id="Stroke-188" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.95592039" y1="29.7459938" x2="0.827593364" y2="30.5844809" id="Stroke-189" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="6.0589183" y1="34.8244833" x2="3.25409344" y2="36.4442267" id="Stroke-190" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="9.40432283" y1="39.1854444" x2="7.11425862" y2="41.4761215" id="Stroke-191" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="13.7641351" y1="42.5317623" x2="12.1448251" y2="45.3371579" id="Stroke-192" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.8412298" y1="44.6353231" x2="18.002967" y2="47.7644873" id="Stroke-193" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M42.9117154,9.71846044 C42.9117154,11.9547862 41.0991677,13.767819 38.8634403,13.767819 C36.627713,13.767819 34.8151653,11.9547862 34.8151653,9.71846044 C34.8151653,7.48213471 36.627713,5.66910192 38.8634403,5.66910192 C41.0991677,5.66910192 42.9117154,7.48213471 42.9117154,9.71846044 Z" id="Stroke-194" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="38.8634403" y1="1.61974341" x2="38.8634403" y2="0" id="Stroke-195" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="38.8634403" y1="19.4369209" x2="38.8634403" y2="17.8171775" id="Stroke-196" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="46.9599904" y1="9.71846044" x2="48.5793004" y2="9.71846044" id="Stroke-197" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.1475803" y1="9.71846044" x2="30.7668903" y2="9.71846044" id="Stroke-198" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.5885649" y1="3.99180364" x2="45.733597" y2="2.84646507" id="Stroke-199" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="31.9932837" y1="16.5904558" x2="33.1383158" y2="15.4451172" id="Stroke-200" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="44.5885649" y1="15.4451172" x2="45.733597" y2="16.5904558" id="Stroke-201" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="31.9932837" y1="2.84646507" x2="33.1383158" y2="3.99180364" id="Stroke-202" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

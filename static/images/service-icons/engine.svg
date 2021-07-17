@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Engine</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Engine" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-60">
+            <g transform="translate(7.000000, 14.000000)">
+                <line x1="0.0905730129" y1="9.60957179" x2="0.0905730129" y2="28.6523929" id="Stroke-288" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="0.0905730129" y1="19.1309824" x2="4.98151571" y2="19.1309824" id="Stroke-289" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="22.9149723" y1="0.0881612091" x2="22.9149723" y2="4.8488665" id="Stroke-290" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="16.3937153" y1="0.0881612091" x2="29.4362292" y2="0.0881612091" id="Stroke-291" stroke="#50505A" stroke-width="2.475"></line>
+                <path d="M45.7393715,9.60957179 L42.4787431,9.60957179 L42.4787431,12.7833753 L37.5878004,12.7833753 L29.4362292,4.8488665 L16.3937153,4.8488665 L11.5027726,9.60957179 L4.98151571,9.60957179 L4.98151571,28.6523929 L14.7634011,28.6523929 L21.284658,35 L37.5878004,35 L37.5878004,25.4785894 L42.4787431,25.4785894 L42.4787431,28.6523929 L45.7393715,28.6523929 C47.5415933,28.6523929 49,24.3938539 49,19.1309824 C49,13.8681108 47.5415933,9.60957179 45.7393715,9.60957179 Z" id="Stroke-292" stroke="#50505A" stroke-width="2.475"></path>
+                <polygon id="Stroke-293" stroke="#50505A" stroke-width="2.475" points="24.5452865 27.0654912 22.9149723 20.7178841 18.0240296 20.7178841 24.5452865 11.1964736 26.1756007 17.5440806 31.0665434 17.5440806"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
