@@ -232,6 +232,27 @@
 			<div class="carousel-item kicker">
 				<img src="/static/images/service-icons/oil.svg" />Brakes
 			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/car.svg" />Servicing
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/car.svg" />Brakes
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/oil.svg" />Wheel alignment
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/car.svg" />Servicing
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
+			</div>
+			<div class="carousel-item kicker">
+				<img src="/static/images/service-icons/oil.svg" />Brakes
+			</div>
 
 		</div>
 
