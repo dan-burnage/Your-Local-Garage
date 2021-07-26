@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Bumper</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Bumper" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-22">
+            <g transform="translate(8.000000, 24.000000)">
+                <line x1="12.9544801" y1="11.3382038" x2="35.6248203" y2="11.3382038" id="Stroke-399" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="6.46104696" y1="11.3382038" x2="6.49343316" y2="11.3382038" id="Stroke-400" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.0858673" y1="11.3382038" x2="42.1182535" y2="11.3382038" id="Stroke-401" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M3.23862003,0 C1.44856277,0 0,1.44895046 0,3.23948681 L0,9.71846044 C0,13.2995331 2.89712554,16.1974341 6.47724006,16.1974341 L42.1020604,16.1974341 C45.6821749,16.1974341 48.5793004,13.2995331 48.5793004,9.71846044 L48.5793004,3.23948681 C48.5793004,1.44895046 47.1307377,0 45.3406804,0 C45.3406804,3.5810727 42.4435549,6.47897363 38.8634403,6.47897363 L9.71586009,6.47897363 C6.13574557,6.47897363 3.23862003,3.5810727 3.23862003,0 Z" id="Stroke-402" stroke="#50505A" stroke-width="2.5"></path>
+                <polyline id="Stroke-403" stroke="#50505A" stroke-width="2.5" points="17.8124102 6.47897363 16.1931001 0 32.3862003 0 30.7668903 6.47897363"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

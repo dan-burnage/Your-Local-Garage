@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Manual Gearbox</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Manual-Gearbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-34">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M48.5793004,24.2961511 C48.5793004,37.7144654 37.7043742,48.5923022 24.2896502,48.5923022 C10.8749262,48.5923022 0,37.7144654 0,24.2961511 C0,10.8778368 10.8749262,0 24.2896502,0 C37.7043742,0 48.5793004,10.8778368 48.5793004,24.2961511 Z" id="Stroke-294" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="33.1958553" y1="34.0146115" x2="30.7668903" y2="34.0146115" id="Stroke-295" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M35.6248203,37.2540984 L33.1958553,34.0146115 C34.5373637,34.0146115 35.6248203,32.9268639 35.6248203,31.5849964 C35.6248203,30.243129 34.5373637,29.1553813 33.1958553,29.1553813 L30.7668903,29.1553813 L30.7668903,37.2540984" id="Stroke-296" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="12.9544801" y1="11.3382038" x2="12.9544801" y2="37.2540984" id="Stroke-297" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="11.3382038" x2="24.2896502" y2="37.2540984" id="Stroke-298" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M12.9544801,24.2961511 L32.3862003,24.2961511 C34.1762575,24.2961511 35.6248203,22.8472006 35.6248203,21.0566643 L35.6248203,11.3382038" id="Stroke-299" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

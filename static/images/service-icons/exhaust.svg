@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Exhaust</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Exhaust" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-35">
+            <g transform="translate(11.000000, 8.000000)">
+                <polygon id="Stroke-285" stroke="#50505A" stroke-width="2.5" points="16.1931001 45.3528154 3.23862003 32.3948681 22.6703402 12.9579473 35.6248203 25.9158945"></polygon>
+                <polyline id="Stroke-286" stroke="#50505A" stroke-width="2.5" points="12.1448251 41.3034569 4.85793004 48.5923022 0 43.733072 7.28689506 36.4442267"></polyline>
+                <path d="M26.7186152,17.0073058 L29.9572353,13.767819 C33.1958553,10.5283321 31.1717178,5.26416607 33.1958553,3.23948681 L36.4344753,0 L41.2924054,4.85923022 L38.627201,7.5251479 C36.6030635,9.54982716 38.627201,14.8139932 35.388581,18.05348 L31.5765453,21.866536" id="Stroke-287" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

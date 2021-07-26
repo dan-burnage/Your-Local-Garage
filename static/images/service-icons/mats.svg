@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Mats</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Mats" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-45">
+            <g transform="translate(8.000000, 8.000000)">
+                <line x1="6.46104696" y1="29.1553813" x2="6.49343316" y2="29.1553813" id="Stroke-139" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="25.8927671" y1="29.1553813" x2="25.9251533" y2="29.1553813" id="Stroke-140" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="42.0858673" y1="42.1133286" x2="42.1182535" y2="42.1133286" id="Stroke-141" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="22.6541471" y1="42.1133286" x2="22.6865333" y2="42.1133286" id="Stroke-142" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M32.3862003,12.9579473 L35.6248203,12.9579473 C37.4148776,12.9579473 38.8634403,14.4068977 38.8634403,16.1974341 C38.8634403,22.6764077 48.5793004,25.9158945 48.5793004,32.3948681 L48.5793004,45.3528154 C48.5793004,47.1433517 47.1307377,48.5923022 45.3406804,48.5923022 L19.4317202,48.5923022 C17.6416629,48.5923022 16.1931001,47.1433517 16.1931001,45.3528154 L16.1931001,35.634355" id="Stroke-143" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M32.3862003,3.23948681 C32.3862003,1.44895046 30.9376375,0 29.1475803,0 L12.9544801,0 C11.1644229,0 9.71586009,1.44895046 9.71586009,3.23948681 C9.71586009,9.71846044 0,12.9579473 0,19.4369209 L0,32.3948681 C0,34.1854045 1.44856277,35.634355 3.23862003,35.634355 L29.1475803,35.634355 C30.9376375,35.634355 32.3862003,34.1854045 32.3862003,32.3948681 L32.3862003,3.23948681 Z" id="Stroke-144" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

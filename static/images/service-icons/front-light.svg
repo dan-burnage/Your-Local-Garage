@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Front Light</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Front-Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-47">
+            <g transform="translate(8.000000, 21.000000)">
+                <path d="M22.6703402,8.09871703 C22.6703402,12.5715485 19.0454248,16.1974341 14.5737901,16.1974341 C10.1021555,16.1974341 6.47724006,12.5715485 6.47724006,8.09871703 C6.47724006,3.6258856 10.1021555,0 14.5737901,0 C19.0454248,0 22.6703402,3.6258856 22.6703402,8.09871703 Z" id="Stroke-388" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M38.8634403,11.3382038 C38.8634403,14.0219387 36.6885271,16.1974341 34.0055103,16.1974341 C31.3224935,16.1974341 29.1475803,14.0219387 29.1475803,11.3382038 C29.1475803,8.654469 31.3224935,6.47897363 34.0055103,6.47897363 C36.6885271,6.47897363 38.8634403,8.654469 38.8634403,11.3382038 Z" id="Stroke-389" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,22.6764077 L12.9544801,22.6764077 C5.79407115,22.6764077 0,16.8807858 0,9.71846044 L0,1.42108547e-14 L14.5737901,1.42108547e-14 C32.3862003,1.42108547e-14 48.5793004,9.71846044 48.5793004,22.6764077 Z" id="Stroke-390" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

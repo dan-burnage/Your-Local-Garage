@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Rear Door</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Rear-Door" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-52">
+            <g transform="translate(8.000000, 11.000000)">
+                <line x1="0" y1="16.1974341" x2="48.5793004" y2="16.1974341" id="Stroke-312" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="38.8634403" y1="22.6764077" x2="32.3862003" y2="22.6764077" id="Stroke-313" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M0,42.1133286 L32.3862003,42.1133286 C32.3862003,29.1553813 48.5793004,29.1553813 48.5793004,24.2961511 L48.5793004,16.1974341 C48.5793004,12.6163614 47.0105489,11.3887758 45.3406804,9.71846044 L38.8634403,3.23948681 C37.1935719,1.56917142 35.9663148,0 32.3862003,0 L3.23862003,0 C1.44856277,0 0,7.24457234 0,16.1974341 L0,42.1133286 Z" id="Stroke-314" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

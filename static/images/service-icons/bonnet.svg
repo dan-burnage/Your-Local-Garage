@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Bonnet</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Bonnet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-38">
+            <g transform="translate(8.000000, 11.000000)">
+                <line x1="12.938287" y1="9.71846044" x2="12.9706732" y2="9.71846044" id="Stroke-264" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="35.6086272" y1="9.71846044" x2="35.6410134" y2="9.71846044" id="Stroke-265" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M3.23862003,35.634355 C9.71586009,35.634355 9.71586009,42.1133286 12.9544801,42.1133286 L35.6248203,42.1133286 C38.8634403,42.1133286 38.8634403,35.634355 45.3406804,35.634355 C47.1307377,35.634355 48.5793004,19.6962598 48.5793004,0 C46.4016883,0.473325018 36.8204109,3.23948681 24.2896502,3.23948681 C11.7588896,3.23948681 2.17761212,0.473325018 0,0 C0,19.6962598 1.44856277,35.634355 3.23862003,35.634355 Z" id="Stroke-266" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

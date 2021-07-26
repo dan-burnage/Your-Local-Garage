@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Tow Bar</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Tow-Bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-23">
+            <g transform="translate(8.000000, 14.000000)">
+                <path d="M38.8634403,12.0909166 L38.8634403,22.6764797 C38.8634403,24.467016 37.4148776,25.9159665 35.6248203,25.9159665 L19.4317202,25.9159665" id="Stroke-326" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M45.3406804,12.0909166 L45.3406804,22.6764797 C45.3406804,28.0480887 40.995172,32.3949401 35.6248203,32.3949401 L19.4317202,32.3949401" id="Stroke-327" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,6.47897363 C48.5793004,10.0571668 45.6792961,12.9579473 42.1020604,12.9579473 C38.5248246,12.9579473 35.6248203,10.0571668 35.6248203,6.47897363 C35.6248203,2.90078047 38.5248246,0 42.1020604,0 C45.6792961,0 48.5793004,2.90078047 48.5793004,6.47897363 Z" id="Stroke-328" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="6.46104696" y1="29.1553813" x2="6.49343316" y2="29.1553813" id="Stroke-329" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.938287" y1="29.1553813" x2="12.9706732" y2="29.1553813" id="Stroke-330" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M19.4317202,24.2961511 L19.4317202,34.0146115 C19.4317202,34.9099697 18.7075287,35.634355 17.8124102,35.634355 L0,35.634355 L0,22.6764077 L17.8124102,22.6764077 C18.7075287,22.6764077 19.4317202,23.4007929 19.4317202,24.2961511 Z" id="Stroke-331" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

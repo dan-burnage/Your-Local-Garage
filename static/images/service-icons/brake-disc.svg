@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Brake Disc</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Brake-Disc" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-48">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M48.5793004,24.2961511 C48.5793004,37.7144654 37.7043742,48.5923022 24.2896502,48.5923022 C10.8749262,48.5923022 0,37.7144654 0,24.2961511 C0,10.8778368 10.8749262,0 24.2896502,0 C37.7043742,0 48.5793004,10.8778368 48.5793004,24.2961511 Z" id="Stroke-145" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M38.8634403,24.2961511 C38.8634403,32.3471757 32.3385206,38.8738418 24.2896502,38.8738418 C16.2407798,38.8738418 9.71586009,32.3471757 9.71586009,24.2961511 C9.71586009,16.2451265 16.2407798,9.71846044 24.2896502,9.71846044 C32.3385206,9.71846044 38.8634403,16.2451265 38.8634403,24.2961511 Z" id="Stroke-146" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M29.1475803,24.2961511 C29.1475803,26.979886 26.972667,29.1553813 24.2896502,29.1553813 C21.6066334,29.1553813 19.4317202,26.979886 19.4317202,24.2961511 C19.4317202,21.6124163 21.6066334,19.4369209 24.2896502,19.4369209 C26.972667,19.4369209 29.1475803,21.6124163 29.1475803,24.2961511 Z" id="Stroke-147" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="22.6703402" y1="14.5776907" x2="25.9089602" y2="14.5776907" id="Stroke-148" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="22.6703402" y1="34.0146115" x2="25.9089602" y2="34.0146115" id="Stroke-149" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="15.0658085" y1="20.8396547" x2="16.6851185" y2="18.0342591" id="Stroke-150" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="31.8941819" y1="30.5581151" x2="33.513492" y2="27.7527195" id="Stroke-151" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="16.6851185" y1="30.5581151" x2="15.0658085" y2="27.7527195" id="Stroke-152" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="33.513492" y1="20.8396547" x2="31.8941819" y2="18.0342591" id="Stroke-153" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="9.71394316" x2="30.2740803" y2="0.743264255" id="Stroke-154" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="18.3053461" y1="47.84884" x2="24.2895962" y2="38.8783411" id="Stroke-155" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="17.0005601" y1="11.6676057" x2="17.6990225" y2="0.905670527" id="Stroke-156" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="30.8803499" y1="47.6863617" x2="31.5789922" y2="36.9247865" id="Stroke-157" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="31.5787403" y1="11.6674797" x2="41.2456613" y2="6.89175624" id="Stroke-158" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="7.33385506" y1="41.700402" x2="17.0004161" y2="36.9246785" id="Stroke-159" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="9.71155992" y1="24.2961151" x2="0.743281289" y2="18.3100834" id="Stroke-160" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="47.836289" y1="30.2820029" x2="38.8681903" y2="24.2961511" id="Stroke-161" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="36.9148526" y1="31.5869761" x2="41.6894782" y2="41.2564843" id="Stroke-162" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="6.89002017" y1="7.33560192" x2="11.6644658" y2="17.0047502" id="Stroke-163" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="36.9147627" y1="17.0048942" x2="47.6738183" y2="17.7035435" id="Stroke-164" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0.905680091" y1="30.8883988" x2="11.6643758" y2="31.5872281" id="Stroke-165" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

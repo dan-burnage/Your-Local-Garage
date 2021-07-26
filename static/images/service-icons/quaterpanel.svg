@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Quaterpanel</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Quaterpanel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-31">
+            <g transform="translate(8.000000, 17.000000)">
+                <line x1="38.8634403" y1="6.47897363" x2="42.1020604" y2="6.47897363" id="Stroke-386" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M0,22.6764077 C0,19.4369209 3.23862003,19.4369209 3.23862003,16.1974341 C3.23862003,12.9579473 0,12.9579473 0,9.71846044 C9.71586009,3.23948681 32.3862003,0 48.5793004,0 L48.5793004,29.1553813 L42.1020604,29.1553813 C42.1020604,20.2025196 34.8594264,12.9579473 25.9089602,12.9579473 C16.958494,12.9579473 9.71586009,20.2025196 9.71586009,29.1553813 L3.23862003,29.1553813 C1.44856277,29.1553813 0,27.7064309 0,25.9158945 L0,22.6764077 Z" id="Stroke-387" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Wheel Arches</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Wheel-Arches" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-7">
+            <g transform="translate(8.000000, 11.000000)">
+                <line x1="0" y1="42.1133286" x2="8.09655007" y2="42.1133286" id="Stroke-562" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48.5793004" y1="42.1133286" x2="40.4827504" y2="42.1133286" id="Stroke-563" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M8.09655007,42.1133286 C9.71586009,32.3948681 15.339184,25.9158945 24.2896502,25.9158945" id="Stroke-564" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M40.4827504,42.1133286 C38.8634403,32.3948681 33.2401164,25.9158945 24.2896502,25.9158945" id="Stroke-565" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M0,42.1133286 C0,27.7886778 9.9688323,16.1974341 24.2896502,16.1974341" id="Stroke-566" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,42.1133286 C48.5793004,27.7886778 38.6104681,16.1974341 24.2896502,16.1974341" id="Stroke-567" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="0" y1="25.9158945" x2="5.03929276" y2="25.9158945" id="Stroke-568" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48.5793004" y1="25.9158945" x2="43.539288" y2="25.9158945" id="Stroke-569" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M9.18602185,21.4908455 C11.6112085,14.2806477 16.7789665,9.71837046 24.2896862,9.71837046" id="Stroke-570" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M39.3931886,21.4905756 C36.968002,14.2805577 31.800244,9.71846044 24.2897042,9.71846044" id="Stroke-571" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M0,25.9158945 C0,11.5912438 9.9688323,0 24.2896502,0" id="Stroke-572" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,25.9158945 C48.5793004,11.5912438 38.6104681,0 24.2896502,0" id="Stroke-573" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

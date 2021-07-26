@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Tyres</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Tyres" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-43">
+            <g transform="translate(14.000000, 8.000000)">
+                <path d="M32.3862003,35.634355 L3.23862003,35.634355 C1.44856277,35.634355 0,37.0833054 0,38.8738418 L0,45.3528154 C0,47.1433517 1.44856277,48.5923022 3.23862003,48.5923022 L32.3862003,48.5923022 C34.1762575,48.5923022 35.6248203,47.1433517 35.6248203,45.3528154 L35.6248203,38.8738418 C35.6248203,37.0833054 34.1762575,35.634355 32.3862003,35.634355 Z" id="Stroke-61" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M35.6248203,17.8171775 C35.6248203,27.6572986 27.6498984,35.634355 17.8124102,35.634355 C7.9749219,35.634355 0,27.6572986 0,17.8171775 C0,7.97705631 7.9749219,0 17.8124102,0 C27.6498984,0 35.6248203,7.97705631 35.6248203,17.8171775 Z" id="Stroke-63" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M27.5282702,17.8171775 C27.5282702,23.1844672 23.1782638,27.5356379 17.8124102,27.5356379 C12.4465565,27.5356379 8.09655007,23.1844672 8.09655007,17.8171775 C8.09655007,12.4498877 12.4465565,8.09871703 17.8124102,8.09871703 C23.1782638,8.09871703 27.5282702,12.4498877 27.5282702,17.8171775 Z" id="Stroke-65" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="0" y1="42.1133286" x2="35.6248203" y2="42.1133286" id="Stroke-67" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

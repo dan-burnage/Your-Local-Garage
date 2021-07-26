@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Rear Light</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Rear-Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-13">
+            <g transform="translate(8.000000, 21.000000)">
+                <path d="M48.5793004,22.6764077 L12.9544801,22.6764077 C5.79407115,22.6764077 5.68434189e-14,16.8807858 5.68434189e-14,9.71846044 L5.68434189e-14,0 L25.9089602,0" id="Stroke-488" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M48.5793004,22.6764077 C48.5793004,10.1422933 38.4397209,0 25.9089602,0" id="Stroke-489" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="1.70530257e-13" y1="6.47897363" x2="22.6703402" y2="6.47897363" id="Stroke-490" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0.421254504" y1="12.9579473" x2="25.9090142" y2="12.9579473" id="Stroke-491" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

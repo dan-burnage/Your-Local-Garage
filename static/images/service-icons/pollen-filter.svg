@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Pollen Filter</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Pollen-Filter" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-24">
+            <g transform="translate(11.000000, 8.000000)">
+                <path d="M38.8634403,48.5923022 C40.6534976,48.5923022 42.1020604,47.1433517 42.1020604,45.3528154 L42.1020604,3.23948681 C42.1020604,1.44895046 40.6534976,0 38.8634403,0 L3.23862003,0 C1.44856277,0 0,1.44895046 0,3.23948681 L0,45.3528154 C0,47.1433517 1.44856277,48.5923022 3.23862003,48.5923022 L38.8634403,48.5923022 Z" id="Stroke-332" stroke="#50505A" stroke-width="2.5"></path>
+                <polygon id="Stroke-333" stroke="#50505A" stroke-width="2.5" points="4.85793004 43.733072 37.2441303 43.733072 37.2441303 4.85923022 4.85793004 4.85923022"></polygon>
+                <line x1="21.0510302" y1="4.85923022" x2="21.0510302" y2="43.733072" id="Stroke-334" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="9.71846044" x2="37.2441303" y2="9.71846044" id="Stroke-335" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="14.5776907" x2="37.2441303" y2="14.5776907" id="Stroke-336" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="19.4369209" x2="37.2441303" y2="19.4369209" id="Stroke-337" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="24.2961511" x2="37.2441303" y2="24.2961511" id="Stroke-338" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="29.1553813" x2="37.2441303" y2="29.1553813" id="Stroke-339" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="34.0146115" x2="37.2441303" y2="34.0146115" id="Stroke-340" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85793004" y1="38.8738418" x2="37.2441303" y2="38.8738418" id="Stroke-341" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Tyre</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Tyre" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-58">
+            <g transform="translate(8.000000, 8.000000)">
+                <path d="M48,24 C48,37.2547556 37.2547556,48 24,48 C10.7452444,48 0,37.2547556 0,24 C0,10.7452444 10.7452444,0 24,0 C37.2547556,0 48,10.7452444 48,24 Z" id="Stroke-9" stroke="#50505A" stroke-width="2.475"></path>
+                <path d="M36.8,24 C36.8,31.0691556 31.0693333,36.8 24,36.8 C16.9306667,36.8 11.2,31.0691556 11.2,24 C11.2,16.9308444 16.9306667,11.2 24,11.2 C31.0693333,11.2 36.8,16.9308444 36.8,24 Z" id="Stroke-11" stroke="#50505A" stroke-width="2.475"></path>
+                <line x1="24" y1="0" x2="24" y2="3.2" id="Stroke-13" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="24" y1="44.8" x2="24" y2="48" id="Stroke-15" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="17.7883378" y1="0.81776" x2="18.6166044" y2="3.90878222" id="Stroke-17" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="29.3834489" y1="44.0912356" x2="30.2117156" y2="47.1822578" id="Stroke-19" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="12" y1="3.21536" x2="13.6" y2="5.98673778" id="Stroke-21" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="34.4" y1="42.0133333" x2="36" y2="44.7847111" id="Stroke-23" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="7.02944" y1="7.02942222" x2="9.29219556" y2="9.29217778" id="Stroke-25" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="38.7078044" y1="38.7078044" x2="40.97056" y2="40.97056" id="Stroke-27" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="3.21537778" y1="12" x2="5.98675556" y2="13.6" id="Stroke-29" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="42.0133333" y1="34.4" x2="44.7847111" y2="36" id="Stroke-31" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="0.817777778" y1="17.78832" x2="3.9088" y2="18.6165867" id="Stroke-33" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="44.0912533" y1="29.3834667" x2="47.1822756" y2="30.2117333" id="Stroke-35" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="48" y1="24" x2="44.8" y2="24" id="Stroke-37" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="3.2" y1="24" x2="0" y2="24" id="Stroke-39" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="47.1822222" y1="17.7883733" x2="44.0912" y2="18.61664" id="Stroke-41" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="3.90874667" y1="29.3834133" x2="0.817724444" y2="30.21168" id="Stroke-43" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="44.7846222" y1="12" x2="42.0132444" y2="13.6" id="Stroke-45" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="5.98666667" y1="34.4" x2="3.21528889" y2="36" id="Stroke-47" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="40.97056" y1="7.02942222" x2="38.7078044" y2="9.29217778" id="Stroke-49" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="9.29219556" y1="38.7078044" x2="7.02944" y2="40.97056" id="Stroke-51" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="36" y1="3.21541333" x2="34.4" y2="5.98661333" id="Stroke-53" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="13.6" y1="42.0133333" x2="12" y2="44.7845333" id="Stroke-55" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="30.2116622" y1="0.81776" x2="29.3833956" y2="3.90878222" id="Stroke-57" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="18.6165511" y1="44.0912356" x2="17.7882844" y2="47.1822578" id="Stroke-59" stroke="#50505A" stroke-width="2.475"></line>
+            </g>
+        </g>
+    </g>
+</svg>

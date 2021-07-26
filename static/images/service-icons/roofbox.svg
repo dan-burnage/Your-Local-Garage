@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Roofbox</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Roofbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-12">
+            <g transform="translate(8.000000, 21.000000)">
+                <path d="M0.0899616675,16.2874198 C0.0899616675,18.0779562 1.53852444,19.5269066 3.3285817,19.5269066" id="Stroke-648" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="3.3285817" y1="19.5269066" x2="42.192022" y2="19.5269066" id="Stroke-649" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="9.80582175" y1="22.7663934" x2="9.80582175" y2="19.5269066" id="Stroke-650" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="38.953402" y1="22.7663934" x2="38.953402" y2="19.5269066" id="Stroke-651" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="0.0899616675" y1="13.047933" x2="48.6692621" y2="13.047933" id="Stroke-652" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M48.6692621,13.047933 C48.6692621,16.6290057 45.7721366,19.5269066 42.192022,19.5269066" id="Stroke-653" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="0.0899616675" y1="13.047933" x2="0.0899616675" y2="16.2874198" id="Stroke-654" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M48.6692621,13.047933 C42.192022,3.32947256 32.0524425,0.0899857448 19.5216818,0.0899857448" id="Stroke-655" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="19.5216818" y1="0.0899857448" x2="13.0444418" y2="0.0899857448" id="Stroke-656" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M0.0899616675,13.047933 C3.3285817,3.32947256 5.88403282,0.0899857448 13.0444418,0.0899857448" id="Stroke-657" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

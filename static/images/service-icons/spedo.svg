@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Spedo</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Spedo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-9">
+            <g transform="translate(8.000000, 11.000000)">
+                <line x1="24.2897402" y1="0" x2="24.2897402" y2="4.85923022" id="Stroke-596" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M30.7669802,14.6941862 C28.9308626,21.1148491 27.988784,25.9863174 27.0943851,27.5358719 C26.2001661,29.0852464 24.2193902,29.6161623 22.6704302,28.7215241 C21.1214702,27.8270658 20.5906963,25.8457596 21.4849153,24.2963851 C22.3793142,22.7468305 26.1260377,19.4951057 30.7669802,14.6941862" id="Stroke-597" stroke="#50505A" stroke-width="2.5"></path>
+                <path d="M7.8153299,42.1133286 L40.7641505,42.1133286 C45.5592873,37.6750517 48.5793004,31.3461743 48.5793004,24.2961511 C48.5793004,10.8776568 37.7045541,0 24.2896502,0 C10.8749262,0 0,10.8776568 0,24.2961511 C0,31.3461743 3.0201931,37.6750517 7.8153299,42.1133286 Z" id="Stroke-598" stroke="#50505A" stroke-width="2.5"></path>
+                <line x1="19.4318101" y1="35.634355" x2="29.1476702" y2="35.634355" id="Stroke-599" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="36.4345653" y1="3.25507234" x2="34.0056003" y2="7.46334569" id="Stroke-600" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="45.325225" y1="12.1480756" x2="41.1180776" y2="14.5776907" id="Stroke-601" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="7.46136672" y1="34.0146115" x2="3.25421938" y2="36.4442267" id="Stroke-602" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="48.5793904" y1="24.2961511" x2="43.7214603" y2="24.2961511" id="Stroke-603" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="4.85802" y1="24.2961511" x2="8.99616673e-05" y2="24.2961511" id="Stroke-604" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="12.1449151" y1="3.25505435" x2="14.5738801" y2="7.46332769" id="Stroke-605" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="3.25430934" y1="12.1480756" x2="7.46145668" y2="14.5776907" id="Stroke-606" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="41.1181136" y1="34.0146115" x2="45.325261" y2="36.4442267" id="Stroke-607" stroke="#50505A" stroke-width="2.5"></line>
+            </g>
+        </g>
+    </g>
+</svg>

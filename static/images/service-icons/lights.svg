@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Lights</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Lights" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-59">
+            <g transform="translate(8.000000, 15.000000)">
+                <line x1="35.2" y1="7.95454545" x2="48" y2="7.95454545" id="Stroke-452" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="35.2" y1="14.3181818" x2="48" y2="14.3181818" id="Stroke-453" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="35.2" y1="20.6818182" x2="48" y2="20.6818182" id="Stroke-454" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="35.2" y1="27.0454545" x2="48" y2="27.0454545" id="Stroke-455" stroke="#50505A" stroke-width="2.475"></line>
+                <path d="M27.2,0 C28.0844444,0 28.8,0.711489899 28.8,1.59090909 L28.8,33.4090909 C28.8,34.2885101 28.0844444,35 27.2,35 C12.1656889,35 0,27.172904 0,17.5 C0,7.82709596 12.1656889,0 27.2,0 Z" id="Stroke-456" stroke="#50505A" stroke-width="2.475"></path>
+            </g>
+        </g>
+    </g>
+</svg>

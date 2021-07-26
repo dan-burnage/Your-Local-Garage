@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Rear Mirror</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Rear-Mirror" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-30">
+            <g transform="translate(8.000000, 21.000000)">
+                <line x1="37.2441303" y1="10.6183179" x2="30.7668903" y2="17.0972915" id="Stroke-381" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="30.7668903" y1="10.6183179" x2="27.5282702" y2="13.8578047" id="Stroke-382" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="24.2896502" y1="0.0899857448" x2="24.2896502" y2="6.56895937" id="Stroke-383" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="29.1475803" y1="0.0899857448" x2="19.4317202" y2="0.0899857448" id="Stroke-384" stroke="#50505A" stroke-width="2.5"></line>
+                <path d="M9.71586009,6.56895937 L38.8634403,6.56895937 C44.233792,6.56895937 48.5793004,12.3645813 48.5793004,19.5269066 C48.5793004,21.317443 47.1307377,22.7663934 45.3406804,22.7663934 L3.23862003,22.7663934 C1.44856277,22.7663934 0,21.317443 0,19.5269066 C0,12.3645813 4.34550839,6.56895937 9.71586009,6.56895937 Z" id="Stroke-385" stroke="#50505A" stroke-width="2.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

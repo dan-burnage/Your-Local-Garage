@@ -38,6 +38,10 @@
 		opacity: 0.2;
 	}
 
+	.mobile-hide {
+		display: none;
+	}
+
 	/* -- Grid - Mobile -- */
 
 	.wrapper {
@@ -112,24 +116,28 @@
 
 	/* -- Typography - Mobile -- */
 
+	h1, h2, h3, h4, h5, h6, p {
+		color: var(--Rhino);
+		margin-top: 0rem;
+	}
+
 	h1 {
 		font-size: 36px;
 		line-height: 46px;
 		font-weight: 700;
-		margin-top: 0.5rem;
-		margin-bottom: .5rem;
+		margin-bottom: 0.5rem;
 	}
 
 	h1.h1-plus {
 		font-size: 44px;
 		line-height: 54px;
+		margin-bottom: 0.75rem;
 	}
 
 	h2 {
 		font-size: 30px;
 		line-height: 40px;
 		font-weight: 700;
-		margin-top: 1rem;
 		margin-bottom: .5rem;
 	}
 
@@ -137,7 +145,6 @@
 		font-size: 26px;
 		line-height: 36px;
 		font-weight: 700;
-		margin-top: 1rem;
 		margin-bottom: .5rem;
 	}
 
@@ -145,7 +152,6 @@
 		font-size: 22px;
 		line-height: 32px;
 		font-weight: 700;
-		margin-top: 1rem;
 		margin-bottom: .5rem;
 	}
 
@@ -153,59 +159,27 @@
 		font-size: 18px;
 		line-height: 28px;
 		font-weight: 700;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
+		margin-bottom: .15rem;
 	}
 
 	h6 {
 		font-size: 18px;
 		line-height: 28px;
 		font-weight: 500;
-		margin-top: 1rem;
 		margin-bottom: .5rem;
 	}
 
 	p {
 		font-size: 14px;
 		line-height: 26px;
-		font-weight: 500;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
+		font-weight: 400;
+		margin-bottom: 0.75rem;
 	}
 
 	p.p-plus {
 		font-size: 16px;
 		line-height: 28px;
-	}
-
-	.button-link {
-		font-size: 14px;
-		line-height: 26px;
-		font-weight: 600;
-	}
-
-	.button-link > img {
-		widows: 16px;
-		height: 16px;
-		vertical-align: middle;
-		margin: 0 0 3px 12px;
-	}
-
-	.button {
-		font-size: 14px;
-		line-height: 28px;
-		font-weight: 600;
-		background-color: var(--AzureRadiance);
-		padding: 12px 32px;
-		border-radius: 24px;
-		transition: 0.3s;
-	}
-
-	.button > img {
-		widows: 16px;
-		height: 16px;
-		vertical-align: middle;
-		margin: 0 0 3px 12px;
+		font-weight: 400;
 	}
 
 	.caption {
@@ -216,14 +190,11 @@
 	.kicker {
 		font-size: 12px;
 		line-height: 22px;
-		margin-top: 0.5rem;
-		margin-bottom: .25rem;
+		margin-bottom: 0.5rem;
 		letter-spacing: 2px;
 		text-transform: uppercase;
-		color: var(--AzureRadiance);
+		color: var(--AzureRadiance) !important;
 	}
-
-
 
 }
 
@@ -238,6 +209,10 @@
 
 	#grid > .col-1 {
 		flex-basis: calc(8.333% - 32px);
+	}
+
+	.mobile-hide {
+		display: inherit;
 	}
 
 	/* -- Grid - Tablet -- */
@@ -266,7 +241,7 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(33.332% - 32px);
+		flex-basis: calc(23.332% - 32px);
 		margin: 0 16px;
 	}
 
@@ -281,8 +256,7 @@
 	}
 
 	.col-7 {
-		flex-basis: calc(99.996% - 32px);
-		margin: 0 16px;
+		flex-basis: calc(66.664% - 32px);
 	}
 
 	.col-8 {
@@ -353,16 +327,6 @@
 	}
 
 	p.p-plus {
-		font-size: 18px;
-		line-height: 30px;
-	}
-
-	.button-link {
-		font-size: 16px;
-		line-height: 28px;
-	}
-
-	.button {
 		font-size: 16px;
 		line-height: 28px;
 	}
@@ -373,8 +337,8 @@
 	}
 
 	.kicker {
-		font-size: 14px;
-		line-height: 24px;
+		font-size: 13px;
+		line-height: 23px;
 	}
 
 }
@@ -501,24 +465,14 @@
 		line-height: 30px;
 	}
 
-	.button-link {
-		font-size: 16px;
-		line-height: 28px;
-	}
-
-	.button {
-		font-size: 16px;
-		line-height: 28px;
-	}
-
 	.caption {
 		font-size: 14px;
 		line-height: 26px;
 	}
 
 	.kicker {
-		font-size: 14px;
-		line-height: 24px;
+		font-size: 12px;
+		line-height: 22px;
 	}
 
 }

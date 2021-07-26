@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Fuel</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Fuel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-53">
+            <g transform="translate(12.000000, 8.000000)">
+                <path d="M3.15384615,12.8 L12.6153846,3.2 C14.2415427,1.55004444 15.4366752,0 18.9230769,0 L34.6923077,0 C38.1787094,0 41,2.86257778 41,6.4 L41,44.8 C41,46.5687111 39.5893547,48 37.8461538,48 L3.15384615,48 C1.4106453,48 1.12588414e-13,46.5687111 1.12588414e-13,44.8 L1.12588414e-13,19.2 C1.12588414e-13,15.6625778 1.52768803,14.4499556 3.15384615,12.8 Z" id="Stroke-121" stroke="#50505A" stroke-width="2.475"></path>
+                <path d="M18.9230769,6.4 C17.1812778,6.4 15.7692308,7.83271111 15.7692308,9.6 C15.7692308,11.3672889 17.1812778,12.8 18.9230769,12.8 L31.5384615,12.8 C33.2802607,12.8 34.6923077,11.3672889 34.6923077,9.6 C34.6923077,7.83271111 33.2802607,6.4 31.5384615,6.4 L18.9230769,6.4 Z" id="Stroke-123" stroke="#50505A" stroke-width="2.475"></path>
+                <line x1="31.5384615" y1="41.6" x2="26.8076923" y2="35.2" id="Stroke-125" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="31.5384615" y1="19.2" x2="26.8076923" y2="25.6" id="Stroke-127" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="9.46153846" y1="19.2" x2="14.1923077" y2="25.6" id="Stroke-129" stroke="#50505A" stroke-width="2.475"></line>
+                <line x1="9.46153846" y1="41.6" x2="14.1923077" y2="35.2" id="Stroke-131" stroke="#50505A" stroke-width="2.475"></line>
+                <polygon id="Stroke-133" stroke="#50505A" stroke-width="2.475" points="14.1923077 35.2 26.8076923 35.2 26.8076923 25.6 14.1923077 25.6"></polygon>
+                <polyline id="Stroke-135" stroke="#50505A" stroke-width="2.475" points="10.25 5.6 6.30769231 1.6 0 8 3.94230769 12"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

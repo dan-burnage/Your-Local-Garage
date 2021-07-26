@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / Vehicle / Bushes</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.156863 0 0 0 0 0.203922 0 0 0 0 0.325490 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons-/-Vehicle-/-Bushes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Group-17">
+            <g transform="translate(8.000000, 8.000000)">
+                <polyline id="Stroke-432" stroke="#50505A" stroke-width="2.5" points="9.71586009 19.4369209 9.71586009 0 16.1931001 0 16.1931001 19.4369209"></polyline>
+                <line x1="19.4317202" y1="42.1133286" x2="48.5793004" y2="42.1133286" id="Stroke-433" stroke="#50505A" stroke-width="2.5"></line>
+                <line x1="22.6703402" y1="35.634355" x2="45.3406804" y2="35.634355" id="Stroke-434" stroke="#50505A" stroke-width="2.5"></line>
+                <polygon id="Stroke-435" stroke="#50505A" stroke-width="2.5" points="48.5793004 42.1133286 42.1020604 29.1553813 25.9089602 29.1553813 19.4317202 42.1133286 19.4317202 48.5923022 48.5793004 48.5923022"></polygon>
+                <polyline id="Stroke-436" stroke="#50505A" stroke-width="2.5" points="29.1475803 29.1553813 29.1475803 22.6764077 38.8634403 22.6764077 38.8634403 29.1553813"></polyline>
+                <polyline id="Stroke-437" stroke="#50505A" stroke-width="2.5" points="25.9089602 29.1553813 22.6703402 25.9158945 22.6703402 19.4369209 3.23862003 19.4369209 3.23862003 25.9158945 -2.84217094e-14 29.1553813 -2.84217094e-14 38.8738418 21.0510302 38.8738418"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
