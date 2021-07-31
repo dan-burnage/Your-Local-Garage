@@ -560,6 +560,19 @@ body {
 		z-index: 1
 	}
 
+	.sec-reviews .align-left img {
+		border-radius: 8px;
+		position: relative;
+		width: 80%;
+		z-index: 1
+	}
+
+	.review-stars {
+		border-radius: 0 !important;
+		width: 100% !important;
+		margin: 6px 0;
+	}
+
 	.sec-reviews-container {
 		background: var(--Onahau);
 		position: relative;

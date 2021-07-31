@@ -308,7 +308,7 @@
 							<cms:if sec-isr-booking='Yes'>
 								<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
 							</cms:if>
-							<cms:if sec-ir-button>
+							<cms:if sec-isr-button>
 								<a href="<cms:show sec-isr-link />"><span class="button">
 										<cms:show sec-isr-button /><img src="static/images/arrow-forward.svg" />
 									</span></a>
@@ -372,6 +372,7 @@
 					<div class="col-6 align-left">
 						<img class="split-img" src="<cms:show sec-reviews-image />">
 						<div class="sec-reviews-container">
+							<img class="review-stars" src="/static/images/<cms:get_field 'trustpilot_rating' masterpage='settings.php' />.png">
 							<cms:get_field 'trustpilot' masterpage='settings.php' />
 						</div>
 					</div>
