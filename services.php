@@ -180,7 +180,7 @@
 
 	</div>
 
-	<div class="sec-cta">
+	<div class="sec-cta service-cta">
 		<div class="wrapper">
 			<div class="col-12 sec-cta-container">
 

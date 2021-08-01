@@ -29,7 +29,15 @@
 
 		<cms:editable name='footer_address' label='Address content' type='textarea' group='footer_group' order='4' />
 
-		<cms:repeatable name='quick_links' label='Quick Links' group='footer_group' order='5'>
+		<cms:repeatable name='serv_links' label='Service Links' group='footer_group' order='5'>
+
+			<cms:editable name='serv_links_text' label='Link Text' type='text' col_width='200' />
+
+			<cms:editable name='serv_links_link' label='Link URL' type='text' />
+
+		</cms:repeatable>
+
+		<cms:repeatable name='quick_links' label='Quick Links' group='footer_group' order='6'>
 
 			<cms:editable name='quick_links_text' label='Link Text' type='text' col_width='200' />
 
@@ -37,7 +45,7 @@
 
 		</cms:repeatable>
 
-		<cms:repeatable name='footer_links' label='Footer Links' group='footer_group' order='6'>
+		<cms:repeatable name='footer_links' label='Footer Links' group='footer_group' order='7'>
 
 			<cms:editable name='footer_links_text' label='Link Text' type='text' col_width='200' />
 
@@ -45,11 +53,11 @@
 
 		</cms:repeatable>
 
-		<cms:editable name='facebook_link' label='Facebook page URL' type='text' group='footer_group' order='7' />
+		<cms:editable name='facebook_link' label='Facebook page URL' type='text' group='footer_group' order='8' />
 
-		<cms:editable name='instagram_link' label='Instagram page URL' type='text' group='footer_group' order='8' />
+		<cms:editable name='instagram_link' label='Instagram page URL' type='text' group='footer_group' order='9' />
 
-		<cms:editable name='twitter_link' label='Twitter page URL' type='text' group='footer_group' order='9' />
+		<cms:editable name='twitter_link' label='Twitter page URL' type='text' group='footer_group' order='10' />
 
 	<cms:editable name='superuser' label='Super User Settings' desc='You should check before changing these settings' type='group' order='3' />
 

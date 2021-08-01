@@ -28,19 +28,19 @@
 		</ul>
 
 		<ul class="col-2 align-right sec-footer-content">
-			<li class="caption"><strong>Quick links<br></strong></li>
-			<cms:get_field 'quick_links' masterpage='settings.php'>
-				<cms:show_repeatable 'quick_links'>
-					<a href="<cms:show quick_links_link />">
+			<li class="caption"><strong>Services<br></strong></li>
+			<cms:get_field 'serv_links' masterpage='settings.php'>
+				<cms:show_repeatable 'serv_links'>
+					<a href="<cms:show serv_links_link />">
 						<li class="caption">
-							<cms:show quick_links_text /><br>
+							<cms:show serv_links_text /><br>
 						</li>
 					</a>
 				</cms:show_repeatable>
 			</cms:get_field>
 		</ul>
 
-		<ul class="col-2 align-right sec-footer-content">
+		<ul class="col-2 align-right sec-footer-content mobile-hide">
 			<li class="caption"><strong>Quick links<br></strong></li>
 			<cms:get_field 'quick_links' masterpage='settings.php'>
 				<cms:show_repeatable 'quick_links'>

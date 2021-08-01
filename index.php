@@ -160,7 +160,7 @@
 				</cms:if>
 			</div>
 		</div>
-		<div class="sec-hero-scroll">
+		<div class="sec-hero-scroll tablet-hide">
 			<div class="scroller"></div>
 		</div>
 		<div class="background-image"><img src="<cms:show hero_image />" /></div>
@@ -276,7 +276,7 @@
 					<div class="col-12 sec-cta-container">
 
 						<div class="sec-cta-content">
-							<h1 class="h1">
+							<h1>
 								<cms:show sec-cta-title />
 							</h1>
 

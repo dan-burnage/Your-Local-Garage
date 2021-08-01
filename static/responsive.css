@@ -55,10 +55,6 @@
 		margin: 0 24px;
 	}
 
-	.wrapper > div:not(.background-image) {
-		max-width: calc(99.996% - 16px);
-	}
-
 	.col-1 {
 		flex-basis: calc(49.998% - 16px);
 		margin: 0 8px;
@@ -75,7 +71,7 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
@@ -145,7 +141,7 @@
 
 	h2 {
 		font-size: 30px;
-		line-height: 40px;
+		line-height: 38px;
 		font-weight: 700;
 		margin-bottom: .5rem;
 	}
@@ -234,10 +230,6 @@
 		margin: 0 32px;
 	}
 
-	.wrapper > div:not(.background-image) {
-		max-width: calc(1240px + 32px);
-	}
-
 	.col-1 {
 		flex-basis: calc(33.332% - 32px);
 		margin: 0 16px;
@@ -254,7 +246,7 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(33.332% - 32px);
+		flex-basis: calc(24.999% - 32px);
 		margin: 0 16px;
 	}
 
@@ -269,7 +261,7 @@
 	}
 
 	.col-7 {
-		flex-basis: calc(66.664% - 32px);
+		flex-basis: calc(58.331% - 32px);
 	}
 
 	.col-8 {
@@ -356,16 +348,22 @@
 
 }
 
-/* Landing Hero - Extra Step */
+@media screen and (min-width: 768px) {
+
+	.col-7 {
+		flex-basis: calc(66.664% - 32px);
+	}
+
+	.col-4 {
+		flex-basis: calc(24.999% - 32px);
+	}
+}
+
 @media screen and (min-width: 1080px) {
 
 	.col-8 {
 		flex-basis: calc(66.664% - 32px);
 		margin: 0 16px;
-	}
-
-	.tablet-hide {
-		display: block;
 	}
 
 }
@@ -491,6 +489,10 @@
 	.kicker {
 		font-size: 12px;
 		line-height: 22px;
+	}
+
+	.tablet-hide {
+		display: block;
 	}
 
 }
