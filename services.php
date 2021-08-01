@@ -165,7 +165,7 @@
 				</cms:if>
 			</div>
 		</div>
-		<div class="hero-image"><img src="<cms:show hero_image />" /></div>
+		<div class="hero-image mobile-hide"><img src="<cms:show hero_image />" /></div>
 	</div>
 
 	<div class="serv-content">
@@ -176,7 +176,7 @@
 
 				<cms:show_repeatable 'services' >
 
-					<div class="service-item">
+					<a id="<cms:show serv-li-title />"></a><div class="service-item">
 						<img src="/static/images/service-icons/<cms:show serv-li-icon />.svg" />
 						<div>
 						<h5><cms:show serv-li-title /></h5>
@@ -255,10 +255,10 @@
 
 			<div class="col-3 align-left sec-footer-content">
 				<img src="static/images/joint-logo-full.svg"/>
-				<span class="caption opacity">Your Local Garage and FRESH MOTORS are <br>® registered trademarks of Fresh Motors Ltd</span>
+				<span class="caption opacity">Your Local Garage and FRESH MOTORS are ® registered trademarks of Fresh Motors Ltd</span>
 			</div>
 
-			<div class="col-4 sec-footer-content">
+			<div class="col-3 align-right sec-footer-content tablet-hide">
 				<span class="caption"><strong><cms:get_field 'footer_info_title' masterpage='settings.php' /></strong></span>
 				<span class="caption"><cms:get_field 'footer_info' masterpage='settings.php' /><br><br> Tel: <a href="">01953 797272</a><br>Email: <a href="">help@yourlocalgarage.co.uk</a></span>
 			</div>
@@ -266,6 +266,15 @@
 			<ul class="col-2 align-right sec-footer-content">
 				<li class="caption"><strong><cms:get_field 'footer_address_title' masterpage='settings.php' /><br></strong></li>
 				<li class="caption"><cms:nl2br><cms:get_field 'footer_address' masterpage='settings.php' /></cms:nl2br></li>
+			</ul>
+
+			<ul class="col-2 align-right sec-footer-content">
+				<li class="caption"><strong>Quick links<br></strong></li>
+				<cms:get_field 'quick_links' masterpage='settings.php' >
+					<cms:show_repeatable 'quick_links'>
+						<a href="<cms:show quick_links_link />"><li class="caption"><cms:show quick_links_text /><br></li></a>
+					</cms:show_repeatable>
+				</cms:get_field>
 			</ul>
 
 			<ul class="col-2 align-right sec-footer-content">

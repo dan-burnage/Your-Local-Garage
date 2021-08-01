@@ -42,6 +42,11 @@
 		display: none;
 	}
 
+	.tablet-hide {
+		display: none;
+	}
+
+
 	/* -- Grid - Mobile -- */
 
 	.wrapper {
@@ -75,12 +80,12 @@
 	}
 
 	.col-5 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
 	.col-6 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
@@ -119,6 +124,10 @@
 	h1, h2, h3, h4, h5, h6, p {
 		color: var(--Rhino);
 		margin-top: 0rem;
+	}
+
+	ul {
+		padding: 0;
 	}
 
 	h1 {
@@ -212,7 +221,11 @@
 	}
 
 	.mobile-hide {
-		display: inherit;
+		display: block;
+	}
+
+	.tablet-hide {
+		display: none;
 	}
 
 	/* -- Grid - Tablet -- */
@@ -231,7 +244,7 @@
 	}
 
 	.col-2 {
-		flex-basis: calc(33.332% - 32px);
+		flex-basis: calc(16.666% - 32px);
 		margin: 0 16px;
 	}
 
@@ -241,7 +254,7 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(23.332% - 32px);
+		flex-basis: calc(33.332% - 32px);
 		margin: 0 16px;
 	}
 
@@ -287,8 +300,8 @@
 	/* -- Typography - Tablet -- */
 
 	h1 {
-		font-size: 56px;
-		line-height: 66px;
+		font-size: 46px;
+		line-height: 56px;
 	}
 
 	h1.h1-plus {
@@ -345,9 +358,14 @@
 
 /* Landing Hero - Extra Step */
 @media screen and (min-width: 1080px) {
+
 	.col-8 {
 		flex-basis: calc(66.664% - 32px);
 		margin: 0 16px;
+	}
+
+	.tablet-hide {
+		display: block;
 	}
 
 }

@@ -143,7 +143,7 @@
 
 		<nav class="wrapper">
 
-			<div class="col-3 align-left nav-logo"><img src="static/images/joint-logo.svg" class="header-logo" /></div>
+			<div class="col-3 align-left nav-logo"><a href="/"><img src="static/images/joint-logo.svg" class="header-logo" /></a></div>
 
 			<ul class="nav-menu col-9 align-right">
 
@@ -211,48 +211,24 @@
 
 		<div class="wrapper carousel-wrapper">
 
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Servicing
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Brakes
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Wheel alignment
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Servicing
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Brakes
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Servicing
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Brakes
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Wheel alignment
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/car.svg" />Servicing
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Class 1–7 MOTs
-			</div>
-			<div class="carousel-item kicker">
-				<img src="/static/images/service-icons/oil.svg" />Brakes
-			</div>
+			<cms:get_field 'services' masterpage='services.php' >
+
+				<cms:show_repeatable 'services'>
+
+					<cms:if serv-li-content>
+						<a href="/services.php#<cms:show serv-li-title />"><div class="carousel-item kicker">
+							<img src="/static/images/service-icons/<cms:show serv-li-icon/>.svg" />
+							<cms:if>
+								<cms:show serv-li-shorttitle/>
+							<cms:else />
+								<cms:show serv-li-title/>
+							</cms:if>
+						</div></a>
+					</cms:if>
+
+				</cms:show_repeatable>
+
+			</cms:get_field>
 
 		</div>
 
@@ -262,7 +238,8 @@
 
 		<cms:if section_type='Image-split Left'>
 
-			<div id="<cms:show section_id />" class="sec-split">
+			<a id="<cms:show section_id />"></a>
+			<div class="sec-split">
 				<div class="wrapper">
 					<div class="col-6 align-left">
 						<img class="split-img" src="<cms:show sec-isl-image />">
@@ -295,8 +272,12 @@
 
 		<cms:if section_type='Image-split Right'>
 
-			<div id="<cms:show section_id />" class="sec-split">
+			<a id="<cms:show section_id />"></a>
+			<div class="sec-split">
 				<div class="wrapper">
+					<div class="col-6 align-right" style="order:2;">
+						<img class="split-img" src="<cms:show sec-isr-image />">
+					</div>
 					<div class="col-5 align-left">
 						<div>
 							<h2>
@@ -317,9 +298,6 @@
 								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary"><cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" /></span></a>
 							</cms:if>
 						</div>
-					</div>
-					<div class="col-6 align-right">
-						<img class="split-img" src="<cms:show sec-isr-image />">
 					</div>
 				</div>
 			</div>
@@ -366,7 +344,8 @@
 
 		<cms:if section_type='Reviews'>
 
-			<div id="<cms:show section_id />" class="sec-reviews">
+			<a id="<cms:show section_id />"></a>
+			<div class="sec-reviews">
 				<div class="wrapper">
 
 					<div class="col-6 align-left">

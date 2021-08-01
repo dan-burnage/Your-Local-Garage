@@ -64,6 +64,13 @@ body {
 	background-color: var(--White);
 }
 
+:target {
+  display: block;
+  position: relative;
+  top: -40px;
+  visibility: hidden;
+}
+
 /* Mobile */
 @media screen and (min-width: 0px) {
 
@@ -147,7 +154,6 @@ body {
 		opacity: 1;
 		z-index: 2;
 		transition: 0.4s;
-
     }
 
 	.header-logo {
@@ -165,7 +171,7 @@ body {
 
 	.header .button-link a {
 		margin: 0 0 0 0;
-		font-size: 22px;
+		font-size: 20px;
 		font-weight: 400;
 		color: var(--White);
 	}
@@ -252,7 +258,7 @@ body {
 	}
 
 	.sec-footer-content img {
-		height: 74px;
+		width: 100%;
 		margin-bottom: 0.5rem;
 	}
 
@@ -304,7 +310,7 @@ body {
 }
 
 /* Tablet */
-@media screen and (min-width: 929px) {
+@media screen and (min-width: 937px) {
 
 
 	.header {
@@ -405,6 +411,10 @@ body {
 /* Mobile */
 @media screen and (min-width: 0px) {
 
+	.sec-split .wrapper {
+		display: inline-block;
+	}
+
 	/* ----- Hero ----- */
 
 	.sec-hero {
@@ -415,7 +425,7 @@ body {
 
 
 	.sec-hero.small-hero {
-		padding: 2.5rem 0 0rem 0;
+		padding: 3rem 0 0rem 0;
 		overflow: hidden;
 	}
 
@@ -484,7 +494,7 @@ body {
 		box-sizing: content-box;
 		left: 50%;
 		margin-left: -9px;
-		transform: translateY(25vh);
+		transform: translateY(20vh);
 	}
 	.scroller {
 	  width: 4px;
@@ -506,7 +516,7 @@ body {
 	/* ----- Image Split ----- */
 
 	.sec-split {
-		margin: 4rem 0;
+		margin: 2rem 0;
 	}
 
 	.split-img {
@@ -592,10 +602,18 @@ body {
 /* Tablet */
 @media screen and (min-width: 720px) {
 
+	.sec-split .wrapper {
+		display: flex;
+	}
+
+	.sec-hero .background-image {
+		margin-top: -5rem;
+	}
+
 	.sec-hero .background-image img {
 		width: auto;
-		max-height: 50vh;
-		margin: 0 -5vw;
+		max-height: 45vh;
+		margin: 0 -8vw;
 		float: right;
 	}
 
@@ -607,16 +625,23 @@ body {
 		padding: 2.25rem 33.332% 2.25rem 8.333%;
 	}
 
+	.sec-split {
+		margin: 4rem 0;
+	}
+
 }
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
 
+	.sec-hero .background-image {
+		margin-top: -6rem;
+	}
+
 	.sec-hero .background-image img {
-		width: 70vw;
-		max-width: 1366px;
+		width: 95vw;
 		max-height: 100vh;
-		margin: 0 0 0 0;
+		margin: 0 -5vw 0 0;
 	}
 
 	.sec-cta-container {
@@ -628,8 +653,13 @@ body {
 /* Desktop Large */
 @media screen and (min-width: 1700px) {
 
+	.sec-hero .background-image {
+		margin-top: -7rem;
+	}
+
 	.sec-hero .background-image img {
-		margin: 0 25vh 0 0;
+		max-width: 1650px;
+		margin: 0 -10vh 0 0;
 	}
 
 	.sec-cta-container {
@@ -658,6 +688,7 @@ body {
 		background-color: var(--AzureRadiance);
 		display: inline-block;
 		padding: 5px 24px 5px 24px;
+		margin: 0 4px 8px 0;
 		border-radius: 24px;
 		transition: 0.3s;
 		cursor: pointer;
@@ -674,6 +705,7 @@ body {
 		border: 2px;
 		border-style: solid;
 		border-color: var(--AzureRadiance);
+		margin: 0 4px 8px 0 !important;
 	}
 
 	.sidebar .secondary {
@@ -1043,7 +1075,7 @@ body {
 
 	.service-item {
 		border-bottom-style: solid;
-		border-bottom-width: 2px;
+		border-bottom-width: 1px;
 		border-color: var(--Onahau);
 		padding-bottom: 24px;
 		margin-bottom: 40px;
