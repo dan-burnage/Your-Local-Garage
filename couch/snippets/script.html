@@ -1,0 +1,56 @@
+<script type="text/javascript">
+
+	var modal = document.getElementById('modal', 'modal-overlay');
+
+	function goBack() {
+		window.history.back();
+	}
+
+	const hamburger = document.querySelector(".hamburger");
+	const navMenu = document.querySelector(".nav-menu");
+
+	hamburger.addEventListener("click", mobileMenu);
+
+	function mobileMenu() {
+		hamburger.classList.toggle("active");
+		navMenu.classList.toggle("active");
+	}
+
+	const navLink = document.querySelectorAll(".nav-link");
+
+	navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+	function closeMenu() {
+		hamburger.classList.remove("active");
+		navMenu.classList.remove("active");
+	}
+
+	$(document).ready(function() {
+		$('.carousel-wrapper').slick({
+			slidesToShow: 7,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			arrows: true,
+			dots: false,
+			pauseOnHover: false,
+			responsive: [{
+				breakpoint: 860,
+				settings: {
+					slidesToShow: 5
+				}
+			}, {
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 3
+				}
+			}, {
+				breakpoint: 460,
+				settings: {
+					slidesToShow: 2
+				}
+			}]
+		});
+	});
+
+</script>

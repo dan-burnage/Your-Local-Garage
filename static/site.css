@@ -411,7 +411,7 @@ body {
 /* Mobile */
 @media screen and (min-width: 0px) {
 
-	.sec-split .wrapper {
+	.sec-split .wrapper, .sec-reviews .wrapper {
 		display: inline-block;
 	}
 
@@ -602,7 +602,7 @@ body {
 /* Tablet */
 @media screen and (min-width: 720px) {
 
-	.sec-split .wrapper {
+	.sec-split .wrapper, .sec-reviews .wrapper {
 		display: flex;
 	}
 

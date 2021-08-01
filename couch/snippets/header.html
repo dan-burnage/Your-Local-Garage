@@ -1,0 +1,52 @@
+<header class="header">
+
+	<nav class="wrapper">
+
+		<div class="col-3 align-left nav-logo"><a href="/"><img src="static/images/joint-logo.svg" class="header-logo" /></a></div>
+
+		<ul class="nav-menu col-9 align-right">
+
+			<cms:get_field 'nav_links' masterpage='settings.php'>
+
+				<cms:show_repeatable 'nav_links'>
+
+					<li class="button-link"><a href="<cms:show nav_links_link />">
+							<cms:show nav_links_text />
+						</a></li>
+
+				</cms:show_repeatable>
+
+			</cms:get_field>
+
+			<cms:if g_nav_contact='true'>
+				<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />">
+					<li class="button secondary">
+						<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" />
+					</li>
+				</a>
+			</cms:if>
+
+			<cms:if g_nav_booking='true'>
+				<li onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></li>
+			</cms:if>
+
+			<cms:if g_nav_button>
+				<a href="<cms:get_field 'nav_buttonlink' masterpage='settings.php' />">
+					<li class="button">
+						<cms:get_field 'nav_button' masterpage='settings.php' /><img src="static/images/arrow-forward.svg" />
+					</li>
+				</a>
+			</cms:if>
+
+
+		</ul>
+
+		<div class="hamburger align-right">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+
+	</nav>
+
+</header>
