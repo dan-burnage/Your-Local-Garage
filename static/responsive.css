@@ -42,16 +42,17 @@
 		display: none;
 	}
 
+	.tablet-hide {
+		display: none;
+	}
+
+
 	/* -- Grid - Mobile -- */
 
 	.wrapper {
 		display: flex;
 		flex-wrap: nowrap;
 		margin: 0 24px;
-	}
-
-	.wrapper > div:not(.background-image) {
-		max-width: calc(99.996% - 16px);
 	}
 
 	.col-1 {
@@ -70,17 +71,17 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
 	.col-5 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
 	.col-6 {
-		flex-basis: calc(49.998% - 16px);
+		flex-basis: calc(99.996% - 16px);
 		margin: 0 8px;
 	}
 
@@ -121,6 +122,10 @@
 		margin-top: 0rem;
 	}
 
+	ul {
+		padding: 0;
+	}
+
 	h1 {
 		font-size: 36px;
 		line-height: 46px;
@@ -136,7 +141,7 @@
 
 	h2 {
 		font-size: 30px;
-		line-height: 40px;
+		line-height: 38px;
 		font-weight: 700;
 		margin-bottom: .5rem;
 	}
@@ -212,7 +217,11 @@
 	}
 
 	.mobile-hide {
-		display: inherit;
+		display: block;
+	}
+
+	.tablet-hide {
+		display: none;
 	}
 
 	/* -- Grid - Tablet -- */
@@ -221,17 +230,13 @@
 		margin: 0 32px;
 	}
 
-	.wrapper > div:not(.background-image) {
-		max-width: calc(1240px + 32px);
-	}
-
 	.col-1 {
 		flex-basis: calc(33.332% - 32px);
 		margin: 0 16px;
 	}
 
 	.col-2 {
-		flex-basis: calc(33.332% - 32px);
+		flex-basis: calc(16.666% - 32px);
 		margin: 0 16px;
 	}
 
@@ -241,7 +246,7 @@
 	}
 
 	.col-4 {
-		flex-basis: calc(23.332% - 32px);
+		flex-basis: calc(24.999% - 32px);
 		margin: 0 16px;
 	}
 
@@ -256,7 +261,7 @@
 	}
 
 	.col-7 {
-		flex-basis: calc(66.664% - 32px);
+		flex-basis: calc(58.331% - 32px);
 	}
 
 	.col-8 {
@@ -287,8 +292,8 @@
 	/* -- Typography - Tablet -- */
 
 	h1 {
-		font-size: 56px;
-		line-height: 66px;
+		font-size: 46px;
+		line-height: 56px;
 	}
 
 	h1.h1-plus {
@@ -343,8 +348,19 @@
 
 }
 
-/* Landing Hero - Extra Step */
+@media screen and (min-width: 768px) {
+
+	.col-7 {
+		flex-basis: calc(66.664% - 32px);
+	}
+
+	.col-4 {
+		flex-basis: calc(24.999% - 32px);
+	}
+}
+
 @media screen and (min-width: 1080px) {
+
 	.col-8 {
 		flex-basis: calc(66.664% - 32px);
 		margin: 0 16px;
@@ -473,6 +489,10 @@
 	.kicker {
 		font-size: 12px;
 		line-height: 22px;
+	}
+
+	.tablet-hide {
+		display: block;
 	}
 
 }
