@@ -42,7 +42,7 @@
 
 		<cms:editable name='serv-li-shorttitle' label='Short title' type='text' />
 
-		<cms:editable name='serv-li-content' label='Content' type='richtext' />
+		<cms:editable name='serv-li-content' label='Content' type='nicedit' />
 
 	</cms:repeatable>
 

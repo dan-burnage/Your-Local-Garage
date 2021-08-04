@@ -98,12 +98,6 @@ body {
 	}
 }
 
-/* Desktop */
-@media screen and (min-width: 1280px) {}
-
-/* Desktop Large */
-@media screen and (min-width: 1700px) {}
-
 /* ----- -------------- ----- */
 /* ----- -------------- ----- */
 /* ----- --Navigation-- ----- */
@@ -433,9 +427,6 @@ body {
 		height: 56px;
 	}
 }
-
-/* Desktop Large */
-@media screen and (min-width: 1700px) {}
 
 /* ----- -------------- ----- */
 /* ----- -------------- ----- */
@@ -985,12 +976,6 @@ body {
 
 }
 
-/* Desktop */
-@media screen and (min-width: 1280px) {}
-
-/* Desktop Large */
-@media screen and (min-width: 1700px) {}
-
 /* ----- -------------- ----- */
 /* ----- -------------- ----- */
 /* ----- ----Modal----- ----- */
@@ -1101,18 +1086,6 @@ body {
 	}
 
 }
-
-/* Desktop */
-@media screen and (min-width: 1280px) {}
-
-/* Desktop Large */
-@media screen and (min-width: 1700px) {}
-
-
-
-/* Mobile */
-@media screen and (min-width: 0px) {}
-
 
 /* ----- -------------- ----- */
 /* ----- -------------- ----- */
@@ -1378,5 +1351,3 @@ body {
 
 }
 
-/* Desktop Large */
-@media screen and (min-width: 1700px) {}
