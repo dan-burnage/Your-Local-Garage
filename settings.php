@@ -63,8 +63,6 @@
 
 		<cms:editable name='show_grid' label='Show site grid' desc='This change is only visible to Burnage' opt_values='Hide=false | Show=true' group='superuser' type='radio' order='5' />
 
-		<cms:editable name='booking_link' label='Techman booking link' group='superuser' type='text' order='1' />
-
 		<cms:editable name='phone_number' label='Global phone number' desc='This changes the number used accross phone buttons' group='superuser' type='text' order='2' />
 
 		<cms:editable name='trustpilot' label='Truspilot embed code' desc='Add trustpilot embed code here' group='superuser' type='textarea' order='3' no_xss_check='1' />
