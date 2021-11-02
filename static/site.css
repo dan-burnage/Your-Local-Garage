@@ -55,6 +55,7 @@ html {
 }
 
 body {
+	scroll-behavior: smooth;
 	height: inherit;
 	margin: 0;
 	padding: 0;
