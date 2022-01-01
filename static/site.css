@@ -512,16 +512,13 @@ body {
 		width: 65%;
 		max-height: 784px;
 		max-width: 650px;
-		margin: -13rem -1rem 0 auto;
+		margin: -11rem -1rem 0 auto;
 		padding-bottom: -1rem;
 		display: inline-block;
 		float: right;
 		top: 0;
 		position: relative;
 		z-index: 0;
-
-		background: aqua;
-
 	}
 
 	.sec-hero > .wrapper {
@@ -776,7 +773,7 @@ body {
 @media screen and (min-width: 956px) {
 
 	.sec-hero .background-image {
-		margin-top: -15vh;
+		margin-top: -11vh;
 	}
 
 	.sec-hero .background-image img {
