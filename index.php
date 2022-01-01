@@ -128,7 +128,7 @@
 
 <head>
 
-	<cms:embed 'gtag.html' />
+	<cms:embed 'gtag-head.html' />
 	<cms:embed 'og-meta.html' />
 	<cms:embed 'favicons.html' />
 	<cms:embed 'head-links.html' />
@@ -136,6 +136,8 @@
 </head>
 
 <body>
+
+	<cms:embed 'gtag-body.html' />
 
 	<cms:embed 'grid-overlay.html' />
 
@@ -152,18 +154,18 @@
 				<h1 class="h1-plus">
 					<cms:show hero_title />
 				</h1>
-				<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+				<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
 				<cms:if hero_button>
-					<a href="<cms:show hero_buttonlink />"><span class="button secondary">
-							<cms:show hero_button /><img src="static/images/arrow-forward.svg" />
-						</span></a>
+					<a href="<cms:show hero_buttonlink />"><button class="button secondary">
+							<cms:show hero_button /><img src="static/images/arrow-forward.svg" alt="" />
+						</button></a>
 				</cms:if>
 			</div>
 		</div>
 		<div class="sec-hero-scroll tablet-hide">
 			<div class="scroller"></div>
 		</div>
-		<div class="background-image"><img src="<cms:show hero_image />" /></div>
+		<div class="background-image"><img src="<cms:show hero_image />" alt="" /></div>
 	</div>
 
 	<div id="services" class="sec-carousel">
@@ -177,7 +179,7 @@
 					<cms:if serv-li-content>
 						<a href="/services.php#<cms:show serv-li-title />">
 							<div class="carousel-item kicker">
-								<img src="/static/images/service-icons/<cms:show serv-li-icon/>.svg" />
+								<img src="/static/images/service-icons/<cms:show serv-li-icon/>.svg" alt="" />
 								<cms:if>
 									<cms:show serv-li-shorttitle />
 									<cms:else />
@@ -203,7 +205,7 @@
 			<div class="sec-split">
 				<div class="wrapper">
 					<div class="col-6 align-left">
-						<img class="split-img" src="<cms:show sec-isl-image />">
+						<img class="split-img" src="<cms:show sec-isl-image />" alt="">
 					</div>
 					<div class="col-5 align-right">
 						<div>
@@ -214,17 +216,17 @@
 								<cms:show sec-isl-content />
 							</p>
 							<cms:if sec-isl-booking='Yes'>
-								<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
 							</cms:if>
 							<cms:if sec-isl-button>
-								<a href="<cms:show sec-isl-link />"><span class="button">
-										<cms:show sec-isl-button /><img src="static/images/arrow-forward.svg" />
-									</span></a>
+								<a href="<cms:show sec-isl-link />"><button class="button">
+										<cms:show sec-isl-button /><img src="static/images/arrow-forward.svg" alt="" />
+									</button></a>
 							</cms:if>
 							<cms:if sec-isl-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary">
-										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" />
-									</span></a>
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" alt="" />
+									</button></a>
 							</cms:if>
 						</div>
 					</div>
@@ -239,7 +241,7 @@
 			<div class="sec-split">
 				<div class="wrapper">
 					<div class="col-6 align-right" style="order:2;">
-						<img class="split-img" src="<cms:show sec-isr-image />">
+						<img class="split-img" src="<cms:show sec-isr-image />" alt="">
 					</div>
 					<div class="col-5 align-left">
 						<div>
@@ -250,17 +252,17 @@
 								<cms:show sec-isr-content />
 							</p>
 							<cms:if sec-isr-booking='Yes'>
-								<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
 							</cms:if>
 							<cms:if sec-isr-button>
-								<a href="<cms:show sec-isr-link />"><span class="button">
-										<cms:show sec-isr-button /><img src="static/images/arrow-forward.svg" />
-									</span></a>
+								<a href="<cms:show sec-isr-link />"><button class="button">
+										<cms:show sec-isr-button /><img src="static/images/arrow-forward.svg" alt="" />
+									</button></a>
 							</cms:if>
 							<cms:if sec-isr-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary">
-										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" />
-									</span></a>
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" alt="" />
+									</button></a>
 							</cms:if>
 						</div>
 					</div>
@@ -281,23 +283,23 @@
 							</h1>
 
 							<cms:if sec-cta-booking='Yes'>
-								<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
 							</cms:if>
 
 							<cms:if sec-cta-button>
-								<a href="<cms:show sec-cta-link />"><span class="button">
-										<cms:show sec-cta-button /><img src="static/images/arrow-forward.svg" />
-									</span></a>
+								<a href="<cms:show sec-cta-link />"><button class="button">
+										<cms:show sec-cta-button /><img src="static/images/arrow-forward.svg" alt="" />
+									</button></a>
 							</cms:if>
 
 							<cms:if sec-cta-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary">
-										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" />
-									</span></a>
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" alt="" />
+									</button></a>
 							</cms:if>
 						</div>
 
-						<div class="sec-cta-image"><img src="<cms:show sec-cta-image />" /></div>
+						<div class="sec-cta-image"><img src="<cms:show sec-cta-image />" alt="" /></div>
 
 					</div>
 
@@ -314,9 +316,9 @@
 				<div class="wrapper">
 
 					<div class="col-6 align-left">
-						<img class="split-img" src="<cms:show sec-reviews-image />">
+						<img class="split-img" src="<cms:show sec-reviews-image />" alt="">
 						<div class="sec-reviews-container">
-							<img class="review-stars" src="/static/images/<cms:get_field 'trustpilot_rating' masterpage='settings.php' />.png">
+							<img class="review-stars" src="/static/images/<cms:get_field 'trustpilot_rating' masterpage='settings.php' />.png" alt="Trustpilot rating">
 							<cms:get_field 'trustpilot' masterpage='settings.php' />
 						</div>
 					</div>
@@ -330,9 +332,9 @@
 								<cms:show sec-reviews-content />
 							</p>
 							<cms:if sec-reviews-button>
-								<a href="<cms:show sec-reviews-link />"><span class="button">
-										<cms:show sec-reviews-button /><img src="static/images/arrow-forward.svg" />
-									</span></a>
+								<a href="<cms:show sec-reviews-link />"><button class="button">
+										<cms:show sec-reviews-button /><img src="static/images/arrow-forward.svg" alt="" />
+									</button></a>
 							</cms:if>
 						</div>
 					</div>

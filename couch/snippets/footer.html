@@ -3,7 +3,7 @@
 	<div class="wrapper">
 
 		<div class="col-3 align-left sec-footer-content">
-			<img src="static/images/joint-logo-full.svg" />
+			<img src="static/images/joint-logo-full.svg" alt="Your Local Garage and Fresh Motors logos" />
 			<span class="caption opacity">Your Local Garage and FRESH MOTORS are ® registered trademarks of Fresh Motors Ltd</span>
 		</div>
 
@@ -31,11 +31,12 @@
 			<li class="caption"><strong>Services<br></strong></li>
 			<cms:get_field 'serv_links' masterpage='settings.php'>
 				<cms:show_repeatable 'serv_links'>
-					<a href="<cms:show serv_links_link />">
-						<li class="caption">
+
+					<li class="caption"><a href="<cms:show serv_links_link />">
 							<cms:show serv_links_text /><br>
-						</li>
-					</a>
+						</a>
+					</li>
+
 				</cms:show_repeatable>
 			</cms:get_field>
 		</ul>
@@ -44,11 +45,12 @@
 			<li class="caption"><strong>Quick links<br></strong></li>
 			<cms:get_field 'quick_links' masterpage='settings.php'>
 				<cms:show_repeatable 'quick_links'>
-					<a href="<cms:show quick_links_link />">
-						<li class="caption">
+
+					<li class="caption"><a href="<cms:show quick_links_link />">
 							<cms:show quick_links_text /><br>
-						</li>
-					</a>
+						</a>
+					</li>
+
 				</cms:show_repeatable>
 			</cms:get_field>
 		</ul>
@@ -78,20 +80,20 @@
 			</cms:get_field>
 
 			<cms:if g_facebook_link>
-				<span> &nbsp; |</span> <a href="<cms:get_field 'facebook_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/facebook.svg" /></a>
+				<span> &nbsp; |</span> <a href="<cms:get_field 'facebook_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/facebook.svg" alt="" /></a>
 			</cms:if>
 
 			<cms:if g_instagram_link>
-				<a href="<cms:get_field 'instagram_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/instagram.svg" /></a>
+				<a href="<cms:get_field 'instagram_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" alt="" src="/static/images/instagram.svg" /></a>
 			</cms:if>
 
 			<cms:if g_twitter_link>
-				<a href="<cms:get_field 'twitter_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" src="/static/images/twitter.svg" /></a>
+				<a href="<cms:get_field 'twitter_link' masterpage='settings.php' />" target="_blank" rel="noopener"><img class="social-icons" alt="" src="/static/images/twitter.svg" /></a>
 			</cms:if>
 
 		</div>
 
-		<div class="align-right mobile-hide"><a href="https://www.danburnage.com" target="_blank" rel="noopener"><img class="portfolio-link" src="/static/images/smile-logo.svg" /></a></div>
+		<div class="align-right mobile-hide portfolio-link-text"><a href="https://www.danburnage.com" target="_blank" rel="noopener"><img class="portfolio-link" alt="" src="/static/images/smile-logo.svg" />Website by Dan Burnage</a></div>
 
 	</div>
 

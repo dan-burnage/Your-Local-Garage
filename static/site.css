@@ -77,12 +77,12 @@ body {
 
 	.align-right {
 		margin-left: auto;
-		margin-right: 8px;
+		margin-right: 0px;
 	}
 
 	.align-left {
 		margin-right: auto;
-		margin-left: 8px;
+		margin-left: 0px;
 	}
 
 }
@@ -136,21 +136,37 @@ body {
 		padding: 25vh 32px 0px 32px;
 		text-align: center;
 		z-index: -1;
+		overflow: hidden;
 	}
 
 	.nav-menu.active {
 		left: 0;
 		opacity: 1;
-		z-index: 2;
+		z-index: 3;
 		transition: 0.4s;
 	}
 
+	.nav-logo.active {
+		position: fixed;
+	}
+
 	.header-logo {
-		height: 40px;
+		height: 46px;
+		margin-top: 4px;
 	}
 
 	.nav-logo {
-		z-index: 3;
+		z-index: 4;
+	}
+
+	.nav-logo a {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
+	}
+
+	.nav-logo a:active {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
 	}
 
 	.header li {
@@ -178,7 +194,12 @@ body {
 		display: block;
 		cursor: pointer;
 		padding-top: 7px !important;
-		z-index: 3;
+		z-index: 4;
+	}
+
+	.hamburger.active {
+		position: absolute;
+		right: 24px;
 	}
 
 	.hamburger.active .bar:nth-child(2) {
@@ -282,6 +303,11 @@ body {
 		transition: 0.3s;
 	}
 
+	.portfolio-link-text {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
+	}
+
 	.social-icons {
 		width: 18px;
 		vertical-align: middle;
@@ -309,8 +335,14 @@ body {
 		color: var(--AzureRadiance);
 		transition: 0.3s;
 	}
+}
 
+@media screen and (min-width: 560px) {
 
+	.header-logo {
+		height: 52px;
+		margin-top: 6px;
+	}
 }
 
 /* Tablet */
@@ -319,11 +351,6 @@ body {
 	.header {
 		padding-top: 1rem;
 		padding-bottom: 0rem;
-	}
-
-	.header-logo {
-		height: 44px;
-		margin-top: 13px
 	}
 
 	.hamburger {
@@ -340,6 +367,10 @@ body {
 		padding: 16px 0 0 0 !important;
 		transition: none;
 		z-index: 1;
+	}
+
+	.nav-logo.active {
+		position: relative;
 	}
 
 	.header li {
@@ -382,7 +413,8 @@ body {
 	}
 
 	.header-logo {
-		height: 48px;
+		height: 62px;
+		margin-top: 13px;
 	}
 
 	.sec-footer {
@@ -425,8 +457,9 @@ body {
 @media screen and (min-width: 1280px) {
 
 	.header-logo {
-		height: 56px;
+		height: 68px;
 	}
+
 }
 
 /* ----- -------------- ----- */
@@ -465,13 +498,14 @@ body {
 		overflow: hidden;
 		bottom: 0;
 		left: 0;
-		margin-top: -5rem;
+		margin-top: -10vh;
 	}
 
 	.sec-hero .background-image img {
-		width: 225vw;
-		margin: 0 0 0 -90vw;
+		width: 125vw;
+		margin: 0 0 0 -10vw;
 		float: left;
+
 	}
 
 	.sec-hero .hero-image img {
@@ -485,6 +519,8 @@ body {
 		top: 0;
 		position: relative;
 		z-index: 0;
+
+		background: aqua;
 
 	}
 
@@ -536,7 +572,8 @@ body {
 		box-sizing: content-box;
 		left: 50%;
 		margin-left: -9px;
-		transform: translateY(22vh);
+		transform: translateY(22vw);
+		display: none;
 	}
 
 	.scroller {
@@ -629,14 +666,14 @@ body {
 		border-radius: 8px;
 		position: relative;
 		width: 80%;
-		z-index: 1
+		z-index: 1;
 	}
 
 	.sec-reviews .align-left img {
 		border-radius: 8px;
 		position: relative;
 		width: 90%;
-		z-index: 1
+		z-index: 1;
 	}
 
 	.review-stars {
@@ -678,13 +715,12 @@ body {
 	}
 
 	.sec-hero .background-image {
-		margin-top: -5rem;
+		margin-top: -15vh;
 	}
 
 	.sec-hero .background-image img {
-		width: auto;
-		max-height: 35vh;
-		margin: 0 -15vw;
+		width: 110vw;
+		margin: 0 -5vw;
 		float: right;
 	}
 
@@ -737,11 +773,16 @@ body {
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 956px) {
+
+	.sec-hero .background-image {
+		margin-top: -15vh;
+	}
 
 	.sec-hero .background-image img {
-		max-height: 50vh;
-		margin: 0 -8vw;
+		width: 90vw;
+		margin: 0 -5vw;
+		max-width: 1920px;
 	}
 
 	.sec-hero .hero-image img {
@@ -749,6 +790,10 @@ body {
 		margin: -13rem 0rem 0 auto;
 	}
 
+	.sec-hero-scroll {
+		transform: translateY(15vw);
+		display: block;
+	}
 
 	.sec-split {
 		margin: 3.25rem 0;
@@ -777,7 +822,7 @@ body {
 	}
 
 	.sec-hero .background-image {
-		margin-top: -7rem;
+		margin-top: -22.5vh;
 	}
 
 	.sec-hero.small-hero {
@@ -799,7 +844,7 @@ body {
 	}
 
 	.sec-hero-scroll {
-		transform: translateY(20vh);
+		transform: translateY(14vw);
 	}
 
 	.sec-cta-container {
@@ -809,8 +854,15 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
+
+	.sec-hero .background-image img {
+		width: 95vw;
+		max-height: 100vh;
+		margin: 0 -4vw 0 0;
+	}
+
 	.sec-hero-scroll {
-		transform: translateY(25vh);
+		transform: translateY(17vw);
 	}
 
 	.sec-split {
@@ -834,7 +886,7 @@ body {
 @media screen and (min-width: 1680px) {
 
 	.sec-hero .background-image {
-		margin-top: -7rem;
+		margin-top: -15vw;
 	}
 
 	.sec-hero {
@@ -842,7 +894,7 @@ body {
 	}
 
 	.sec-hero .background-image img {
-		max-width: 1650px;
+		max-width: 1920px;
 		margin: 0 -10vh 0 0;
 	}
 
@@ -852,7 +904,7 @@ body {
 	}
 
 	.sec-hero-scroll {
-		transform: translateY(28vh);
+		transform: translateY(15vw);
 	}
 
 	.sec-cta-container {
@@ -870,6 +922,10 @@ body {
 /* Mobile */
 @media screen and (min-width: 0px) {
 
+	button {
+		font-family: 'Raleway', Helvetica, sans-serif;;
+	}
+
 	.button {
 		font-size: 16px;
 		line-height: 28px;
@@ -881,7 +937,7 @@ body {
 		background-color: var(--AzureRadiance);
 		display: inline-block;
 		padding: 5px 24px 5px 24px;
-		margin: 0 4px 8px 0;
+		margin: 0 4px 16px 0;
 		border-radius: 24px;
 		transition: 0.3s;
 		cursor: pointer;
@@ -936,19 +992,11 @@ body {
 		text-decoration: none;
 	}
 
-	ul {
-		list-style: none;
-	}
-
-	li {
-		list-style: none;
-	}
-
 	:focus {
 		outline: none;
 	}
 
-	#button:focus {
+	.button:focus {
 		outline-style: hidden;
 	}
 
@@ -1023,14 +1071,14 @@ body {
 		}
 	}
 
-	.techman-wrapper {
+	.booking-wrapper {
 		top: 0;
 		left: 0;
-		width: calc(100% - 1rem);
-		height: calc(100% - 60px);
-		overflow: hidden;
-		max-height: 100%;
-		padding: 0 0.5rem;
+		width: calc(100%);
+		height: calc(100%);
+		overflow: scroll;
+		max-height: calc(100% -45px);
+		padding: 0;
 	}
 
 	.modal-overlay {
@@ -1059,15 +1107,15 @@ body {
 	}
 
 	.kicker.label {
-		font-size: 10px;
-		opacity: 70%;
-		text-align: center;
-		margin: 10px auto 0 auto;
+		font-size: 11px;
+		opacity: 100%;
+		text-align: left;
+		margin: 11px auto 0 0.75rem;
 	}
 
 	.caption.label {
 		font-size: 12px;
-		margin: 8px 10px auto 10px;
+		margin: 8px 0.5rem auto 10px;
 		cursor: pointer;
 	}
 
@@ -1083,7 +1131,7 @@ body {
 
 	.modal {
 		max-width: 100%;
-		height: 60%;
+		height: 70%;
 	}
 
 }
@@ -1166,7 +1214,7 @@ body {
 		background-size: 1.15rem;
 		text-indent: -10000px;
 		margin-top: -0.5rem;
-		z-index: 1;
+		z-index: 0;
 		transition: 0.4s;
 	}
 
