@@ -151,7 +151,8 @@ body {
 	}
 
 	.header-logo {
-		height: 40px;
+		height: 46px;
+		margin-top: 4px;
 	}
 
 	.nav-logo {
@@ -334,8 +335,14 @@ body {
 		color: var(--AzureRadiance);
 		transition: 0.3s;
 	}
+}
 
+@media screen and (min-width: 560px) {
 
+	.header-logo {
+		height: 52px;
+		margin-top: 6px;
+	}
 }
 
 /* Tablet */
@@ -344,11 +351,6 @@ body {
 	.header {
 		padding-top: 1rem;
 		padding-bottom: 0rem;
-	}
-
-	.header-logo {
-		height: 44px;
-		margin-top: 13px
 	}
 
 	.hamburger {
@@ -411,7 +413,8 @@ body {
 	}
 
 	.header-logo {
-		height: 48px;
+		height: 62px;
+		margin-top: 13px;
 	}
 
 	.sec-footer {
@@ -454,8 +457,9 @@ body {
 @media screen and (min-width: 1280px) {
 
 	.header-logo {
-		height: 56px;
+		height: 68px;
 	}
+
 }
 
 /* ----- -------------- ----- */
