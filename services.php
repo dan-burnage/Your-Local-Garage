@@ -36,7 +36,7 @@
 
 	<cms:repeatable name='services' label='Services content' stacked_layout='1' group='services_group' order=''>
 
-		<cms:editable name='serv-li-icon' label='Service Icon' type='dropdown' opt_values='Air filter=air-filter | Aircon=aircon | Alloy wheel=alloy-wheel | Automatic gearbox=automatic-gearbox | Batter=battery | Bonnet=bonnet | Brake disc=brake-disc | Brakes=brakes | Blulb=bulb | Bumper=bumper | Bushes=bushes | Cambelt=cambelt | Car=car | Chasis=chasis | Checklist=checklist | Coolant=coolant | Door inserts=door-inserts | Drive shaft=drive-shaft | Engine=engine | Exhaust=exhaust | Floormats=floormats | Front door=front-door | Front light=front-light | Fuel filter=fuel-filter | Fuel=fuel | Grill=grill | Interior=interior | Keys=keys | Lights=lights | Manual gearbox=manual-gearbox | Mats=mats | MOT=mot | Mudguards=mudguards | Oil filter=oil-filter | Oil=oil | Piston=piston | Pollen filter=pollen-filter | Quaterrpanel=quaterpanel | Radiator=radiator | Rear door=rear-door | Rear light=rear-light | Rear mirrror=rear-mirror | Roofbox=roofbox | Sparkplug=sparkplug | Speaker=speaker | Spedo=spedo | Steel wheel=steel-wheel | Steering wheel=steering-wheel | Steering=steering | Summer tyres=summer-tyres | Suspension=suspension | Tow bar=tow-bar | Turbo=turbo | Tyre=tyre | Tyres=tyres | Undertray=undertray | Wet tyres=wet-tyres | Wheel arches=wheel-arches | Wheel=wheel | Windscreen wipers=windscreen-wipers | Windscreen=windscreen | Wing mirror=wing-mirror | Winter tyres=winter-tyres' />
+		<cms:editable name='serv-li-icon' label='Service Icon' type='dropdown' opt_values='Air filter=air-filter | Aircon=aircon | Alloy wheel=alloy-wheel | Automatic gearbox=automatic-gearbox | Battery=battery | Bonnet=bonnet | Brake disc=brake-disc | Brakes=brakes | Blulb=bulb | Bumper=bumper | Bushes=bushes | Cambelt=cambelt | Car=car | Chasis=chasis | Checklist=checklist | Coolant=coolant | Door inserts=door-inserts | Drive shaft=drive-shaft | Engine=engine | Exhaust=exhaust | Floormats=floormats | Front door=front-door | Front light=front-light | Fuel filter=fuel-filter | Fuel=fuel | Grill=grill | Interior=interior | Keys=keys | Lights=lights | Manual gearbox=manual-gearbox | Mats=mats | MOT=mot | Mudguards=mudguards | Oil filter=oil-filter | Oil=oil | Piston=piston | Pollen filter=pollen-filter | Quaterrpanel=quaterpanel | Radiator=radiator | Rear door=rear-door | Rear light=rear-light | Rear mirrror=rear-mirror | Roofbox=roofbox | Sparkplug=sparkplug | Speaker=speaker | Spedo=spedo | Steel wheel=steel-wheel | Steering wheel=steering-wheel | Steering=steering | Summer tyres=summer-tyres | Suspension=suspension | Tow bar=tow-bar | Turbo=turbo | Tyre=tyre | Tyres=tyres | Undertray=undertray | Wet tyres=wet-tyres | Wheel arches=wheel-arches | Wheel=wheel | Windscreen wipers=windscreen-wipers | Windscreen=windscreen | Wing mirror=wing-mirror | Winter tyres=winter-tyres' />
 
 		<cms:editable name='serv-li-title' label='Service title' type='text' />
 
@@ -94,6 +94,7 @@
 	<cms:embed 'og-meta.html' />
 	<cms:embed 'favicons.html' />
 	<cms:embed 'head-links.html' />
+	<cms:embed 'services-schema.html' />
 
 </head>
 
@@ -155,7 +156,7 @@
 			<div class="col-4 align-right">
 
 				<div class="sidebar booking">
-					<h4>Book your MOT or service online</h4>
+					<h4><cms:show serv_cta_title /></h4>
 					<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" alt="" /></span></a>
 					<img class="sidebar-image" alt="" src="<cms:show serv_cta_image />">
 				</div>
@@ -224,9 +225,9 @@
 
 	<!-- Couch Conditional JS -->
 	<script type="text/javascript">
+
 		//<![CDATA[
-		<
-		cms: conditional_js / >
+		<cms:conditional_js />
 		//]]>
 
 	</script>

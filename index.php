@@ -162,10 +162,10 @@
 				</cms:if>
 			</div>
 		</div>
+		<div class="background-image"><img src="<cms:show hero_image />" alt="" /></div>
 		<div class="sec-hero-scroll tablet-hide">
 			<div class="scroller"></div>
 		</div>
-		<div class="background-image"><img src="<cms:show hero_image />" alt="" /></div>
 	</div>
 
 	<div id="services" class="sec-carousel">
@@ -355,8 +355,7 @@
 	<script type="text/javascript">
 
 		//<![CDATA[
-		<
-		cms: conditional_js / >
+		<cms:conditional_js />
 		//]]>
 
 	</script>

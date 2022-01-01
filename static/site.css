@@ -159,12 +159,12 @@ body {
 		z-index: 4;
 	}
 
-	.nav-logo a {
+	.nav-logo > a {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
 
-	.nav-logo a:active {
+	.nav-logo > a:active {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
@@ -303,7 +303,7 @@ body {
 		transition: 0.3s;
 	}
 
-	.portfolio-link-text {
+	.portfolio-link-text > a {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
@@ -476,6 +476,24 @@ body {
 		display: block;
 	}
 
+	.sec-404 {
+		height: 100vh;
+		overflow: hidden;
+		padding-top: 0rem !important;
+	}
+
+	.sec-404 .wrapper {
+		position: relative;
+		margin-top: 7vw;
+		margin-bottom: 2rem;
+		z-index: 2;
+	}
+
+	.sec-404 .background-image {
+		position: absolute;
+		margin-bottom: 0px !important;
+	}
+
 	/* ----- Hero ----- */
 
 	.sec-hero {
@@ -499,6 +517,7 @@ body {
 		bottom: 0;
 		left: 0;
 		margin-top: -10vh;
+		margin-bottom: 0px;
 	}
 
 	.sec-hero .background-image img {
@@ -512,16 +531,13 @@ body {
 		width: 65%;
 		max-height: 784px;
 		max-width: 650px;
-		margin: -13rem -1rem 0 auto;
+		margin: -10rem -1rem 0 auto;
 		padding-bottom: -1rem;
 		display: inline-block;
 		float: right;
 		top: 0;
 		position: relative;
 		z-index: 0;
-
-		background: aqua;
-
 	}
 
 	.sec-hero > .wrapper {
@@ -572,7 +588,8 @@ body {
 		box-sizing: content-box;
 		left: 50%;
 		margin-left: -9px;
-		transform: translateY(22vw);
+		margin-top: -24px;
+		transform: translateY(-2rem);
 		display: none;
 	}
 
@@ -705,9 +722,15 @@ body {
 /* Tablet */
 @media screen and (min-width: 720px) {
 
+
+
 	.sec-split .wrapper,
 	.sec-reviews .wrapper {
 		display: flex;
+	}
+
+	.sec-404 .wrapper {
+		margin-bottom: 4rem;
 	}
 
 	.sec-hero {
@@ -776,7 +799,8 @@ body {
 @media screen and (min-width: 956px) {
 
 	.sec-hero .background-image {
-		margin-top: -15vh;
+		margin-top: -11vh;
+		margin-bottom: -24px;
 	}
 
 	.sec-hero .background-image img {
@@ -787,11 +811,10 @@ body {
 
 	.sec-hero .hero-image img {
 		width: 55%;
-		margin: -13rem 0rem 0 auto;
+		margin: -11rem 0rem 0 auto;
 	}
 
 	.sec-hero-scroll {
-		transform: translateY(15vw);
 		display: block;
 	}
 
@@ -843,10 +866,6 @@ body {
 		margin: 0 -6vw 0 0;
 	}
 
-	.sec-hero-scroll {
-		transform: translateY(14vw);
-	}
-
 	.sec-cta-container {
 		padding: 2.25rem 38.332% 2.25rem 8.333%;
 	}
@@ -859,10 +878,6 @@ body {
 		width: 95vw;
 		max-height: 100vh;
 		margin: 0 -4vw 0 0;
-	}
-
-	.sec-hero-scroll {
-		transform: translateY(17vw);
 	}
 
 	.sec-split {
@@ -901,10 +916,6 @@ body {
 	.sec-cta-image img {
 		margin: -7rem 0 -2.4rem 6rem;
 		width: 55vw;
-	}
-
-	.sec-hero-scroll {
-		transform: translateY(15vw);
 	}
 
 	.sec-cta-container {
