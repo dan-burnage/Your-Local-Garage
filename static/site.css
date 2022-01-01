@@ -512,7 +512,7 @@ body {
 		width: 65%;
 		max-height: 784px;
 		max-width: 650px;
-		margin: -11rem -1rem 0 auto;
+		margin: -10rem -1rem 0 auto;
 		padding-bottom: -1rem;
 		display: inline-block;
 		float: right;
@@ -784,7 +784,7 @@ body {
 
 	.sec-hero .hero-image img {
 		width: 55%;
-		margin: -13rem 0rem 0 auto;
+		margin: -11rem 0rem 0 auto;
 	}
 
 	.sec-hero-scroll {

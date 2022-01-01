@@ -94,6 +94,7 @@
 	<cms:embed 'og-meta.html' />
 	<cms:embed 'favicons.html' />
 	<cms:embed 'head-links.html' />
+	<cms:embed 'services-schema.html' />
 
 </head>
 
@@ -155,7 +156,7 @@
 			<div class="col-4 align-right">
 
 				<div class="sidebar booking">
-					<h4>Book your MOT or service online</h4>
+					<h4><cms:show serv_cta_title /></h4>
 					<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" alt="" /></span></a>
 					<img class="sidebar-image" alt="" src="<cms:show serv_cta_image />">
 				</div>
