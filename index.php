@@ -355,8 +355,7 @@
 	<script type="text/javascript">
 
 		//<![CDATA[
-		<
-		cms: conditional_js / >
+		<cms:conditional_js />
 		//]]>
 
 	</script>
