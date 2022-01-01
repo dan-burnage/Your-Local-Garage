@@ -476,6 +476,24 @@ body {
 		display: block;
 	}
 
+	.sec-404 {
+		height: 100vh;
+		overflow: hidden;
+		padding-top: 0rem !important;
+	}
+
+	.sec-404 .wrapper {
+		position: relative;
+		margin-top: 7vw;
+		margin-bottom: 2rem;
+		z-index: 2;
+	}
+
+	.sec-404 .background-image {
+		position: absolute;
+		margin-bottom: 0px !important;
+	}
+
 	/* ----- Hero ----- */
 
 	.sec-hero {
@@ -704,9 +722,15 @@ body {
 /* Tablet */
 @media screen and (min-width: 720px) {
 
+
+
 	.sec-split .wrapper,
 	.sec-reviews .wrapper {
 		display: flex;
+	}
+
+	.sec-404 .wrapper {
+		margin-bottom: 4rem;
 	}
 
 	.sec-hero {
