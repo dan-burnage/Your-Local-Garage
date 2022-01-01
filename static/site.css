@@ -159,12 +159,12 @@ body {
 		z-index: 4;
 	}
 
-	.nav-logo a {
+	.nav-logo > a {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
 
-	.nav-logo a:active {
+	.nav-logo > a:active {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
@@ -303,7 +303,7 @@ body {
 		transition: 0.3s;
 	}
 
-	.portfolio-link-text {
+	.portfolio-link-text > a {
 		color: rgba(40, 52, 83, 0);
 		font-size: 0px;
 	}
