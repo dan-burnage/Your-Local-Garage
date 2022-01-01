@@ -1,19 +1,16 @@
 <script type="text/javascript">
-
 	var modal = document.getElementById('modal', 'modal-overlay');
-
-	function goBack() {
-		window.history.back();
-	}
 
 	const hamburger = document.querySelector(".hamburger");
 	const navMenu = document.querySelector(".nav-menu");
+	const navControls = document.querySelector(".nav-logo");
 
 	hamburger.addEventListener("click", mobileMenu);
 
 	function mobileMenu() {
 		hamburger.classList.toggle("active");
 		navMenu.classList.toggle("active");
+		navControls.classList.toggle("active");
 	}
 
 	const navLink = document.querySelectorAll(".nav-link");
@@ -23,6 +20,7 @@
 	function closeMenu() {
 		hamburger.classList.remove("active");
 		navMenu.classList.remove("active");
+		navControls.classList.toggle("active");
 	}
 
 	$(document).ready(function() {
@@ -52,5 +50,13 @@
 			}]
 		});
 	});
+
+	function externalLinks() {
+		for (var c = document.getElementsByTagName("a"), a = 0; a < c.length; a++) {
+			var b = c[a];
+			b.getAttribute("href") && b.hostname !== location.hostname && (b.target = "_blank")
+		}
+	};
+	externalLinks();
 
 </script>

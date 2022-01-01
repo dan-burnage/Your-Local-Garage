@@ -157,14 +157,14 @@ $(function() {
         url: '<?php echo $upload_link; ?>',
 
         file_data_name: 'NewFile',
-        chunk_size: '1mb',
+        chunk_size: '10mb',
 
         filters: {
             // Maximum file size
-            max_file_size: '2mb',
+            max_file_size: '10mb',
             // Specify what files to browse for
             mime_types: [
-                {title: "Image files", extensions: "jpg,jpeg,gif,png,bmp"}
+                {title: "Image files", extensions: "jpg,jpeg,gif,png,bmp,webp"}
             ]
         },
 

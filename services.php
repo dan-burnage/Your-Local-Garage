@@ -36,7 +36,7 @@
 
 	<cms:repeatable name='services' label='Services content' stacked_layout='1' group='services_group' order=''>
 
-		<cms:editable name='serv-li-icon' label='Service Icon' type='dropdown' opt_values='Air filter=air-filter | Aircon=aircon | Alloy wheel=alloy-wheel | Automatic gearbox=automatic-gearbox | Batter=battery | Bonnet=bonnet | Brake disc=brake-disc | Brakes=brakes | Blulb=bulb | Bumper=bumper | Bushes=bushes | Cambelt=cambelt | Car=car | Chasis=chasis | Coolant=coolant | Door inserts=door-inserts | Drive shaft=drive-shaft | Engine=engine | Exhaust=exhaust | Floormats=floormats | Front door=front-door | Front light=front-light | Fuel filter=fuel-filter | Fuel=fuel | Grill=grill | Interior=interior | Keys=keys | Lights=lights | Manual gearbox=manual-gearbox | Mats=mats | MOT=mot | Mudguards=mudguards | Oil filter=oil-filter | Oil=oil | Piston=piston | Pollen filter=pollen-filter | Quaterrpanel=quaterpanel | Radiator=radiator | Rear door=rear-door | Rear light=rear-light | Rear mirrror=rear-mirror | Roofbox=roofbox | Sparkplug=sparkplug | Speaker=speaker | Spedo=spedo | Steel wheel=steel-wheel | Steering wheel=steering-wheel | Steering=steering | Summer tyres=summer-tyres | Suspension=suspension | Tow bar=tow-bar | Turbo=turbo | Tyre=tyre | Tyres=tyres | Undertray=undertray | Wet tyres=wet-tyres | Wheel arches=wheel-arches | Wheel=wheel | Windscreen wipers=windscreen-wipers | Windscreen=windscreen | Wing mirror=wing-mirror | Winter tyres=winter-tyres' />
+		<cms:editable name='serv-li-icon' label='Service Icon' type='dropdown' opt_values='Air filter=air-filter | Aircon=aircon | Alloy wheel=alloy-wheel | Automatic gearbox=automatic-gearbox | Batter=battery | Bonnet=bonnet | Brake disc=brake-disc | Brakes=brakes | Blulb=bulb | Bumper=bumper | Bushes=bushes | Cambelt=cambelt | Car=car | Chasis=chasis | Checklist=checklist | Coolant=coolant | Door inserts=door-inserts | Drive shaft=drive-shaft | Engine=engine | Exhaust=exhaust | Floormats=floormats | Front door=front-door | Front light=front-light | Fuel filter=fuel-filter | Fuel=fuel | Grill=grill | Interior=interior | Keys=keys | Lights=lights | Manual gearbox=manual-gearbox | Mats=mats | MOT=mot | Mudguards=mudguards | Oil filter=oil-filter | Oil=oil | Piston=piston | Pollen filter=pollen-filter | Quaterrpanel=quaterpanel | Radiator=radiator | Rear door=rear-door | Rear light=rear-light | Rear mirrror=rear-mirror | Roofbox=roofbox | Sparkplug=sparkplug | Speaker=speaker | Spedo=spedo | Steel wheel=steel-wheel | Steering wheel=steering-wheel | Steering=steering | Summer tyres=summer-tyres | Suspension=suspension | Tow bar=tow-bar | Turbo=turbo | Tyre=tyre | Tyres=tyres | Undertray=undertray | Wet tyres=wet-tyres | Wheel arches=wheel-arches | Wheel=wheel | Windscreen wipers=windscreen-wipers | Windscreen=windscreen | Wing mirror=wing-mirror | Winter tyres=winter-tyres' />
 
 		<cms:editable name='serv-li-title' label='Service title' type='text' />
 
@@ -90,7 +90,7 @@
 
 <head>
 
-	<cms:embed 'gtag.html' />
+	<cms:embed 'gtag-head.html' />
 	<cms:embed 'og-meta.html' />
 	<cms:embed 'favicons.html' />
 	<cms:embed 'head-links.html' />
@@ -98,6 +98,8 @@
 </head>
 
 <body>
+
+	<cms:embed 'gtag-body.html' />
 
 	<cms:embed 'grid-overlay.html' />
 
@@ -119,12 +121,12 @@
 				</p>
 				<cms:if hero_button>
 					<a href="<cms:show hero_buttonlink />"><span class="button secondary">
-							<cms:show hero_button /><img src="static/images/arrow-forward.svg" />
+							<cms:show hero_button /><img src="static/images/arrow-forward.svg" alt="" />
 						</span></a>
 				</cms:if>
 			</div>
 		</div>
-		<div class="hero-image mobile-hide"><img src="<cms:show hero_image />" /></div>
+		<div class="hero-image mobile-hide"><img src="<cms:show hero_image />" alt="" /></div>
 	</div>
 
 	<div class="serv-content">
@@ -137,7 +139,7 @@
 
 					<a id="<cms:show serv-li-title />"></a>
 					<div class="service-item">
-						<img src="/static/images/service-icons/<cms:show serv-li-icon />.svg" />
+						<img src="/static/images/service-icons/<cms:show serv-li-icon />.svg" alt="" />
 						<div>
 							<h5>
 								<cms:show serv-li-title />
@@ -154,8 +156,8 @@
 
 				<div class="sidebar booking">
 					<h4>Book your MOT or service online</h4>
-					<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
-					<img class="sidebar-image" src="<cms:show serv_cta_image />">
+					<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" alt="" /></span></a>
+					<img class="sidebar-image" alt="" src="<cms:show serv_cta_image />">
 				</div>
 
 				<cms:show_repeatable 'sidebar'>
@@ -166,10 +168,10 @@
 						</h4>
 						<cms:if serv-sidebar-button>
 							<a href="<cms:show serv-sidebar-link />"><span class="button secondary">
-									<cms:show serv-sidebar-button /><img src="static/images/arrow-forward.svg" />
+									<cms:show serv-sidebar-button /><img src="static/images/arrow-forward.svg" alt="" />
 								</span></a>
 						</cms:if>
-						<img class="sidebar-image" src="<cms:show serv-sidebar-image />">
+						<img class="sidebar-image" src="<cms:show serv-sidebar-image />" alt="">
 					</div>
 
 				</cms:show_repeatable>
@@ -190,23 +192,23 @@
 					</h1>
 
 					<cms:if serv_cta_booking='Yes'>
-						<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" /></span></a>
+						<a><span onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" alt="" /></span></a>
 					</cms:if>
 
 					<cms:if serv_cta_button>
 						<a href="<cms:show serv_cta_link />"><span class="button">
-								<cms:show serv_cta_button /><img src="static/images/arrow-forward.svg" />
+								<cms:show serv_cta_button /><img src="static/images/arrow-forward.svg" alt="" />
 							</span></a>
 					</cms:if>
 
 					<cms:if serv_cta_contact='Yes'>
 						<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><span class="button secondary">
-								<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" />
+								<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" alt="" />
 							</span></a>
 					</cms:if>
 				</div>
 
-				<div class="sec-cta-image"><img src="<cms:show serv_cta_image />" /></div>
+				<div class="sec-cta-image"><img src="<cms:show serv_cta_image />" alt="" /></div>
 
 			</div>
 

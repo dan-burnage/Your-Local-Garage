@@ -77,12 +77,12 @@ body {
 
 	.align-right {
 		margin-left: auto;
-		margin-right: 8px;
+		margin-right: 0px;
 	}
 
 	.align-left {
 		margin-right: auto;
-		margin-left: 8px;
+		margin-left: 0px;
 	}
 
 }
@@ -136,13 +136,18 @@ body {
 		padding: 25vh 32px 0px 32px;
 		text-align: center;
 		z-index: -1;
+		overflow: hidden;
 	}
 
 	.nav-menu.active {
 		left: 0;
 		opacity: 1;
-		z-index: 2;
+		z-index: 3;
 		transition: 0.4s;
+	}
+
+	.nav-logo.active {
+		position: fixed;
 	}
 
 	.header-logo {
@@ -150,7 +155,17 @@ body {
 	}
 
 	.nav-logo {
-		z-index: 3;
+		z-index: 4;
+	}
+
+	.nav-logo a {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
+	}
+
+	.nav-logo a:active {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
 	}
 
 	.header li {
@@ -178,7 +193,12 @@ body {
 		display: block;
 		cursor: pointer;
 		padding-top: 7px !important;
-		z-index: 3;
+		z-index: 4;
+	}
+
+	.hamburger.active {
+		position: absolute;
+		right: 24px;
 	}
 
 	.hamburger.active .bar:nth-child(2) {
@@ -282,6 +302,11 @@ body {
 		transition: 0.3s;
 	}
 
+	.portfolio-link-text {
+		color: rgba(40, 52, 83, 0);
+		font-size: 0px;
+	}
+
 	.social-icons {
 		width: 18px;
 		vertical-align: middle;
@@ -340,6 +365,10 @@ body {
 		padding: 16px 0 0 0 !important;
 		transition: none;
 		z-index: 1;
+	}
+
+	.nav-logo.active {
+		position: relative;
 	}
 
 	.header li {
@@ -465,13 +494,14 @@ body {
 		overflow: hidden;
 		bottom: 0;
 		left: 0;
-		margin-top: -5rem;
+		margin-top: -10vh;
 	}
 
 	.sec-hero .background-image img {
-		width: 225vw;
-		margin: 0 0 0 -90vw;
+		width: 125vw;
+		margin: 0 0 0 -10vw;
 		float: left;
+
 	}
 
 	.sec-hero .hero-image img {
@@ -485,6 +515,8 @@ body {
 		top: 0;
 		position: relative;
 		z-index: 0;
+
+		background: aqua;
 
 	}
 
@@ -536,7 +568,8 @@ body {
 		box-sizing: content-box;
 		left: 50%;
 		margin-left: -9px;
-		transform: translateY(22vh);
+		transform: translateY(22vw);
+		display: none;
 	}
 
 	.scroller {
@@ -629,14 +662,14 @@ body {
 		border-radius: 8px;
 		position: relative;
 		width: 80%;
-		z-index: 1
+		z-index: 1;
 	}
 
 	.sec-reviews .align-left img {
 		border-radius: 8px;
 		position: relative;
 		width: 90%;
-		z-index: 1
+		z-index: 1;
 	}
 
 	.review-stars {
@@ -678,13 +711,12 @@ body {
 	}
 
 	.sec-hero .background-image {
-		margin-top: -5rem;
+		margin-top: -15vh;
 	}
 
 	.sec-hero .background-image img {
-		width: auto;
-		max-height: 35vh;
-		margin: 0 -15vw;
+		width: 110vw;
+		margin: 0 -5vw;
 		float: right;
 	}
 
@@ -737,11 +769,16 @@ body {
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 956px) {
+
+	.sec-hero .background-image {
+		margin-top: -15vh;
+	}
 
 	.sec-hero .background-image img {
-		max-height: 50vh;
-		margin: 0 -8vw;
+		width: 90vw;
+		margin: 0 -5vw;
+		max-width: 1920px;
 	}
 
 	.sec-hero .hero-image img {
@@ -749,6 +786,10 @@ body {
 		margin: -13rem 0rem 0 auto;
 	}
 
+	.sec-hero-scroll {
+		transform: translateY(15vw);
+		display: block;
+	}
 
 	.sec-split {
 		margin: 3.25rem 0;
@@ -777,7 +818,7 @@ body {
 	}
 
 	.sec-hero .background-image {
-		margin-top: -7rem;
+		margin-top: -22.5vh;
 	}
 
 	.sec-hero.small-hero {
@@ -799,7 +840,7 @@ body {
 	}
 
 	.sec-hero-scroll {
-		transform: translateY(20vh);
+		transform: translateY(14vw);
 	}
 
 	.sec-cta-container {
@@ -809,8 +850,15 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
+
+	.sec-hero .background-image img {
+		width: 95vw;
+		max-height: 100vh;
+		margin: 0 -4vw 0 0;
+	}
+
 	.sec-hero-scroll {
-		transform: translateY(25vh);
+		transform: translateY(17vw);
 	}
 
 	.sec-split {
@@ -834,7 +882,7 @@ body {
 @media screen and (min-width: 1680px) {
 
 	.sec-hero .background-image {
-		margin-top: -7rem;
+		margin-top: -15vw;
 	}
 
 	.sec-hero {
@@ -842,7 +890,7 @@ body {
 	}
 
 	.sec-hero .background-image img {
-		max-width: 1650px;
+		max-width: 1920px;
 		margin: 0 -10vh 0 0;
 	}
 
@@ -852,7 +900,7 @@ body {
 	}
 
 	.sec-hero-scroll {
-		transform: translateY(28vh);
+		transform: translateY(15vw);
 	}
 
 	.sec-cta-container {
@@ -869,6 +917,10 @@ body {
 
 /* Mobile */
 @media screen and (min-width: 0px) {
+
+	button {
+		font-family: 'Raleway', Helvetica, sans-serif;;
+	}
 
 	.button {
 		font-size: 16px;
@@ -936,19 +988,11 @@ body {
 		text-decoration: none;
 	}
 
-	ul {
-		list-style: none;
-	}
-
-	li {
-		list-style: none;
-	}
-
 	:focus {
 		outline: none;
 	}
 
-	#button:focus {
+	.button:focus {
 		outline-style: hidden;
 	}
 
