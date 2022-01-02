@@ -137,6 +137,7 @@ body {
 		text-align: center;
 		z-index: -1;
 		overflow: hidden;
+		transition: 0.4s;
 	}
 
 	.nav-menu.active {
@@ -365,7 +366,7 @@ body {
 		width: ;
 		height: ;
 		padding: 16px 0 0 0 !important;
-		transition: none;
+		transition: 0.4s;
 		z-index: 1;
 	}
 
@@ -1001,6 +1002,16 @@ body {
 
 	a {
 		text-decoration: none;
+	}
+
+	p > a, p > a:active {
+		color: var(--AzureRadiance);
+		transition: 0.3s;
+	}
+
+	p > a:hover {
+		color: var(--BahamaBlue);
+		transition: 0.3s;
 	}
 
 	:focus {
