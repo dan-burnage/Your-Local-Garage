@@ -133,7 +133,7 @@ body {
 		background: var(--BahamaBlue-Gradient);
 		width: calc(100% - 64px);
 		height: 100%;
-		padding: 25vh 32px 0px 32px;
+		padding: 22.5vh 32px 0px 32px;
 		text-align: center;
 		z-index: -1;
 		overflow: hidden;
@@ -152,8 +152,9 @@ body {
 	}
 
 	.header-logo {
-		height: 46px;
-		margin-top: 4px;
+		width: 280px;
+		max-width: 65vw;
+		margin-top: 12px;
 	}
 
 	.nav-logo {
@@ -189,6 +190,10 @@ body {
 
 	.header .secondary {
 		margin: 24px auto !important;
+	}
+
+	.mobile-home {
+		display: inline-block!imnportant;
 	}
 
 	.hamburger {
@@ -250,6 +255,10 @@ body {
 		transition: 0.4s;
 	}
 
+	.sec-footer-content ul {
+		padding-left: 0rem;
+	}
+
 	.sec-footer .caption {
 		color: var(--White);
 	}
@@ -269,13 +278,18 @@ body {
 	}
 
 	.sec-footer-content img {
-		margin-bottom: 0.5rem;
+		margin-bottom: .5rem;
 		padding-right: ;
 	}
 
 	.sec-footer-content:first-child {
-		margin-right ;
-		margin-bottom: 0.75rem;
+		margin-bottom: 1rem;
+		margin-right: auto;
+	}
+
+	.sec-footer-content:nth-child(2) {
+		margin-left: 0;
+		min-width: 280px;
 	}
 
 	.sec-footer-content.col-2 {
@@ -341,8 +355,12 @@ body {
 @media screen and (min-width: 560px) {
 
 	.header-logo {
-		height: 52px;
-		margin-top: 6px;
+		width: 360px;
+		margin-top: 15px;
+	}
+
+	.sec-footer-content:nth-child(2) {
+		min-width: inherit;
 	}
 }
 
@@ -414,8 +432,12 @@ body {
 	}
 
 	.header-logo {
-		height: 62px;
-		margin-top: 13px;
+		width: 320px;
+		margin-top: 20px;
+	}
+
+	.mobile-home {
+		display: none !important;
 	}
 
 	.sec-footer {
@@ -430,7 +452,11 @@ body {
 	}
 
 	.sec-footer-content:first-child {
-		margin-right: 1rem;
+		margin-right: ;
+	}
+
+	.sec-footer-content:nth-child(2) {
+		margin-left: auto;
 	}
 
 	.sec-footer-content.col-2 {
@@ -458,7 +484,8 @@ body {
 @media screen and (min-width: 1280px) {
 
 	.header-logo {
-		height: 68px;
+		width: 400px;
+		margin-top: 18px;
 	}
 
 }
@@ -485,7 +512,7 @@ body {
 
 	.sec-404 .wrapper {
 		position: relative;
-		margin-top: 7vw;
+		margin-top: 5vw;
 		margin-bottom: 2rem;
 		z-index: 2;
 	}
@@ -499,7 +526,7 @@ body {
 
 	.sec-hero {
 		background: var(--Rhino-Gradient);
-		padding: 2.5rem 0 0 0;
+		padding: 2rem 0 0 0;
 		color: var(--White);
 		max-height: 100vh;
 	}

@@ -25,7 +25,7 @@
 	<div class="sec-hero sec-404">
 
 		<div class="wrapper">
-			<div class="col-3 align-left nav-logo"><a href="/"><img src="static/images/ylg-logo.svg" alt="Your Local Garage Logo" class="header-logo" />Your Local Garage at Fresh Motors</a></div>
+			<div class="col-4 align-left nav-logo"><a href="/"><img src="static/images/ylg-logo-long.svg" alt="Your Local Garage Logo" class="header-logo" />Your Local Garage at Fresh Motors</a></div>
 		</div>
 
 		<div class="wrapper">
@@ -36,7 +36,7 @@
 				<h1 class="">
 					Looks like this isn't the page you're looking for ... try heading back to our homepage
 				</h1>
-				<a href="/"><button class="button">Back to our homepage<img src="static/images/arrow-forward.svg" alt="" /></button></a>
+				<a href="/"><button class="button">Back to homepage<img src="static/images/arrow-forward.svg" alt="" /></button></a>
 			</div>
 		</div>
 

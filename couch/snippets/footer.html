@@ -7,16 +7,20 @@
 			<span class="caption opacity">Your Local Garage and Fresh Motors are ® registered trademarks of Fresh Motors Ltd</span>
 		</div>
 
-		<div class="col-3 align-right sec-footer-content tablet-hide">
+		<div class="col-3 align-left sec-footer-content">
 			<span class="caption"><strong>
 					<cms:get_field 'footer_info_title' masterpage='settings.php' />
 				</strong></span>
 			<span class="caption">
-				<cms:get_field 'footer_info' masterpage='settings.php' /><br><br> Tel: <a href="tel:01953797200">01953 797200</a><br>Email: <a href="mailto:bookings@yourlocalgarage.co.uk">bookings@yourlocalgarage.co.uk</a>
+				<cms:nl2br>
+					<cms:get_field 'footer_info' masterpage='settings.php' />
+				</cms:nl2br>
+				<br><br> Tel: <a href="tel:01953797200">01953 797200</a><br>Email: <a href="mailto:bookings@yourlocalgarage.co.uk">bookings@yourlocalgarage.co.uk</a>
 			</span>
 		</div>
 
-		<ul class="col-2 align-right sec-footer-content">
+		<div class="col-2 align-right sec-footer-content tablet-hide">
+			<ul>
 			<li class="caption"><strong>
 					<cms:get_field 'footer_address_title' masterpage='settings.php' /><br>
 				</strong></li>
@@ -25,9 +29,11 @@
 					<cms:get_field 'footer_address' masterpage='settings.php' />
 				</cms:nl2br>
 			</li>
-		</ul>
+			</ul>
+		</div>
 
-		<ul class="col-2 align-right sec-footer-content">
+		<div class="col-2 align-right sec-footer-content tablet-hide">
+			<ul>
 			<li class="caption"><strong>Services<br></strong></li>
 			<cms:get_field 'serv_links' masterpage='settings.php'>
 				<cms:show_repeatable 'serv_links'>
@@ -39,9 +45,11 @@
 
 				</cms:show_repeatable>
 			</cms:get_field>
-		</ul>
+			</ul>
+		</div>
 
-		<ul class="col-2 align-right sec-footer-content mobile-hide">
+		<div class="col-2 align-right sec-footer-content mobile-hide">
+			<ul>
 			<li class="caption"><strong>Quick links<br></strong></li>
 			<cms:get_field 'quick_links' masterpage='settings.php'>
 				<cms:show_repeatable 'quick_links'>
@@ -51,9 +59,11 @@
 						</a>
 					</li>
 
+
 				</cms:show_repeatable>
 			</cms:get_field>
-		</ul>
+			</ul>
+		</div>
 
 	</div>
 
