@@ -1004,12 +1004,12 @@ body {
 		text-decoration: none;
 	}
 
-	p > a, p > a:active {
+	p > a, p > a:active, li > a, li > a:active {
 		color: var(--AzureRadiance);
 		transition: 0.3s;
 	}
 
-	p > a:hover {
+	p > a:hover, li > a:hover {
 		color: var(--BahamaBlue);
 		transition: 0.3s;
 	}

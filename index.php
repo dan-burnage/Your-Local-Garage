@@ -154,7 +154,7 @@
 				<h1 class="h1-plus">
 					<cms:show hero_title />
 				</h1>
-				<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
+				<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
 				<cms:if hero_button>
 					<a href="<cms:show hero_buttonlink />"><button class="button secondary">
 							<cms:show hero_button /><img src="static/images/arrow-forward.svg" alt="" />
@@ -201,7 +201,7 @@
 
 		<cms:if section_type='Image-split Left'>
 
-			<a id="<cms:show section_id />"></a>
+			<div id="<cms:show section_id />"></div>
 			<div class="sec-split">
 				<div class="wrapper">
 					<div class="col-6 align-left">
@@ -216,7 +216,7 @@
 								<cms:show sec-isl-content />
 							</p>
 							<cms:if sec-isl-booking='Yes'>
-								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 							<cms:if sec-isl-button>
 								<a href="<cms:show sec-isl-link />"><button class="button">
@@ -237,7 +237,7 @@
 
 		<cms:if section_type='Image-split Right'>
 
-			<a id="<cms:show section_id />"></a>
+			<div id="<cms:show section_id />"></div>
 			<div class="sec-split">
 				<div class="wrapper">
 					<div class="col-6 align-right" style="order:2;">
@@ -252,7 +252,7 @@
 								<cms:show sec-isr-content />
 							</p>
 							<cms:if sec-isr-booking='Yes'>
-								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 							<cms:if sec-isr-button>
 								<a href="<cms:show sec-isr-link />"><button class="button">
@@ -283,7 +283,7 @@
 							</h1>
 
 							<cms:if sec-cta-booking='Yes'>
-								<a><button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button></a>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 
 							<cms:if sec-cta-button>
@@ -311,7 +311,7 @@
 
 		<cms:if section_type='Reviews'>
 
-			<a id="<cms:show section_id />"></a>
+			<div id="<cms:show section_id />"></div>
 			<div class="sec-reviews">
 				<div class="wrapper">
 
