@@ -183,7 +183,7 @@
 
 	</div>
 
-	<div class="sec-cta service-cta">
+	<div class="sec-cta service-cta mobile-hide">
 		<div class="wrapper">
 			<div class="col-12 sec-cta-container">
 
