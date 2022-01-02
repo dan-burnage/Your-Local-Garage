@@ -20,7 +20,7 @@
 		<hr><br>
 	</cms:editable>
 
-	<cms:editable name='page_content' type='richtext' group='content_group' order='8' />
+	<cms:editable name='page_content' label='Page Content' type='richtext' group='content_group' order='8' />
 
 	<cms:editable name='divider_line' type='message' group='content_group' order='9'><br>
 		<hr><br>
