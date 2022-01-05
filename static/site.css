@@ -529,6 +529,7 @@ body {
 		padding: 3rem 0 0 0;
 		color: var(--White);
 		max-height: 100vh;
+		overflow: hidden;
 	}
 
 	.sec-hero.small-hero {
