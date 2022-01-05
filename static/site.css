@@ -526,11 +526,11 @@ body {
 
 	.sec-hero {
 		background: var(--Rhino-Gradient);
-		padding: 2rem 0 0 0;
+		padding: 3rem 0 0 0;
 		color: var(--White);
 		max-height: 100vh;
+		overflow: hidden;
 	}
-
 
 	.sec-hero.small-hero {
 		padding: 2rem 0 0 0;

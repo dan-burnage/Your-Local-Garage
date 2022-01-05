@@ -40,7 +40,7 @@
 			</div>
 		</div>
 
-		<div class="background-image"><img src="/static/images/404-background.webp" alt="" /></div>
+		<div class="background-image"><img src="/static/images/404-background.png" alt="" /></div>
 	</div>
 
 </body>
