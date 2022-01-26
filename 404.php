@@ -25,7 +25,7 @@
 	<div class="sec-hero sec-404">
 
 		<div class="wrapper">
-			<div class="col-4 align-left nav-logo"><a href="/"><img src="static/images/ylg-logo-long.svg" alt="Your Local Garage Logo" class="header-logo" />Your Local Garage at Fresh Motors</a></div>
+			<div class="col-4 align-left nav-logo"><a href="/"><img src="/static/images/ylg-logo-long.svg" alt="Your Local Garage Logo" class="header-logo" />Your Local Garage at Fresh Motors</a></div>
 		</div>
 
 		<div class="wrapper">
