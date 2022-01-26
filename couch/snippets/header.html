@@ -22,14 +22,14 @@
 
 			<cms:if g_nav_contact='true'>
 				<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />">
-					<li class="button secondary">
+					<li class="button secondary ga-track-phone">
 						<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" alt="" />
 					</li>
 				</a>
 			</cms:if>
 
 			<cms:if g_nav_booking='true'>
-				<li onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button">Book now<img src="static/images/spanner.svg" alt="" /></li>
+				<li onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" id="button" class="button ga-track-modal">Book now<img src="static/images/spanner.svg" alt="" /></li>
 			</cms:if>
 
 			<cms:if g_nav_button>

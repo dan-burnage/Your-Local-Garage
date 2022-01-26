@@ -154,7 +154,7 @@
 				<h1 class="h1-plus">
 					<cms:show hero_title />
 				</h1>
-				<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
+				<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button ga-track-modal">Book now<img src="static/images/spanner.svg" alt="" /></button>
 				<cms:if hero_button>
 					<a href="<cms:show hero_buttonlink />"><button class="button secondary">
 							<cms:show hero_button /><img src="static/images/arrow-forward.svg" alt="" />
@@ -216,7 +216,7 @@
 								<cms:show sec-isl-content />
 							</p>
 							<cms:if sec-isl-booking='Yes'>
-								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button ga-track-modal">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 							<cms:if sec-isl-button>
 								<a href="<cms:show sec-isl-link />"><button class="button">
@@ -224,7 +224,7 @@
 									</button></a>
 							</cms:if>
 							<cms:if sec-isl-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary ga-track-phone">
 										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" alt="" />
 									</button></a>
 							</cms:if>
@@ -252,7 +252,7 @@
 								<cms:show sec-isr-content />
 							</p>
 							<cms:if sec-isr-booking='Yes'>
-								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button ga-track-modal">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 							<cms:if sec-isr-button>
 								<a href="<cms:show sec-isr-link />"><button class="button">
@@ -260,7 +260,7 @@
 									</button></a>
 							</cms:if>
 							<cms:if sec-isr-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary ga-track-phone">
 										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone-dark.svg" alt="" />
 									</button></a>
 							</cms:if>
@@ -283,7 +283,7 @@
 							</h1>
 
 							<cms:if sec-cta-booking='Yes'>
-								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button">Book now<img src="static/images/spanner.svg" alt="" /></button>
+								<button onclick="document.getElementById('modal', 'modal-overlay').style.display='inherit'" tabindex="0" class="button ga-track-modal">Book now<img src="static/images/spanner.svg" alt="" /></button>
 							</cms:if>
 
 							<cms:if sec-cta-button>
@@ -293,7 +293,7 @@
 							</cms:if>
 
 							<cms:if sec-cta-contact='Yes'>
-								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary">
+								<a href="tel:<cms:get_field 'phone_number' masterpage='settings.php' />"><button class="button secondary ga-track-phone">
 										<cms:get_field 'phone_number' masterpage='settings.php' /><img src="static/images/phone.svg" alt="" />
 									</button></a>
 							</cms:if>
