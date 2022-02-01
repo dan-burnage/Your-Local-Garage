@@ -145,7 +145,9 @@
 							<h5>
 								<cms:show serv-li-title />
 							</h5>
-							<cms:show serv-li-content />
+							<p>
+								<cms:show serv-li-content />
+							</p>
 						</div>
 					</div>
 
